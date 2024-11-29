@@ -1,0 +1,8 @@
+summary: ''
+display_name: test_folder
+extra_perms:
+  g/all: true
+  u/hoangphuc090104: true
+owners:
+  - u/hoangphuc090104
+  - g/all
