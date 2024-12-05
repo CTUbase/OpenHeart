@@ -2,4 +2,6 @@ summary: null
 display_name: App Custom Components
 extra_perms:
   g/all: false
-owners: []
+  u/nguyen: true
+owners:
+  - u/nguyen

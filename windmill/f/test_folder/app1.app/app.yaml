@@ -138,7 +138,7 @@ value:
                   expr: 'false'
                 url:
                   type: static
-                  value: 'http://localhost:8080/apps/get/f/test_folder/app2?param=1'
+                  value: 'https://app.windmill.dev/a/opensource/app2?param=1'
               none: {}
               open:
                 id:
@@ -586,7 +586,7 @@ value:
     path: f/app_themes/theme_0
   unusedInlineScripts: []
 policy:
-  execution_mode: publisher
+  execution_mode: anonymous
   s3_inputs: []
   triggerables_v2:
     'bg_0:rawscript/9e295ccf92b30d35fb20fe96e81219a9a8cca7d867012a04cff0898a5ac3d141':

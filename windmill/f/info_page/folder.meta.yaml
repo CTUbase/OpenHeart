@@ -2,7 +2,9 @@ summary: null
 display_name: info_page
 extra_perms:
   g/all: true
-  u/hoangphuc090104: false
+  u/hoangphuc090104: true
+  u/nguyen: true
 owners:
   - u/hoangphuc090104
   - g/all
+  - u/nguyen

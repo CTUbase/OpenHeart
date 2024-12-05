@@ -1,7 +1,6 @@
 summary: null
-display_name: App Groups
+display_name: page
 extra_perms:
-  g/all: false
   u/nguyen: true
 owners:
   - u/nguyen
