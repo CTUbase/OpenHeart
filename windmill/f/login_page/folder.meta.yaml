@@ -2,9 +2,9 @@ summary: ''
 display_name: login_page
 extra_perms:
   g/all: true
+  u/admin: true
   u/hoangphuc090104: true
-  u/nguyen: true
 owners:
   - u/hoangphuc090104
   - g/all
-  - u/nguyen
+  - u/admin
