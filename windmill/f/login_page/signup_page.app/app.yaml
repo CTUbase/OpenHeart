@@ -32,7 +32,7 @@ value:
     textinputcomponent:
       input:
         class: ''
-        style: ''
+        style: 'height: 5vh; border-radius: 4px;'
     verticalsplitpanescomponent:
       container:
         class: ''
@@ -42,7 +42,7 @@ value:
     - '12':
         fixed: false
         fullHeight: false
-        h: 24
+        h: 31
         w: 12
         x: 0
         'y': 0
@@ -65,11 +65,42 @@ value:
             style: |-
 
               overflow: hidden;
-        numberOfSubgrids: 2
+        numberOfSubgrids: 1
         panes:
-          - 50
-          - 50
-  hiddenInlineScripts: []
+          - 100
+  hiddenInlineScripts:
+    - type: runnableByName
+      name: City
+      autoRefresh: true
+      fields: {}
+      inlineScript:
+        content: '!inline city.inline_script.py'
+        lock: '!inline city.inline_script.lock'
+        language: python3
+        path: f/login_page/signup_page/City
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties: {}
+          required: []
+      recomputeIds: []
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: Gender
+      autoRefresh: true
+      fields: {}
+      inlineScript:
+        content: '!inline gender.inline_script.py'
+        lock: '!inline gender.inline_script.lock'
+        language: python3
+        path: f/login_page/signup_page/Gender
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties: {}
+          required: []
+      recomputeIds: []
+      recomputeOnInputChanged: true
   hideLegacyTopBar: true
   mobileViewOnSmallerScreens: false
   norefreshbar: false
@@ -78,7 +109,7 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 24
+          h: 30
           w: 12
           x: 0
           'y': 0
@@ -102,69 +133,1008 @@ value:
                 padding: 20px;
                 overflow: hidden;
           numberOfSubgrids: 1
+    d-0:
       - '12':
           fixed: false
           fullHeight: false
-          h: 8
-          w: 6
-          x: 0
-          'y': 24
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 8
-          w: 2
-          x: 0
-          'y': 21
-        id: v
-        data:
-          id: v
-          type: containercomponent
-          actions: []
-          configuration: {}
-          customCss:
-            container:
-              class: ''
-              style: ''
-          numberOfSubgrids: 1
-    a-1:
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 23
-          w: 12
+          h: 1
+          w: 3
           x: 0
           'y': 0
         '3':
           fixed: false
-          fullHeight: true
-          h: 4
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 0
+        id: e
+        data:
+          id: e
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            autoRefresh: true
+            connections: []
+            eval: 'Hello ${ctx.username}'
+            expr: '"Họ và tên:"'
+            fields: {}
+            fieldType: template
+            recomputeOnInputChanged: true
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 12
+          x: 0
+          'y': 1
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 1
+          'y': 0
+        id: fullname
+        data:
+          id: fullname
+          type: textinputcomponent
+          actions: []
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            defaultValue:
+              type: static
+            disabled:
+              type: static
+              value: false
+            placeholder:
+              type: static
+              value: Nhập đầy đủ họ tên...
+          customCss:
+            input:
+              class: ''
+              style: ''
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
           w: 3
+          x: 0
+          'y': 3
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 1
+        id: g
+        data:
+          id: g
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            autoRefresh: true
+            connections: []
+            eval: 'Hello ${ctx.username}'
+            expr: '"Số điện thoại:"'
+            fields: {}
+            fieldType: template
+            recomputeOnInputChanged: true
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 6
+          'y': 3
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 2
+        id: i
+        data:
+          id: i
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            autoRefresh: true
+            connections: []
+            eval: 'Hello ${ctx.username}'
+            expr: '"Email:"'
+            fields: {}
+            fieldType: template
+            recomputeOnInputChanged: true
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 6
+          x: 0
+          'y': 4
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 1
+          'y': 1
+        id: phone
+        data:
+          id: phone
+          type: textinputcomponent
+          actions: []
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            defaultValue:
+              type: static
+            disabled:
+              type: static
+              value: false
+            placeholder:
+              type: static
+              value: Nhập số điện thoại...
+          customCss:
+            input:
+              class: ''
+              style: ''
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 6
+          x: 6
+          'y': 4
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 3
+          'y': 3
+        id: o
+        data:
+          id: o
+          type: emailinputcomponent
+          actions: []
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            defaultValue:
+              type: static
+            disabled:
+              type: static
+              value: false
+            placeholder:
+              type: static
+              value: Email
+          customCss:
+            input:
+              class: ''
+              style: ''
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 0
+          'y': 6
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 3
+        id: f
+        data:
+          id: f
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            autoRefresh: true
+            connections: []
+            eval: 'Hello ${ctx.username}'
+            expr: '"Giới tính:"'
+            fields: {}
+            fieldType: template
+            recomputeOnInputChanged: true
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 6
+          'y': 6
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 1
+          'y': 3
+        id: h
+        data:
+          id: h
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            autoRefresh: true
+            connections: []
+            eval: 'Hello ${ctx.username}'
+            expr: '"Thành phố sinh sống:"'
+            fields: {}
+            fieldType: template
+            recomputeOnInputChanged: true
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 0
+          'y': 7
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 3
+          'y': 3
+        id: gender
+        data:
+          id: gender
+          type: selectcomponent
+          actions: []
+          configuration:
+            create:
+              type: static
+              value: false
+            defaultValue:
+              type: static
+            disabled:
+              type: static
+              value: false
+            fullWidth:
+              type: static
+              value: true
+            items:
+              type: evalv2
+              value: []
+              connections:
+                - id: result
+                  componentId: bg_1
+              expr: bg_1.result
+            nativeHtmlSelect:
+              type: static
+              value: false
+            placeholder:
+              type: static
+              value: Select an item
+            preselectFirst:
+              type: static
+              value: true
+          customCss:
+            input:
+              class: ''
+              style: ''
+              tooltip: >-
+                https://github.com/rob-balfre/svelte-select/blob/master/docs/theming_variables.md
+          onSelect: []
+          recomputeIds: []
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 6
+          'y': 7
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 0
+          'y': 4
+        id: provines
+        data:
+          id: provines
+          type: selectcomponent
+          actions: []
+          configuration:
+            create:
+              type: static
+              value: false
+            defaultValue:
+              type: static
+            disabled:
+              type: static
+              value: false
+            fullWidth:
+              type: static
+              value: true
+            items:
+              type: evalv2
+              value:
+                - value: foo
+                  label: Foo
+                - value: bar
+                  label: Bar
+              connections:
+                - id: result
+                  componentId: bg_0
+              expr: bg_0.result
+            nativeHtmlSelect:
+              type: static
+              value: false
+            placeholder:
+              type: static
+              value: Select an item
+            preselectFirst:
+              type: static
+              value: true
+          customCss:
+            input:
+              class: ''
+              style: ''
+              tooltip: >-
+                https://github.com/rob-balfre/svelte-select/blob/master/docs/theming_variables.md
+          onSelect: []
+          recomputeIds: []
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 0
+          'y': 8
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 2
+          'y': 3
+        id: j
+        data:
+          id: j
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            autoRefresh: true
+            connections: []
+            eval: 'Hello ${ctx.username}'
+            expr: '"Mật khẩu:"'
+            fields: {}
+            fieldType: template
+            recomputeOnInputChanged: true
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 6
+          'y': 8
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 2
+          'y': 4
+        id: k
+        data:
+          id: k
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            autoRefresh: true
+            connections: []
+            eval: 'Hello ${ctx.username}'
+            expr: '"Nhập lại mật khẩu:"'
+            fields: {}
+            fieldType: template
+            recomputeOnInputChanged: true
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 0
+          'y': 9
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 0
+          'y': 10
+        id: m
+        data:
+          id: m
+          type: passwordinputcomponent
+          actions: []
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            disabled:
+              type: static
+              value: false
+            placeholder:
+              type: static
+              value: Password
+          customCss:
+            input:
+              class: ''
+              style: ''
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 6
+          'y': 9
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 0
+          'y': 5
+        id: 'n'
+        data:
+          id: 'n'
+          type: passwordinputcomponent
+          actions: []
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            disabled:
+              type: static
+              value: false
+            placeholder:
+              type: static
+              value: Password
+          customCss:
+            input:
+              class: ''
+              style: ''
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 6
+          'y': 11
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 1
+          'y': 2
+        id: p
+        data:
+          id: p
+          type: dateinputcomponent
+          actions: []
+          configuration:
+            defaultValue:
+              type: static
+            maxDate:
+              type: static
+              value: ''
+            minDate:
+              type: static
+              value: ''
+            outputFormat:
+              type: static
+              value: yyyy-MM-dd
+          customCss:
+            input:
+              class: ''
+              style: ''
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 5
+          'y': 13
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 2
+          'y': 5
+        id: l
+        data:
+          id: l
+          type: buttoncomponent
+          actions: []
+          componentInput:
+            type: runnable
+            autoRefresh: false
+            fields:
+              brithday:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: p
+                expr: p.result
+                fieldType: string
+              email:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: o
+                expr: o.result
+                fieldType: string
+              full_name:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: fullname
+                expr: fullname.result
+                fieldType: string
+              id_gender:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: gender
+                expr: gender.result
+                fieldType: string
+              id_provinces:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: provines
+                expr: provines.result
+                fieldType: string
+              pass1:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: m
+                expr: m.result
+                fieldType: string
+              phone:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: phone
+                expr: phone.result
+                fieldType: string
+            fieldType: any
+            recomputeOnInputChanged: false
+            runnable:
+              type: runnableByName
+              name: Inline Script 0
+              inlineScript:
+                content: '!inline inline_script_0.inline_script.py'
+                lock: '!inline inline_script_0.inline_script.lock'
+                language: python3
+                path: f/login_page/signup_page/Inline_Script_0
+                schema:
+                  $schema: 'https://json-schema.org/draft/2020-12/schema'
+                  type: object
+                  properties:
+                    brithday:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    email:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    full_name:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    id_gender:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    id_provinces:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    pass1:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    phone:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                  required:
+                    - email
+                    - pass1
+                    - id_gender
+                    - full_name
+                    - brithday
+                    - id_provinces
+                    - phone
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            color:
+              type: static
+              value: blue
+            confirmationModal:
+              type: oneOf
+              configuration:
+                confirmationModal:
+                  description:
+                    type: static
+                    value: Are you sure?
+                  confirmationText:
+                    type: static
+                    value: Confirm
+                  title:
+                    type: static
+                    value: Title
+                none: {}
+              selected: none
+            disabled:
+              type: static
+              value: false
+            fillContainer:
+              type: static
+              value: false
+            label:
+              type: static
+              value: Đăng ký
+            onError:
+              type: oneOf
+              configuration:
+                close:
+                  id:
+                    type: static
+                    value: ''
+                errorOverlay: {}
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: static
+                    value: ''
+                open:
+                  id:
+                    type: static
+                    value: ''
+                sendErrorToast:
+                  appendError:
+                    type: static
+                    value: true
+                  message:
+                    type: static
+                    value: An error occured
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: errorOverlay
+            onSuccess:
+              type: oneOf
+              configuration:
+                clearFiles:
+                  id:
+                    type: static
+                    value: ''
+                close:
+                  id:
+                    type: static
+                    value: ''
+                closeModal:
+                  modalId:
+                    type: static
+                    value: ''
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: static
+                    value: ''
+                none: {}
+                open:
+                  id:
+                    type: static
+                    value: ''
+                openModal:
+                  modalId:
+                    type: static
+                    value: ''
+                sendToast:
+                  message:
+                    type: static
+                    value: Thành công
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: sendToast
+            size:
+              type: static
+              value: xs
+            triggerOnAppLoad:
+              type: static
+              value: false
+          customCss:
+            button:
+              class: ''
+              style: ''
+            container:
+              class: ''
+              style: ''
+          horizontalAlignment: center
+          recomputeIds: []
+          verticalAlignment: center
+    d-1:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
           x: 0
           'y': 0
         id: u
         data:
           id: u
-          type: imagecomponent
+          type: textcomponent
           actions: []
+          componentInput:
+            type: evalv2
+            autoRefresh: true
+            connections: []
+            eval: 'Hello ${ctx.username}'
+            expr: '"Họ và tên:"'
+            fields: {}
+            fieldType: template
+            recomputeOnInputChanged: true
           configuration:
-            altText:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
               type: static
               value: ''
-            imageFit:
-              type: static
-              value: cover
-            source:
-              type: static
-              value: >-
-                https://dash.pointapp.org/static/media/causes2x.010adc0a42dbba7aeff7.png
-            sourceKind:
-              type: static
-              value: url
           customCss:
-            image:
+            container:
               class: ''
-              style: 'scale: 1.8; background-color: #c2e9ff;'
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
     q-0:
       - '12':
           fixed: false
@@ -356,7 +1326,6 @@ value:
           horizontalAlignment: left
           recomputeIds: []
           verticalAlignment: center
-    v-0: []
     w-0:
       - '12':
           fixed: false
@@ -492,655 +1461,58 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 1
-          w: 5
+          h: 23
+          w: 12
           x: 0
           'y': 4
         '3':
           fixed: false
           fullHeight: false
-          h: 1
-          w: 1
+          h: 8
+          w: 2
           x: 0
           'y': 4
         id: d
         data:
           id: d
-          type: textcomponent
+          type: tabscomponent
           actions: []
-          componentInput:
-            type: templatev2
-            connections: []
-            eval: Họ *
-            fieldType: template
           configuration:
-            copyButton:
+            tabsKind:
               type: static
-              value: false
-            disableNoText:
-              type: static
-              value: false
-            style:
-              type: static
-              value: Body
-            tooltip:
-              type: static
-              value: ''
+              value: tabs
           customCss:
+            allTabs:
+              class: ''
+              style: ''
             container:
               class: ''
               style: ''
-            text:
+            selectedTab:
               class: ''
               style: ''
-          horizontalAlignment: left
-          verticalAlignment: top
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 3
-          x: 6
-          'y': 4
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 5
-          'y': 4
-        id: f
-        data:
-          id: f
-          type: textcomponent
-          actions: []
-          componentInput:
-            type: templatev2
-            connections: []
-            eval: Tên *
-            fieldType: template
-          configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: false
-            style:
-              type: static
-              value: Body
-            tooltip:
-              type: static
-              value: ''
-          customCss:
-            container:
+            tabRow:
               class: ''
               style: ''
-            text:
-              class: ''
-              style: ''
-          horizontalAlignment: left
-          verticalAlignment: top
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 6
-          x: 0
-          'y': 5
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 2
-          x: 1
-          'y': 0
-        id: e
-        data:
-          id: e
-          type: textinputcomponent
-          actions: []
-          configuration:
-            afterIcon:
-              type: static
-              value: ''
-            beforeIcon:
-              type: static
-              value: ''
-            defaultValue:
-              type: static
-            disabled:
-              type: static
+          disabledTabs:
+            - type: static
               value: false
-            placeholder:
-              type: static
-              value: Nhập họ của bạn...
-          customCss:
-            input:
-              class: ''
-              style: 'height: 7vh; border-radius: 10px;'
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 6
-          x: 6
-          'y': 5
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 2
-          x: 6
-          'y': 5
-        id: g
-        data:
-          id: g
-          type: textinputcomponent
-          actions: []
-          configuration:
-            afterIcon:
-              type: static
-              value: ''
-            beforeIcon:
-              type: static
-              value: ''
-            defaultValue:
-              type: static
-            disabled:
-              type: static
+              fieldType: boolean
+            - type: static
               value: false
-            placeholder:
-              type: static
-              value: Nhập tên của bạn...
-          customCss:
-            input:
-              class: ''
-              style: 'height: 7vh; border-radius: 10px;'
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 12
-          x: 0
-          'y': 7
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 0
-          'y': 6
-        id: h
-        data:
-          id: h
-          type: textcomponent
-          actions: []
-          componentInput:
-            type: templatev2
-            connections: []
-            eval: Địa chỉ email *
-            fieldType: template
-          configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: false
-            style:
-              type: static
-              value: Body
-            tooltip:
-              type: static
-              value: ''
-          customCss:
-            container:
-              class: ''
-              style: ''
-            text:
-              class: ''
-              style: ''
-          horizontalAlignment: left
-          verticalAlignment: top
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 12
-          x: 0
-          'y': 8
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 2
-          x: 0
-          'y': 7
-        id: i
-        data:
-          id: i
-          type: textinputcomponent
-          actions: []
-          configuration:
-            afterIcon:
-              type: static
-              value: ''
-            beforeIcon:
-              type: static
-              value: ''
-            defaultValue:
-              type: static
-            disabled:
-              type: static
-              value: false
-            placeholder:
-              type: static
-              value: Nhập email...
-          customCss:
-            input:
-              class: ''
-              style: 'height: 7vh; border-radius: 10px;'
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 5
-          x: 0
-          'y': 10
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 0
-          'y': 8
-        id: j
-        data:
-          id: j
-          type: textcomponent
-          actions: []
-          componentInput:
-            type: templatev2
-            connections: []
-            eval: Mật khẩu *
-            fieldType: template
-          configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: false
-            style:
-              type: static
-              value: Body
-            tooltip:
-              type: static
-              value: ''
-          customCss:
-            container:
-              class: ''
-              style: ''
-            text:
-              class: ''
-              style: ''
-          horizontalAlignment: left
-          verticalAlignment: top
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 6
-          x: 6
-          'y': 10
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 5
-          'y': 8
-        id: k
-        data:
-          id: k
-          type: textcomponent
-          actions: []
-          componentInput:
-            type: templatev2
-            connections: []
-            eval: Nhập lại mật khẩu *
-            fieldType: template
-          configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: false
-            style:
-              type: static
-              value: Body
-            tooltip:
-              type: static
-              value: ''
-          customCss:
-            container:
-              class: ''
-              style: ''
-            text:
-              class: ''
-              style: ''
-          horizontalAlignment: left
-          verticalAlignment: top
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 6
-          x: 0
-          'y': 11
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 2
-          x: 0
-          'y': 9
-        id: l
-        data:
-          id: l
-          type: textinputcomponent
-          actions: []
-          configuration:
-            afterIcon:
-              type: static
-              value: ''
-            beforeIcon:
-              type: static
-              value: ''
-            defaultValue:
-              type: static
-            disabled:
-              type: static
-              value: false
-            placeholder:
-              type: static
-              value: Nhập mật khẩu...
-          customCss:
-            input:
-              class: ''
-              style: 'height: 7vh; border-radius: 10px;'
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 6
-          x: 6
-          'y': 11
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 2
-          x: 6
-          'y': 9
-        id: m
-        data:
-          id: m
-          type: textinputcomponent
-          actions: []
-          configuration:
-            afterIcon:
-              type: static
-              value: ''
-            beforeIcon:
-              type: static
-              value: ''
-            defaultValue:
-              type: static
-            disabled:
-              type: static
-              value: false
-            placeholder:
-              type: static
-              value: Nhập mật khẩu...
-          customCss:
-            input:
-              class: ''
-              style: 'height: 7vh; border-radius: 10px;'
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 2
-          x: 0
-          'y': 14
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 5
-          'y': 4
-        id: 'n'
-        data:
-          id: 'n'
-          type: checkboxcomponent
-          actions: []
-          configuration:
-            defaultValue:
-              type: static
-            disabled:
-              type: static
-              value: false
-            label:
-              type: static
-              value: ''
-          customCss:
-            container:
-              class: ''
-              style: ''
-            text:
-              class: ''
-              style: ''
-          horizontalAlignment: center
-          recomputeIds: []
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 4
-          w: 10
-          x: 2
-          'y': 14
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 2
-          w: 1
-          x: 5
-          'y': 16
-        id: o
-        data:
-          id: o
-          type: htmlcomponent
-          actions: []
-          componentInput:
-            type: templatev2
-            connections: []
-            eval: >-
-              <div style="font-family: 'Montserrat', sans-serif; font-size:
-              2vh;">
-                      Bằng cách tiếp tục, bạn đồng ý rằng mình 
-                      <span style="font-weight: bold; color: #0071b3;">ít nhất 13 tuổi</span>. 
-                      Ngoài ra, bạn cũng đồng ý với tất cả các điều khoản pháp lý sau: 
-                      <span style="font-weight: bold; color: #0071b3;">Điều khoản Sử dụng</span>, 
-                      <span style="font-weight: bold; color: #0071b3;">Hướng dẫn Cộng đồng</span> và 
-                      <span style="font-weight: bold; color: #0071b3;">Chính sách Bảo mật</span>.
-                  </div>
-            fieldType: template
-          configuration: {}
-          customCss:
-            container:
-              class: ''
-              style: ''
+              fieldType: boolean
+          numberOfSubgrids: 2
+          onTabChange: []
+          tabs:
+            - Tình nguyện viên
+            - Tổ chức cứu trợ
       - '12':
           fixed: false
           fullHeight: false
           h: 2
           w: 12
           x: 0
-          'y': 18
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 0
-          'y': 14
-        id: p
-        data:
-          id: p
-          type: buttoncomponent
-          actions: []
-          componentInput:
-            type: runnable
-            fields: {}
-            fieldType: any
-          configuration:
-            afterIcon:
-              type: static
-              value: ''
-            beforeIcon:
-              type: static
-              value: ''
-            color:
-              type: static
-              value: blue
-            confirmationModal:
-              type: oneOf
-              configuration:
-                confirmationModal:
-                  description:
-                    type: static
-                    value: Are you sure?
-                  confirmationText:
-                    type: static
-                    value: Confirm
-                  title:
-                    type: static
-                    value: Title
-                none: {}
-              selected: none
-            disabled:
-              type: static
-              value: false
-            fillContainer:
-              type: static
-              value: true
-            label:
-              type: static
-              value: Tiếp tục
-            onError:
-              type: oneOf
-              configuration:
-                close:
-                  id:
-                    type: static
-                    value: ''
-                errorOverlay: {}
-                gotoUrl:
-                  newTab:
-                    type: static
-                    value: true
-                  url:
-                    type: static
-                    value: ''
-                open:
-                  id:
-                    type: static
-                    value: ''
-                sendErrorToast:
-                  appendError:
-                    type: static
-                    value: true
-                  message:
-                    type: static
-                    value: An error occured
-                setTab:
-                  setTab:
-                    type: static
-                    value: []
-              selected: errorOverlay
-            onSuccess:
-              type: oneOf
-              configuration:
-                clearFiles:
-                  id:
-                    type: static
-                    value: ''
-                close:
-                  id:
-                    type: static
-                    value: ''
-                closeModal:
-                  modalId:
-                    type: static
-                    value: ''
-                gotoUrl:
-                  newTab:
-                    type: static
-                    value: true
-                  url:
-                    type: static
-                    value: ''
-                none: {}
-                open:
-                  id:
-                    type: static
-                    value: ''
-                openModal:
-                  modalId:
-                    type: static
-                    value: ''
-                sendToast:
-                  message:
-                    type: static
-                    value: ''
-                setTab:
-                  setTab:
-                    type: static
-                    value: []
-              selected: none
-            size:
-              type: static
-              value: xs
-            triggerOnAppLoad:
-              type: static
-              value: false
-          customCss:
-            button:
-              class: ''
-              style: 'height: 7vh; font-size: 2vh;'
-            container:
-              class: ''
-              style: ''
-          horizontalAlignment: center
-          recomputeIds: []
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 2
-          w: 12
-          x: 0
-          'y': 21
+          'y': 27
         '3':
           fixed: false
           fullHeight: false
@@ -1166,4 +1538,16 @@ value:
 policy:
   execution_mode: publisher
   s3_inputs: []
-  triggerables_v2: {}
+  triggerables_v2:
+    'bg_0:rawscript/7e6ab991b453734f8e2322e61eb9a2b122d070a3cdc11435d02b393dc1b39a2a':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_1:rawscript/cb966f9f5d1ef3dfaaa8949cca69b392bce2235b44c04b635ca3ff338e6909e4':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'l:rawscript/267b7aba11871a7560a587e64b635d5253ab19ffe71c4dd26034804705201f8c':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}

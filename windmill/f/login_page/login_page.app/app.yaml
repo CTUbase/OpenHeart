@@ -1571,11 +1571,11 @@ policy:
   execution_mode: publisher
   s3_inputs: []
   triggerables_v2:
-    'bg_0:rawscript/2c5e4e1ccdaba1ef5ba9b91f65c19d6a5a050084d156d7de00317bd2eb4af80b':
+    'bg_0:rawscript/429d56d5dd0e0cc6c736ad3426d5403bdca03f0904a5da32335fa9ace8cffabc':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'j:rawscript/2c5e4e1ccdaba1ef5ba9b91f65c19d6a5a050084d156d7de00317bd2eb4af80b':
+    'j:rawscript/429d56d5dd0e0cc6c736ad3426d5403bdca03f0904a5da32335fa9ace8cffabc':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
