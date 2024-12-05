@@ -1,10 +1,10 @@
 from supabase import create_client, Client
 import wmill
 
-def main():
+def main(id_user: str):
     url = wmill.get_variable("f/info_page/supabase_url")
     key = wmill.get_variable("f/info_page/supabase_service_key")
-    account_id = 2
+    account_id = id_user
     supabase: Client = create_client(url, key)
 
     response = supabase.table("accounts").select("*").eq("id", account_id).execute()

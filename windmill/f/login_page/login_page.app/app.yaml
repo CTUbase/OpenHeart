@@ -23,6 +23,10 @@ value:
       container:
         class: ''
         style: ''
+    passwordinputcomponent:
+      input:
+        class: ''
+        style: ''
     tabscomponent:
       allTabs:
         class: ''
@@ -83,9 +87,53 @@ value:
         panes:
           - 40
           - 60
-  hiddenInlineScripts: []
+  hiddenInlineScripts:
+    - type: runnableByName
+      name: Background Runnable 0
+      autoRefresh: true
+      fields:
+        email:
+          type: evalv2
+          value: null
+          connections:
+            - id: result
+              componentId: email
+          expr: email.result
+          fieldType: string
+        pass1:
+          type: evalv2
+          value: null
+          connections:
+            - id: result
+              componentId: d
+          expr: d.result
+          fieldType: string
+      inlineScript:
+        content: '!inline background_runnable_0.inline_script.py'
+        lock: '!inline background_runnable_0.inline_script.lock'
+        language: python3
+        path: f/login_page/login_page/Background_Runnable_0
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties:
+            email:
+              type: string
+              description: ''
+              default: null
+              originalType: string
+            pass1:
+              type: string
+              description: ''
+              default: null
+              originalType: string
+          required:
+            - email
+            - pass1
+      recomputeIds: []
+      recomputeOnInputChanged: true
   hideLegacyTopBar: true
-  mobileViewOnSmallerScreens: false
+  mobileViewOnSmallerScreens: true
   norefreshbar: false
   subgrids:
     b-0:
@@ -243,9 +291,9 @@ value:
           w: 2
           x: 0
           'y': 1
-        id: d
+        id: email
         data:
-          id: d
+          id: email
           type: textinputcomponent
           actions: []
           configuration:
@@ -257,6 +305,8 @@ value:
               value: ''
             defaultValue:
               type: static
+              connections: []
+              expr: ''
             disabled:
               type: static
               value: false
@@ -328,10 +378,10 @@ value:
           w: 2
           x: 0
           'y': 2
-        id: g
+        id: d
         data:
-          id: g
-          type: textinputcomponent
+          id: d
+          type: passwordinputcomponent
           actions: []
           configuration:
             afterIcon:
@@ -340,18 +390,17 @@ value:
             beforeIcon:
               type: static
               value: ''
-            defaultValue:
-              type: static
             disabled:
               type: static
               value: false
             placeholder:
               type: static
-              value: Nhập mật khẩu của bạn...
+              value: Nhập mật khẩu của bạn
           customCss:
             input:
               class: ''
-              style: 'cursor: pointer; height: 7vh; border-radius: 10px;'
+              style: |
+                cursor: pointer; height: 7vh; border-radius: 10px;
           verticalAlignment: center
       - '12':
           fixed: false
@@ -518,8 +567,51 @@ value:
           actions: []
           componentInput:
             type: runnable
-            fields: {}
+            autoRefresh: false
+            fields:
+              email:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: email
+                expr: email.result
+                fieldType: string
+              pass1:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: d
+                expr: d.result
+                fieldType: string
             fieldType: any
+            recomputeOnInputChanged: false
+            runnable:
+              type: runnableByName
+              name: Inline Script 0
+              inlineScript:
+                content: '!inline inline_script_0.inline_script.py'
+                lock: '!inline inline_script_0.inline_script.lock'
+                language: python3
+                path: f/login_page/login_page/Inline_Script_0
+                schema:
+                  $schema: 'https://json-schema.org/draft/2020-12/schema'
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    pass1:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                  required:
+                    - email
+                    - pass1
           configuration:
             afterIcon:
               type: static
@@ -606,9 +698,15 @@ value:
                   newTab:
                     type: static
                     value: true
+                    connections: []
+                    expr: 'true'
                   url:
-                    type: static
-                    value: ''
+                    type: evalv2
+                    value: 'http://localhost/apps/get/f/info_page/info_page_volunteer'
+                    connections:
+                      - id: result
+                        componentId: bg_0
+                    expr: bg_0.result
                 none: {}
                 open:
                   id:
@@ -626,7 +724,7 @@ value:
                   setTab:
                     type: static
                     value: []
-              selected: none
+              selected: gotoUrl
             size:
               type: static
               value: xs
@@ -643,7 +741,8 @@ value:
               class: ''
               style: ''
           horizontalAlignment: center
-          recomputeIds: []
+          recomputeIds:
+            - bg_0
           verticalAlignment: center
       - '12':
           fixed: false
@@ -1471,4 +1570,12 @@ value:
 policy:
   execution_mode: publisher
   s3_inputs: []
-  triggerables_v2: {}
+  triggerables_v2:
+    'bg_0:rawscript/2c5e4e1ccdaba1ef5ba9b91f65c19d6a5a050084d156d7de00317bd2eb4af80b':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'j:rawscript/2c5e4e1ccdaba1ef5ba9b91f65c19d6a5a050084d156d7de00317bd2eb4af80b':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}

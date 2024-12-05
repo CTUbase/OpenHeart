@@ -171,7 +171,15 @@ value:
     - type: runnableByName
       name: Background Runnable 0
       autoRefresh: true
-      fields: {}
+      fields:
+        id_user:
+          type: evalv2
+          value: null
+          connections:
+            - id: result
+              componentId: bg_1
+          expr: bg_1.result
+          fieldType: string
       inlineScript:
         content: '!inline background_runnable_0.inline_script.py'
         lock: '!inline background_runnable_0.inline_script.lock'
@@ -180,8 +188,26 @@ value:
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
-          properties: {}
-          required: []
+          properties:
+            id_user:
+              type: string
+              description: ''
+              default: null
+              originalType: string
+          required:
+            - id_user
+      recomputeIds:
+        - bg_1
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: Background Runnable 1
+      autoRefresh: true
+      fields: {}
+      inlineScript:
+        content: '!inline background_runnable_1.inline_script.frontend.js'
+        language: frontend
+        path: f/info_page/info_page_volunteer/Background_Runnable_1
+        suggestedRefreshOn: []
       recomputeIds: []
       recomputeOnInputChanged: true
   hideLegacyTopBar: true
@@ -3611,7 +3637,11 @@ policy:
   execution_mode: publisher
   s3_inputs: []
   triggerables_v2:
-    'bg_0:rawscript/cf406af75cca1eb66444b3aa27e972e90040a0eb664b7d5f28258bae50d28ec7':
+    'bg_0:rawscript/b7e79a7e518cfd30891f9204be4cb72e2c198cf1589f765988b3fdf9089528b2':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_1:rawscript/c417074f47c45d5f5f87168ee935b92127b8ceea06927b4dbb89b427115a7bdb':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}

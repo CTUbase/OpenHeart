@@ -171,17 +171,43 @@ value:
     - type: runnableByName
       name: Background Runnable 0
       autoRefresh: true
-      fields: {}
+      fields:
+        id_user:
+          type: evalv2
+          value: null
+          connections:
+            - id: result
+              componentId: bg_1
+          expr: bg_1.result
+          fieldType: string
       inlineScript:
         content: '!inline background_runnable_0.inline_script.py'
         lock: '!inline background_runnable_0.inline_script.lock'
         language: python3
-        path: f/info_page/ii/Background_Runnable_0
+        path: f/info_page/info_page_organization/Background_Runnable_0
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
-          properties: {}
-          required: []
+          properties:
+            id_user:
+              type: string
+              description: ''
+              default: null
+              originalType: string
+          required:
+            - id_user
+      recomputeIds:
+        - bg_1
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: Background Runnable 1
+      autoRefresh: true
+      fields: {}
+      inlineScript:
+        content: '!inline background_runnable_1.inline_script.frontend.js'
+        language: frontend
+        path: f/info_page/info_page_organization/Background_Runnable_1
+        suggestedRefreshOn: []
       recomputeIds: []
       recomputeOnInputChanged: true
   hideLegacyTopBar: true
@@ -3700,7 +3726,11 @@ policy:
   execution_mode: publisher
   s3_inputs: []
   triggerables_v2:
-    'bg_0:rawscript/ffc37aa1821c22dec6ad8c350bcdc46e845e509d23c3da1af0e67aa70689262f':
+    'bg_0:rawscript/f9dbf748f04b0c73438009add9ddd4028cc90c361f3e4f1659667a4fd0b23db8':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_1:rawscript/c417074f47c45d5f5f87168ee935b92127b8ceea06927b4dbb89b427115a7bdb':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
