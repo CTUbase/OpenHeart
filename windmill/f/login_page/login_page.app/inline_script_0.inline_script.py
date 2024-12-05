@@ -22,10 +22,10 @@ def handle_login(username, password):
         print("Request thất bại với mã lỗi")
     else:
         if(response.data[0]['id_role'] == 2):
-            url_profile = 'http://localhost/apps/get/f/info_page/info_page_volunteer?id_user=' + str(response.data[0]['id'])
+            url_profile = 'https://app.windmill.dev/apps/get/f/info_page/info_page_volunteer?id_user=' + str(response.data[0]['id'])
             return url_profile
         if(response.data[0]['id_role'] == 3):
-            url_profile = 'http://localhost/apps/get/f/info_page/info_page_organization?id_user=' + str(response.data[0]['id'])
+            url_profile = 'https://app.windmill.dev/apps/get/f/info_page/info_page_organization?id_user=' + str(response.data[0]['id'])
             return url_profile
 def main(email: str,pass1: str):
     return handle_login(email,pass1)
