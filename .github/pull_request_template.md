@@ -1,25 +1,25 @@
-## Proposed changes
+## Các thay đổi được đề xuất
 
-Describe the big picture of your changes here to communicate to the maintainers why we should accept this pull request. If it fixes a bug or resolves a feature request, be sure to link to that issue.
+Mô tả tổng quan về các thay đổi của bạn ở đây để giải thích cho người duyệt lý do tại sao chúng tôi nên chấp nhận yêu cầu này. Nếu nó sửa lỗi hoặc giải quyết một yêu cầu tính năng, hãy đảm bảo liên kết đến vấn đề đó.
 
-## Types of changes
+## Loại thay đổi
 
-What types of changes does your code introduce to this project?
-_Put an `x` in the boxes that apply_
+Những thay đổi trong mã của bạn ảnh hưởng đến dự án này như thế nào?  
+_Đánh dấu `x` vào các ô phù hợp_
 
--   [ ] Bugfix (non-breaking change which fixes an issue)
--   [ ] New feature (non-breaking change which adds functionality)
--   [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
--   [ ] Documentation Update (if none of the other choices apply)
+-   [ ] Bugfix (thay đổi không phá vỡ chức năng nhưng sửa một vấn đề)
+-   [ ] New feature (thay đổi không phá vỡ chức năng nhưng thêm tính năng mới)
+-   [ ] Breaking change (sửa hoặc thêm tính năng làm các chức năng hiện tại không hoạt động như mong đợi)
+-   [ ] Documentation Update (nếu không áp dụng các tùy chọn khác)
 
 ## Checklist
 
-_Put an `x` in the boxes that apply. You can also fill these out after creating the PR. If you're unsure about any of them, don't hesitate to ask. We're here to help! This is simply a reminder of what we are going to look for before merging your code._
+_Đánh dấu `x` vào các ô phù hợp. Bạn cũng có thể điền những mục này sau khi tạo PR. Nếu bạn không chắc chắn về bất kỳ mục nào, đừng ngần ngại hỏi. Chúng tôi ở đây để hỗ trợ! Đây chỉ là danh sách nhắc nhở về những gì chúng tôi sẽ kiểm tra trước khi hợp nhất mã của bạn._
 
--   [ ] I have read the CONTRIBUTING.md
--   [ ] I have added tests that prove my fix is effective or that my feature works
--   [ ] I have added necessary documentation (if appropriate)
+-   [ ] Tôi đã đọc CONTRIBUTING.md
+-   [ ] Tôi đã thêm các bài kiểm tra để chứng minh rằng sửa lỗi hoặc tính năng của tôi hoạt động
+-   [ ] Tôi đã thêm tài liệu cần thiết (nếu cần)
 
-## Further comments
+## Các bình luận khác
 
-If this is a relatively large or complex change, kick off the discussion by explaining why you chose the solution you did and what alternatives you considered, etc...
+Nếu đây là một thay đổi lớn hoặc phức tạp, hãy bắt đầu thảo luận bằng cách giải thích tại sao bạn chọn giải pháp này và đã xem xét những phương án thay thế nào, v.v.
