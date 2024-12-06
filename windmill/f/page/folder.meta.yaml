@@ -1,6 +1,8 @@
 summary: null
 display_name: page
 extra_perms:
+  u/admin: true
   u/nguyen: true
 owners:
   - u/nguyen
+  - u/admin
