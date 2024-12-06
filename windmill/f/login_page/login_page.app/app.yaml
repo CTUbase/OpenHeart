@@ -62,7 +62,7 @@ value:
     - '12':
         fixed: false
         fullHeight: false
-        h: 21
+        h: 20
         w: 12
         x: 0
         'y': 0
@@ -96,17 +96,17 @@ value:
           type: evalv2
           value: null
           connections:
-            - id: result
-              componentId: email
-          expr: email.result
+            - id: values
+              componentId: g
+          expr: g.values.email
           fieldType: string
         pass1:
           type: evalv2
           value: null
           connections:
-            - id: result
-              componentId: d
-          expr: d.result
+            - id: values
+              componentId: g
+          expr: 'g.values["Mật khẩu"]'
           fieldType: string
       inlineScript:
         content: '!inline background_runnable_0.inline_script.py'
@@ -234,181 +234,76 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 1
-          w: 5
+          h: 5
+          w: 12
           x: 0
           'y': 4
         '3':
           fixed: false
           fullHeight: false
-          h: 1
-          w: 1
-          x: 2
-          'y': 0
-        id: e
+          h: 8
+          w: 3
+          x: 0
+          'y': 12
+        id: g
         data:
-          id: e
-          type: textcomponent
+          id: g
+          type: schemaformcomponent
           actions: []
           componentInput:
-            type: templatev2
-            connections: []
-            eval: Email *
-            fieldType: template
+            type: static
+            value:
+              order:
+                - email
+                - Mật khẩu
+              properties:
+                email:
+                  type: string
+                  default: ''
+                  format: email
+                  nullable: false
+                  pattern: '^[\w-+.]+@([\w-]+\.)+[\w-]{2,4}$'
+                  placeholder: nhập vào email của bạn...
+                Mật khẩu:
+                  type: string
+                  description: ''
+                  default: ''
+                  disableVariablePicker: true
+                  nullable: false
+                  password: true
+                  placeholder: nhập vào mật khẩu...
+              required: []
+            fieldType: schema
           configuration:
-            copyButton:
+            defaultValues:
+              type: static
+              value: {}
+            displayType:
               type: static
               value: false
-            disableNoText:
+            dynamicEnums:
+              type: static
+              value: {}
+            largeGap:
               type: static
               value: false
-            style:
-              type: static
-              value: Body
-            tooltip:
-              type: static
-              value: ''
           customCss:
+            description:
+              class: ''
+              style: ''
             container:
               class: ''
               style: ''
-            text:
+            label:
               class: ''
               style: ''
-          horizontalAlignment: left
-          verticalAlignment: bottom
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 2
-          w: 12
-          x: 0
-          'y': 5
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 2
-          x: 0
-          'y': 1
-        id: email
-        data:
-          id: email
-          type: textinputcomponent
-          actions: []
-          configuration:
-            afterIcon:
-              type: static
-              value: ''
-            beforeIcon:
-              type: static
-              value: ''
-            defaultValue:
-              type: static
-              connections: []
-              expr: ''
-            disabled:
-              type: static
-              value: false
-            placeholder:
-              type: static
-              value: Nhập email của bạn...
-          customCss:
-            input:
-              class: ''
-              style: 'cursor: pointer; height: 7vh; border-radius: 10px;'
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 5
-          x: 0
-          'y': 7
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 2
-          'y': 1
-        id: f
-        data:
-          id: f
-          type: textcomponent
-          actions: []
-          componentInput:
-            type: templatev2
-            connections: []
-            eval: Mật khẩu *
-            fieldType: template
-          configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: false
-            style:
-              type: static
-              value: Body
-            tooltip:
-              type: static
-              value: ''
-          customCss:
-            container:
-              class: ''
-              style: ''
-            text:
-              class: ''
-              style: ''
-          horizontalAlignment: left
-          verticalAlignment: bottom
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 2
-          w: 12
-          x: 0
-          'y': 8
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 2
-          x: 0
-          'y': 2
-        id: d
-        data:
-          id: d
-          type: passwordinputcomponent
-          actions: []
-          configuration:
-            afterIcon:
-              type: static
-              value: ''
-            beforeIcon:
-              type: static
-              value: ''
-            disabled:
-              type: static
-              value: false
-            placeholder:
-              type: static
-              value: Nhập mật khẩu của bạn
-          customCss:
-            input:
-              class: ''
-              style: |
-                cursor: pointer; height: 7vh; border-radius: 10px;
-          verticalAlignment: center
       - '12':
           fixed: false
           fullHeight: false
           h: 1
           w: 12
           x: 0
-          'y': 10
+          'y': 9
         '3':
           fixed: false
           fullHeight: false
@@ -552,7 +447,7 @@ value:
           h: 2
           w: 12
           x: 0
-          'y': 11
+          'y': 10
         '3':
           fixed: false
           fullHeight: false
@@ -573,17 +468,17 @@ value:
                 type: evalv2
                 value: null
                 connections:
-                  - id: result
-                    componentId: email
-                expr: email.result
+                  - id: values
+                    componentId: g
+                expr: g.values.email
                 fieldType: string
               pass1:
                 type: evalv2
                 value: null
                 connections:
-                  - id: result
-                    componentId: d
-                expr: d.result
+                  - id: values
+                    componentId: g
+                expr: 'g.values["Mật khẩu"]'
                 fieldType: string
             fieldType: any
             recomputeOnInputChanged: false
@@ -697,7 +592,7 @@ value:
                 gotoUrl:
                   newTab:
                     type: static
-                    value: true
+                    value: false
                     connections: []
                     expr: 'true'
                   url:
@@ -741,45 +636,7 @@ value:
               class: ''
               style: ''
           horizontalAlignment: center
-          recomputeIds:
-            - bg_0
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 12
-          x: 0
-          'y': 15
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 3
-          x: 0
-          'y': 3
-        id: i
-        data:
-          id: i
-          type: horizontaldividercomponent
-          actions: []
-          configuration:
-            color:
-              type: static
-              value: '#00000060'
-            size:
-              type: static
-              value: 2
-          customCss:
-            container:
-              class: ''
-              style: ''
-            divider:
-              class: ''
-              style: ''
-              tooltip: >-
-                `background-color` and `height` are handled by the component
-                configuration
+          recomputeIds: []
           verticalAlignment: center
       - '12':
           fixed: false
@@ -787,7 +644,7 @@ value:
           h: 2
           w: 12
           x: 0
-          'y': 16
+          'y': 12
         '3':
           fixed: false
           fullHeight: false
@@ -851,6 +708,7 @@ value:
               value: false
               fieldType: boolean
           numberOfSubgrids: 2
+          onTabChange: []
           tabs:
             - Tình nguyện viên
             - Tổ chức
@@ -1051,8 +909,8 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 2
-          w: 4
+          h: 3
+          w: 2
           x: 0
           'y': 0
         '3':
@@ -1087,15 +945,15 @@ value:
             icon:
               class: ''
               style: 'color: #ffb300;'
-          horizontalAlignment: left
+          horizontalAlignment: center
           verticalAlignment: center
       - '12':
           fixed: false
           fullHeight: false
           h: 3
           w: 10
-          x: 0
-          'y': 2
+          x: 2
+          'y': 0
         '3':
           fixed: false
           fullHeight: false
@@ -1134,14 +992,14 @@ value:
               class: ''
               style: 'font-size: 3vh; font-weight: 600;'
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: center
       - '12':
           fixed: false
           fullHeight: false
-          h: 13
+          h: 9
           w: 12
           x: 0
-          'y': 5
+          'y': 3
         '3':
           fixed: false
           fullHeight: false
@@ -1207,8 +1065,8 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 2
-          w: 4
+          h: 3
+          w: 2
           x: 0
           'y': 0
         '3':
@@ -1245,15 +1103,15 @@ value:
             icon:
               class: ''
               style: 'color: #ffb300;'
-          horizontalAlignment: left
+          horizontalAlignment: center
           verticalAlignment: center
       - '12':
           fixed: false
           fullHeight: false
           h: 3
-          w: 7
-          x: 0
-          'y': 2
+          w: 10
+          x: 2
+          'y': 0
         '3':
           fixed: false
           fullHeight: false
@@ -1292,14 +1150,14 @@ value:
               class: ''
               style: 'font-size: 3vh; font-weight: 600;'
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: center
       - '12':
           fixed: false
           fullHeight: false
           h: 11
           w: 12
           x: 0
-          'y': 5
+          'y': 3
         '3':
           fixed: false
           fullHeight: false
@@ -1571,11 +1429,11 @@ policy:
   execution_mode: publisher
   s3_inputs: []
   triggerables_v2:
-    'bg_0:rawscript/429d56d5dd0e0cc6c736ad3426d5403bdca03f0904a5da32335fa9ace8cffabc':
+    'bg_0:rawscript/e8b2ed50c756d63b86dd6a36f842469ebd795203e725b3ee4165e3ae1f106c97':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'j:rawscript/429d56d5dd0e0cc6c736ad3426d5403bdca03f0904a5da32335fa9ace8cffabc':
+    'j:rawscript/387492d83cca9109c6de35758973de0e856ff1a62033a2dc29c103a76b18031f':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}

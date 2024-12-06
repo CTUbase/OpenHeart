@@ -1,4 +1,4 @@
-summary: null
+summary: lưu các trang người dùng
 display_name: page
 extra_perms:
   u/admin: true
