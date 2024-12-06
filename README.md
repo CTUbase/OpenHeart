@@ -1,3 +1,4 @@
+#OpenHeart
 [![Github license](https://img.shields.io/github/license/CTUbase/OpenHeart.svg 'Github license')](https://github.com/CTUbase/OpenHeart/blob/master/LICENSE)
 [![Open issues](https://img.shields.io/github/issues/CTUbase/OpenHeart.svg 'Open issues')](https://github.com/CTUbase/OpenHeart/issues)
 [![Open Pull Requests](https://img.shields.io/github/issues-pr/CTUbase/OpenHeart.svg 'Open Pull Requests')](https://github.com/CTUbase/OpenHeart/pulls)
