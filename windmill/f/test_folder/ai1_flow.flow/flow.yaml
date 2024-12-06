@@ -1,0 +1,90 @@
+summary: Flow cho AI gợi ý địa điểm
+description: ''
+value:
+  modules:
+    - id: a
+      summary: Get url
+      value:
+        type: rawscript
+        content: '!inline get_url.inline_script.py'
+        input_transforms:
+          keyword:
+            type: javascript
+            expr: flow_input.keyword
+          maximum:
+            type: javascript
+            expr: flow_input.maximum
+        lock: '!inline get_url.inline_script.lock'
+        is_trigger: false
+        language: python3
+    - id: b
+      value:
+        type: forloopflow
+        modules:
+          - id: c
+            summary: Crawl data from url
+            value:
+              type: rawscript
+              content: '!inline crawl_data_from_url.inline_script.py'
+              input_transforms:
+                url:
+                  type: javascript
+                  expr: flow_input.iter.value
+              lock: '!inline crawl_data_from_url.inline_script.lock'
+              is_trigger: false
+              language: python3
+          - id: d
+            summary: Turn the data to the model input
+            value:
+              type: rawscript
+              content: '!inline turn_the_data_to_the_model_input.inline_script.py'
+              input_transforms:
+                article:
+                  type: javascript
+                  expr: results.c
+              lock: '!inline turn_the_data_to_the_model_input.inline_script.lock'
+              is_trigger: false
+              language: python3
+          - id: e
+            summary: Use model to check
+            value:
+              type: rawscript
+              content: '!inline use_model_to_check.inline_script.py'
+              input_transforms:
+                data:
+                  type: javascript
+                  expr: results.d
+              lock: ''
+              is_trigger: false
+              language: python3
+        iterator:
+          type: javascript
+          expr: results.a
+        parallel: true
+        skip_failures: true
+    - id: f
+      summary: Clean data
+      value:
+        type: rawscript
+        content: '!inline clean_data.inline_script.py'
+        input_transforms:
+          data:
+            type: javascript
+            expr: results.b
+        lock: ''
+        is_trigger: false
+        language: python3
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  order:
+    - keyword
+    - maximum
+  properties:
+    keyword:
+      type: string
+      description: ''
+      default: ''
+    maximum:
+      type: integer
+  required: []

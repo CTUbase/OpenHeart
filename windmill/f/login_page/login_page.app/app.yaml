@@ -1,0 +1,1581 @@
+summary: Trang đăng nhập
+value:
+  css:
+    buttoncomponent:
+      button:
+        class: ''
+        style: ''
+      container:
+        class: ''
+        style: ''
+    carousellistcomponent:
+      container:
+        class: ''
+        style: ''
+    iconcomponent:
+      container:
+        class: ''
+        style: ''
+      icon:
+        class: ''
+        style: ''
+    listcomponent:
+      container:
+        class: ''
+        style: ''
+    passwordinputcomponent:
+      input:
+        class: ''
+        style: ''
+    tabscomponent:
+      allTabs:
+        class: ''
+        style: ''
+      container:
+        class: ''
+        style: ''
+      selectedTab:
+        class: ''
+        style: ''
+      tabRow:
+        class: ''
+        style: ''
+    textcomponent:
+      container:
+        class: ''
+        style: ''
+      text:
+        class: ''
+        style: |-
+          font-family: 'Montserrat', sans-serif;
+          font-size: 2vh; 
+    textinputcomponent:
+      input:
+        class: ''
+        style: ''
+    verticalsplitpanescomponent:
+      container:
+        class: ''
+        style: ''
+  fullscreen: false
+  grid:
+    - '12':
+        fixed: false
+        fullHeight: false
+        h: 21
+        w: 12
+        x: 0
+        'y': 0
+      '3':
+        fixed: false
+        fullHeight: false
+        h: 8
+        w: 2
+        x: 0
+        'y': 8
+      id: b
+      data:
+        id: b
+        type: verticalsplitpanescomponent
+        actions: []
+        configuration: {}
+        customCss:
+          container:
+            class: ''
+            style: 'padding: 50px 50px 50px 50px; overflow: hidden;'
+        numberOfSubgrids: 2
+        panes:
+          - 40
+          - 60
+  hiddenInlineScripts:
+    - type: runnableByName
+      name: Background Runnable 0
+      autoRefresh: true
+      fields:
+        email:
+          type: evalv2
+          value: null
+          connections:
+            - id: result
+              componentId: email
+          expr: email.result
+          fieldType: string
+        pass1:
+          type: evalv2
+          value: null
+          connections:
+            - id: result
+              componentId: d
+          expr: d.result
+          fieldType: string
+      inlineScript:
+        content: '!inline background_runnable_0.inline_script.py'
+        lock: '!inline background_runnable_0.inline_script.lock'
+        language: python3
+        path: f/login_page/login_page/Background_Runnable_0
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties:
+            email:
+              type: string
+              description: ''
+              default: null
+              originalType: string
+            pass1:
+              type: string
+              description: ''
+              default: null
+              originalType: string
+          required:
+            - email
+            - pass1
+      recomputeIds: []
+      recomputeOnInputChanged: true
+  hideLegacyTopBar: true
+  mobileViewOnSmallerScreens: true
+  norefreshbar: false
+  subgrids:
+    b-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 12
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 0
+        id: a
+        data:
+          id: a
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections: []
+            eval: open heart
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: >-
+                font-size: 5vh; font-weight: 800; text-transform: uppercase;
+                letter-spacing: 3px; text-align: center; color: #0071b3;
+          horizontalAlignment: left
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 12
+          x: 0
+          'y': 2
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 1
+          'y': 0
+        id: c
+        data:
+          id: c
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections: []
+            eval: Chào mừng quay trở lại. Open Heart rất hân hạnh gặp lại bạn
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: 'text-align: center; font-size: 2.5vh;'
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 5
+          x: 0
+          'y': 4
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 2
+          'y': 0
+        id: e
+        data:
+          id: e
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections: []
+            eval: Email *
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: bottom
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 12
+          x: 0
+          'y': 5
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 0
+          'y': 1
+        id: email
+        data:
+          id: email
+          type: textinputcomponent
+          actions: []
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            defaultValue:
+              type: static
+              connections: []
+              expr: ''
+            disabled:
+              type: static
+              value: false
+            placeholder:
+              type: static
+              value: Nhập email của bạn...
+          customCss:
+            input:
+              class: ''
+              style: 'cursor: pointer; height: 7vh; border-radius: 10px;'
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 5
+          x: 0
+          'y': 7
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 2
+          'y': 1
+        id: f
+        data:
+          id: f
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections: []
+            eval: Mật khẩu *
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: bottom
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 12
+          x: 0
+          'y': 8
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 0
+          'y': 2
+        id: d
+        data:
+          id: d
+          type: passwordinputcomponent
+          actions: []
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            disabled:
+              type: static
+              value: false
+            placeholder:
+              type: static
+              value: Nhập mật khẩu của bạn
+          customCss:
+            input:
+              class: ''
+              style: |
+                cursor: pointer; height: 7vh; border-radius: 10px;
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 12
+          x: 0
+          'y': 10
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 9
+        id: h
+        data:
+          id: h
+          type: buttoncomponent
+          actions: []
+          componentInput:
+            type: runnable
+            fields: {}
+            fieldType: any
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            color:
+              type: static
+              value: none
+            confirmationModal:
+              type: oneOf
+              configuration:
+                confirmationModal:
+                  description:
+                    type: static
+                    value: Are you sure?
+                  confirmationText:
+                    type: static
+                    value: Confirm
+                  title:
+                    type: static
+                    value: Title
+                none: {}
+              selected: none
+            disabled:
+              type: static
+              value: false
+            fillContainer:
+              type: static
+              value: false
+            label:
+              type: static
+              value: Quên mật khẩu?
+            onError:
+              type: oneOf
+              configuration:
+                close:
+                  id:
+                    type: static
+                    value: ''
+                errorOverlay: {}
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: static
+                    value: ''
+                open:
+                  id:
+                    type: static
+                    value: ''
+                sendErrorToast:
+                  appendError:
+                    type: static
+                    value: true
+                  message:
+                    type: static
+                    value: An error occured
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: errorOverlay
+            onSuccess:
+              type: oneOf
+              configuration:
+                clearFiles:
+                  id:
+                    type: static
+                    value: ''
+                close:
+                  id:
+                    type: static
+                    value: ''
+                closeModal:
+                  modalId:
+                    type: static
+                    value: ''
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: static
+                    value: ''
+                none: {}
+                open:
+                  id:
+                    type: static
+                    value: ''
+                openModal:
+                  modalId:
+                    type: static
+                    value: ''
+                sendToast:
+                  message:
+                    type: static
+                    value: ''
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: none
+            size:
+              type: static
+              value: xs
+            triggerOnAppLoad:
+              type: static
+              value: false
+          customCss:
+            button:
+              class: ''
+              style: 'color: #0071b3;'
+            container:
+              class: ''
+              style: ''
+          horizontalAlignment: right
+          recomputeIds: []
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 12
+          x: 0
+          'y': 11
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 2
+          'y': 2
+        id: j
+        data:
+          id: j
+          type: buttoncomponent
+          actions: []
+          componentInput:
+            type: runnable
+            autoRefresh: false
+            fields:
+              email:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: email
+                expr: email.result
+                fieldType: string
+              pass1:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: d
+                expr: d.result
+                fieldType: string
+            fieldType: any
+            recomputeOnInputChanged: false
+            runnable:
+              type: runnableByName
+              name: Inline Script 0
+              inlineScript:
+                content: '!inline inline_script_0.inline_script.py'
+                lock: '!inline inline_script_0.inline_script.lock'
+                language: python3
+                path: f/login_page/login_page/Inline_Script_0
+                schema:
+                  $schema: 'https://json-schema.org/draft/2020-12/schema'
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    pass1:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                  required:
+                    - email
+                    - pass1
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            color:
+              type: static
+              value: blue
+              connections: []
+              expr: '"blue"'
+            confirmationModal:
+              type: oneOf
+              configuration:
+                confirmationModal:
+                  description:
+                    type: static
+                    value: Are you sure?
+                  confirmationText:
+                    type: static
+                    value: Confirm
+                  title:
+                    type: static
+                    value: Title
+                none: {}
+              selected: none
+            disabled:
+              type: static
+              value: false
+            fillContainer:
+              type: static
+              value: true
+            label:
+              type: static
+              value: Đăng nhập
+            onError:
+              type: oneOf
+              configuration:
+                close:
+                  id:
+                    type: static
+                    value: ''
+                errorOverlay: {}
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: static
+                    value: ''
+                open:
+                  id:
+                    type: static
+                    value: ''
+                sendErrorToast:
+                  appendError:
+                    type: static
+                    value: true
+                  message:
+                    type: static
+                    value: An error occured
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: errorOverlay
+            onSuccess:
+              type: oneOf
+              configuration:
+                clearFiles:
+                  id:
+                    type: static
+                    value: ''
+                close:
+                  id:
+                    type: static
+                    value: ''
+                closeModal:
+                  modalId:
+                    type: static
+                    value: ''
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                    connections: []
+                    expr: 'true'
+                  url:
+                    type: evalv2
+                    value: 'http://localhost/apps/get/f/info_page/info_page_volunteer'
+                    connections:
+                      - id: result
+                        componentId: bg_0
+                    expr: bg_0.result
+                none: {}
+                open:
+                  id:
+                    type: static
+                    value: ''
+                openModal:
+                  modalId:
+                    type: static
+                    value: ''
+                sendToast:
+                  message:
+                    type: static
+                    value: ''
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: gotoUrl
+            size:
+              type: static
+              value: xs
+            triggerOnAppLoad:
+              type: static
+              value: false
+          customCss:
+            button:
+              class: ''
+              style: >-
+                background-color: #0071b3; height: 7vh; border-radius: 10px;
+                font-size: 2vh;
+            container:
+              class: ''
+              style: ''
+          horizontalAlignment: center
+          recomputeIds:
+            - bg_0
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 12
+          x: 0
+          'y': 15
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 0
+          'y': 3
+        id: i
+        data:
+          id: i
+          type: horizontaldividercomponent
+          actions: []
+          configuration:
+            color:
+              type: static
+              value: '#00000060'
+            size:
+              type: static
+              value: 2
+          customCss:
+            container:
+              class: ''
+              style: ''
+            divider:
+              class: ''
+              style: ''
+              tooltip: >-
+                `background-color` and `height` are handled by the component
+                configuration
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 12
+          x: 0
+          'y': 16
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 8
+          w: 2
+          x: 1
+          'y': 4
+        id: k
+        data:
+          id: k
+          type: containercomponent
+          actions: []
+          configuration: {}
+          customCss:
+            container:
+              class: ''
+              style: ''
+          numberOfSubgrids: 1
+    b-1:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 20
+          w: 12
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 8
+          w: 2
+          x: 0
+          'y': 0
+        id: 'n'
+        data:
+          id: 'n'
+          type: tabscomponent
+          actions: []
+          configuration:
+            tabsKind:
+              type: static
+              value: tabs
+          customCss:
+            allTabs:
+              class: ''
+              style: ''
+            container:
+              class: ''
+              style: ''
+            selectedTab:
+              class: ''
+              style: ''
+            tabRow:
+              class: ''
+              style: ''
+          disabledTabs:
+            - type: static
+              value: false
+              fieldType: boolean
+            - type: static
+              value: false
+              fieldType: boolean
+          numberOfSubgrids: 2
+          tabs:
+            - Tình nguyện viên
+            - Tổ chức
+    k-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 0
+        id: l
+        data:
+          id: l
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections: []
+            eval: Không có tài khoản?
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 6
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 1
+          'y': 0
+        id: m
+        data:
+          id: m
+          type: buttoncomponent
+          actions: []
+          componentInput:
+            type: runnable
+            fields: {}
+            fieldType: any
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            color:
+              type: static
+              value: none
+            confirmationModal:
+              type: oneOf
+              configuration:
+                confirmationModal:
+                  description:
+                    type: static
+                    value: Are you sure?
+                  confirmationText:
+                    type: static
+                    value: Confirm
+                  title:
+                    type: static
+                    value: Title
+                none: {}
+              selected: none
+            disabled:
+              type: static
+              value: false
+            fillContainer:
+              type: static
+              value: false
+            label:
+              type: static
+              value: Đăng ký ngay
+            onError:
+              type: oneOf
+              configuration:
+                close:
+                  id:
+                    type: static
+                    value: ''
+                errorOverlay: {}
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: static
+                    value: ''
+                open:
+                  id:
+                    type: static
+                    value: ''
+                sendErrorToast:
+                  appendError:
+                    type: static
+                    value: true
+                  message:
+                    type: static
+                    value: An error occured
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: errorOverlay
+            onSuccess:
+              type: oneOf
+              configuration:
+                clearFiles:
+                  id:
+                    type: static
+                    value: ''
+                close:
+                  id:
+                    type: static
+                    value: ''
+                closeModal:
+                  modalId:
+                    type: static
+                    value: ''
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: static
+                    value: ''
+                none: {}
+                open:
+                  id:
+                    type: static
+                    value: ''
+                openModal:
+                  modalId:
+                    type: static
+                    value: ''
+                sendToast:
+                  message:
+                    type: static
+                    value: ''
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: none
+            size:
+              type: static
+              value: xs
+            triggerOnAppLoad:
+              type: static
+              value: false
+          customCss:
+            button:
+              class: ''
+              style: >-
+                color: #0071b3; font-size: 2vh; font-family: font-family:
+                'Montserrat', sans-serif; f;
+            container:
+              class: ''
+              style: ''
+          horizontalAlignment: right
+          recomputeIds: []
+          verticalAlignment: center
+    n-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 4
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 3
+          w: 1
+          x: 0
+          'y': 0
+        id: o
+        data:
+          id: o
+          type: iconcomponent
+          actions: []
+          configuration:
+            color:
+              type: static
+              value: currentColor
+            icon:
+              type: static
+              value: hand-heart
+            size:
+              type: static
+              value: 60
+            strokeWidth:
+              type: static
+              value: 2
+          customCss:
+            container:
+              class: ''
+              style: ''
+            icon:
+              class: ''
+              style: 'color: #ffb300;'
+          horizontalAlignment: left
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 3
+          w: 10
+          x: 0
+          'y': 2
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 1
+          'y': 0
+        id: p
+        data:
+          id: p
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections: []
+            eval: Chúng tôi là điểm khởi đầu để bạn làm nhiều điều tốt đẹp hơn.
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: 'font-size: 3vh; font-weight: 600;'
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 13
+          w: 12
+          x: 0
+          'y': 5
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 8
+          w: 3
+          x: 0
+          'y': 3
+        id: q
+        data:
+          id: q
+          type: listcomponent
+          actions: []
+          componentInput:
+            type: static
+            value:
+              - value: Tìm cách tham gia tình nguyện
+                icon: calendar
+              - value: Tham gia các tổ chức phi lợi nhuận địa phương
+                icon: plus
+              - value: Quyên góp tiền hoặc tặng phẩm vật
+                icon: gift
+              - value: Theo dõi tác động của bạn
+                icon: circle-dollar-sign
+              - value: Tình nguyện cùng bạn bè
+                icon: hand
+            connections: []
+            expr: ''
+            fieldType: array
+            subFieldType: object
+          configuration:
+            displayBorders:
+              type: static
+              value: true
+            heightPx:
+              type: static
+            pagination:
+              type: oneOf
+              configuration:
+                auto:
+                  pageSize:
+                    type: static
+                    value: 20
+                manual:
+                  pageCount:
+                    type: static
+                    value: -1
+              selected: auto
+            width:
+              type: oneOf
+              configuration:
+                card:
+                  minWidthPx:
+                    type: static
+                    value: 300
+                row: {}
+              selected: row
+          customCss:
+            container:
+              class: ''
+              style: ''
+          numberOfSubgrids: 1
+    n-1:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 4
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 3
+          w: 1
+          x: 2
+          'y': 0
+        id: v
+        data:
+          id: v
+          type: iconcomponent
+          actions: []
+          configuration:
+            color:
+              type: static
+              value: currentColor
+            icon:
+              type: static
+              value: heart
+              connections: []
+              expr: '"hand-heart"'
+            size:
+              type: static
+              value: 60
+            strokeWidth:
+              type: static
+              value: 2
+          customCss:
+            container:
+              class: ''
+              style: ''
+            icon:
+              class: ''
+              style: 'color: #ffb300;'
+          horizontalAlignment: left
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 3
+          w: 7
+          x: 0
+          'y': 2
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 0
+        id: t
+        data:
+          id: t
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections: []
+            eval: Hãy cùng nhau làm những điều tốt đẹp.
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: 'font-size: 3vh; font-weight: 600;'
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 11
+          w: 12
+          x: 0
+          'y': 5
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 8
+          w: 3
+          x: 0
+          'y': 3
+        id: u
+        data:
+          id: u
+          type: listcomponent
+          actions: []
+          componentInput:
+            type: static
+            value:
+              - value: Giúp các tổ chức dễ dàng tìm kiếm tình nguyện viên phù hợp.
+                icon: calendar
+              - value: Hỗ trợ ghép nối tự động giữa tổ chức và tình nguyện viên.
+                icon: plus
+              - value: 'Đáp ứng nhanh chóng, tiết kiệm thời gian cho tổ chức.'
+                icon: gift
+              - value: >-
+                  Gia tăng hiệu quả hoạt động và kết nối với cộng đồng nhiệt
+                  huyết.
+                icon: circle-dollar-sign
+            connections: []
+            expr: ''
+            fieldType: array
+            subFieldType: object
+          configuration:
+            displayBorders:
+              type: static
+              value: true
+            heightPx:
+              type: static
+            pagination:
+              type: oneOf
+              configuration:
+                auto:
+                  pageSize:
+                    type: static
+                    value: 20
+                manual:
+                  pageCount:
+                    type: static
+                    value: -1
+              selected: auto
+            width:
+              type: oneOf
+              configuration:
+                card:
+                  minWidthPx:
+                    type: static
+                    value: 300
+                row: {}
+              selected: row
+          customCss:
+            container:
+              class: ''
+              style: ''
+          numberOfSubgrids: 1
+    q-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 3
+          w: 1
+          x: 0
+          'y': 0
+        id: r
+        data:
+          id: r
+          type: iconcomponent
+          actions: []
+          configuration:
+            color:
+              type: static
+              value: currentColor
+            icon:
+              type: evalv2
+              value: Smile
+              connections:
+                - id: value
+                  componentId: iter
+              expr: iter.value.icon
+            size:
+              type: static
+              value: 16
+            strokeWidth:
+              type: static
+              value: 2
+          customCss:
+            container:
+              class: ''
+              style: >-
+                padding: 2px 2px 2px 2px; background-color: #0071b31f;
+                border-radius: 50%;
+
+                width: 5vh;
+
+                height: 5vh;
+            icon:
+              class: ''
+              style: 'color: #0071b3;'
+          horizontalAlignment: center
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 9
+          x: 2
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 1
+          'y': 0
+        id: s
+        data:
+          id: s
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            connections:
+              - id: value
+                componentId: iter
+            eval: ''
+            expr: iter.value.value
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: center
+    u-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 3
+          w: 1
+          x: 0
+          'y': 0
+        id: w
+        data:
+          id: w
+          type: iconcomponent
+          actions: []
+          configuration:
+            color:
+              type: static
+              value: currentColor
+            icon:
+              type: evalv2
+              value: Smile
+              connections:
+                - id: value
+                  componentId: iter
+              expr: iter.value.icon
+            size:
+              type: static
+              value: 16
+            strokeWidth:
+              type: static
+              value: 2
+          customCss:
+            container:
+              class: ''
+              style: >-
+                padding: 2px 2px 2px 2px; background-color: #0071b31f;
+                border-radius: 50%;
+
+                width: 5vh;
+
+                height: 5vh;
+            icon:
+              class: ''
+              style: 'color: #0071b3;'
+          horizontalAlignment: center
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 10
+          x: 2
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 1
+          'y': 0
+        id: x
+        data:
+          id: x
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            connections:
+              - id: value
+                componentId: iter
+            eval: ''
+            expr: iter.value.value
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: center
+  theme:
+    type: path
+    path: f/app_themes/theme_0
+  unusedInlineScripts: []
+policy:
+  execution_mode: publisher
+  s3_inputs: []
+  triggerables_v2:
+    'bg_0:rawscript/429d56d5dd0e0cc6c736ad3426d5403bdca03f0904a5da32335fa9ace8cffabc':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'j:rawscript/429d56d5dd0e0cc6c736ad3426d5403bdca03f0904a5da32335fa9ace8cffabc':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}

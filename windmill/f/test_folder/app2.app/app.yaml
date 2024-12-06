@@ -1,0 +1,221 @@
+summary: ''
+value:
+  fullscreen: false
+  grid:
+    - '12':
+        fixed: true
+        fullHeight: false
+        h: 2
+        w: 12
+        x: 0
+        'y': 0
+      '3':
+        fixed: true
+        fullHeight: false
+        h: 2
+        w: 6
+        x: 0
+        'y': 0
+      id: topbar
+      data:
+        id: topbar
+        type: containercomponent
+        actions: []
+        configuration: {}
+        customCss:
+          container:
+            class: '!p-0'
+            style: ''
+        numberOfSubgrids: 1
+    - '12':
+        fixed: false
+        fullHeight: false
+        h: 1
+        w: 12
+        x: 0
+        'y': 2
+      '3':
+        fixed: false
+        fullHeight: false
+        h: 1
+        w: 1
+        x: 0
+        'y': 2
+      id: a
+      data:
+        id: a
+        type: textcomponent
+        actions: []
+        componentInput:
+          type: evalv2
+          autoRefresh: true
+          connections:
+            - id: result
+              componentId: bg_1
+            - id: result
+              componentId: bg_0
+          eval: 'Hello ${ctx.username}'
+          expr: 'bg_1.result[bg_0.result].title'
+          fields: {}
+          fieldType: template
+          recomputeOnInputChanged: true
+        configuration:
+          copyButton:
+            type: static
+            value: false
+          disableNoText:
+            type: static
+            value: false
+          style:
+            type: static
+            value: Body
+          tooltip:
+            type: static
+            value: ''
+        customCss:
+          container:
+            class: ''
+            style: ''
+          text:
+            class: ''
+            style: ''
+        horizontalAlignment: left
+        verticalAlignment: top
+  hiddenInlineScripts:
+    - type: runnableByName
+      name: Background Runnable 0
+      autoRefresh: true
+      fields: {}
+      inlineScript:
+        content: '!inline background_runnable_0.inline_script.frontend.js'
+        language: frontend
+        path: u/hoangphuc090104/app2/Background_Runnable_0
+        suggestedRefreshOn:
+          - id: ctx
+            key: email
+          - id: state
+            key: foo
+      recomputeIds: []
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: Background Runnable 1
+      autoRefresh: true
+      fields:
+        supabase:
+          type: static
+          value: null
+          fieldType: object
+          format: resource-supabase
+      inlineScript:
+        content: '!inline background_runnable_1.inline_script.py'
+        lock: '!inline background_runnable_1.inline_script.lock'
+        language: python3
+        path: u/hoangphuc090104/app2/Background_Runnable_1
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties: {}
+          required: []
+      recomputeIds: []
+      recomputeOnInputChanged: true
+  hideLegacyTopBar: true
+  mobileViewOnSmallerScreens: false
+  norefreshbar: false
+  subgrids:
+    topbar-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 0
+          'y': 0
+        id: title
+        data:
+          id: title
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections: []
+            eval: Test application 2
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: true
+              fieldType: boolean
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: evalv2
+              value: ''
+              connections:
+                - id: author
+                  componentId: ctx
+              expr: '`Author: ${ctx.author}`'
+              fieldType: text
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: text-xl font-semibold whitespace-nowrap truncate
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 6
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 0
+          'y': 1
+        id: recomputeall
+        data:
+          id: recomputeall
+          type: recomputeallcomponent
+          actions: []
+          configuration: {}
+          customCss:
+            container:
+              class: ''
+              style: ''
+          horizontalAlignment: right
+          menuItems: []
+          verticalAlignment: center
+  theme:
+    type: path
+    path: f/app_themes/theme_0
+  unusedInlineScripts: []
+policy:
+  execution_mode: publisher
+  s3_inputs: []
+  triggerables_v2:
+    'bg_0:rawscript/09a87787f79e6ba12420d1ae1944cfeafc3f6fcc8faa46ba29a936f70fd5585b':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_1:rawscript/cdda9859abe49672fa0e39eaea4872901d8aa90f843a0bd616cbcfeacd4304f2':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs:
+        supabase: null
