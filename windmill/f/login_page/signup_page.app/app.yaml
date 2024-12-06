@@ -20,6 +20,16 @@ value:
       image:
         class: ''
         style: ''
+    schemaformcomponent:
+      description:
+        class: ''
+        style: ''
+      container:
+        class: ''
+        style: ''
+      label:
+        class: ''
+        style: ''
     textcomponent:
       container:
         class: ''
@@ -99,6 +109,94 @@ value:
           type: object
           properties: {}
           required: []
+      recomputeIds: []
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: Check pass
+      autoRefresh: true
+      fields:
+        x:
+          type: evalv2
+          value: null
+          connections:
+            - id: values
+              componentId: formpass
+          expr: 'formpass.values["Nhập lại mật khẩu"]'
+          fieldType: string
+        'y':
+          type: evalv2
+          value: null
+          connections:
+            - id: values
+              componentId: formpass
+          expr: 'formpass.values["Mật khẩu"]'
+          fieldType: string
+      inlineScript:
+        content: '!inline check_pass.inline_script.py'
+        lock: ''
+        language: python3
+        path: f/login_page/signup_page/Check_pass
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties:
+            x:
+              type: string
+              description: ''
+              default: null
+              originalType: string
+            'y':
+              type: string
+              description: ''
+              default: null
+              originalType: string
+          required:
+            - x
+            - 'y'
+      recomputeIds: []
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: Background Runnable 0
+      autoRefresh: true
+      fields:
+        x:
+          type: evalv2
+          value: null
+          connections:
+            - id: result
+              componentId: m
+          expr: m.result
+          fieldType: string
+        'y':
+          type: evalv2
+          value: null
+          connections:
+            - id: result
+              componentId: 'n'
+          expr: n.result
+          fieldType: string
+      inlineScript:
+        content: '!inline background_runnable_0.inline_script.py'
+        lock: ''
+        language: python3
+        path: f/login_page/signup_page/Background_Runnable_0
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties:
+            x:
+              type: string
+              description: ''
+              default: null
+              originalType: string
+            'y':
+              type: string
+              description: ''
+              default: null
+              originalType: string
+          required:
+            - x
+            - 'y'
       recomputeIds: []
       recomputeOnInputChanged: true
   hideLegacyTopBar: true
@@ -794,6 +892,51 @@ value:
       - '12':
           fixed: false
           fullHeight: false
+          h: 2
+          w: 1
+          x: 0
+          'y': 11
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 3
+          w: 1
+          x: 0
+          'y': 6
+        id: ai
+        data:
+          id: ai
+          type: iconcomponent
+          actions: []
+          configuration:
+            color:
+              type: static
+              value: currentColor
+            icon:
+              type: evalv2
+              value: Smile
+              connections:
+                - id: result
+                  componentId: bg_3
+              expr: bg_3.result
+            size:
+              type: static
+              value: 24
+            strokeWidth:
+              type: static
+              value: 2
+          customCss:
+            container:
+              class: ''
+              style: ''
+            icon:
+              class: ''
+              style: ''
+          horizontalAlignment: center
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
           h: 1
           w: 6
           x: 6
@@ -1099,9 +1242,9 @@ value:
           w: 1
           x: 0
           'y': 0
-        id: u
+        id: orgname
         data:
-          id: u
+          id: orgname
           type: textcomponent
           actions: []
           componentInput:
@@ -1109,7 +1252,7 @@ value:
             autoRefresh: true
             connections: []
             eval: 'Hello ${ctx.username}'
-            expr: '"Họ và tên:"'
+            expr: '"Tên tổ chức:"'
             fields: {}
             fieldType: template
             recomputeOnInputChanged: true
@@ -1135,6 +1278,884 @@ value:
               style: ''
           horizontalAlignment: left
           verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 12
+          x: 0
+          'y': 1
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 1
+          'y': 0
+        id: u
+        data:
+          id: u
+          type: textinputcomponent
+          actions: []
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            defaultValue:
+              type: static
+            disabled:
+              type: static
+              value: false
+            placeholder:
+              type: static
+              value: Nhập đầy đủ họ tên...
+          customCss:
+            input:
+              class: ''
+              style: ''
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 0
+          'y': 3
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 1
+        id: v
+        data:
+          id: v
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            autoRefresh: true
+            connections: []
+            eval: 'Hello ${ctx.username}'
+            expr: '"Số điện thoại:"'
+            fields: {}
+            fieldType: template
+            recomputeOnInputChanged: true
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 6
+          'y': 3
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 2
+        id: 'y'
+        data:
+          id: 'y'
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            autoRefresh: true
+            connections: []
+            eval: 'Hello ${ctx.username}'
+            expr: '"Email:"'
+            fields: {}
+            fieldType: template
+            recomputeOnInputChanged: true
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 6
+          x: 0
+          'y': 4
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 1
+          'y': 1
+        id: x
+        data:
+          id: x
+          type: textinputcomponent
+          actions: []
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            defaultValue:
+              type: static
+            disabled:
+              type: static
+              value: false
+            placeholder:
+              type: static
+              value: Nhập số điện thoại...
+          customCss:
+            input:
+              class: ''
+              style: ''
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 6
+          x: 6
+          'y': 4
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 1
+          'y': 2
+        id: z
+        data:
+          id: z
+          type: emailinputcomponent
+          actions: []
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            defaultValue:
+              type: static
+            disabled:
+              type: static
+              value: false
+            placeholder:
+              type: static
+              value: Email
+          customCss:
+            input:
+              class: ''
+              style: ''
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 0
+          'y': 6
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 3
+        id: aa
+        data:
+          id: aa
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            autoRefresh: true
+            connections: []
+            eval: 'Hello ${ctx.username}'
+            expr: '"Thành phố hoạt động:"'
+            fields: {}
+            fieldType: template
+            recomputeOnInputChanged: true
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 6
+          'y': 6
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 4
+        id: ac
+        data:
+          id: ac
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            autoRefresh: true
+            connections: []
+            eval: 'Hello ${ctx.username}'
+            expr: '"Địa chỉ cụ thể:"'
+            fields: {}
+            fieldType: template
+            recomputeOnInputChanged: true
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 0
+          'y': 7
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 1
+          'y': 3
+        id: ab
+        data:
+          id: ab
+          type: selectcomponent
+          actions: []
+          configuration:
+            create:
+              type: static
+              value: false
+            defaultValue:
+              type: static
+            disabled:
+              type: static
+              value: false
+            fullWidth:
+              type: static
+              value: true
+            items:
+              type: evalv2
+              value:
+                - value: foo
+                  label: Foo
+                - value: bar
+                  label: Bar
+              connections:
+                - id: result
+                  componentId: bg_0
+              expr: bg_0.result
+            nativeHtmlSelect:
+              type: static
+              value: false
+            placeholder:
+              type: static
+              value: Select an item
+            preselectFirst:
+              type: static
+              value: true
+          customCss:
+            input:
+              class: ''
+              style: ''
+              tooltip: >-
+                https://github.com/rob-balfre/svelte-select/blob/master/docs/theming_variables.md
+          onSelect: []
+          recomputeIds: []
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 6
+          'y': 7
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 1
+          'y': 4
+        id: ad
+        data:
+          id: ad
+          type: textinputcomponent
+          actions: []
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            defaultValue:
+              type: static
+            disabled:
+              type: static
+              value: false
+            placeholder:
+              type: static
+              value: Nhập số điện thoại...
+          customCss:
+            input:
+              class: ''
+              style: ''
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 0
+          'y': 8
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 5
+        id: ae
+        data:
+          id: ae
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            autoRefresh: true
+            connections: []
+            eval: 'Hello ${ctx.username}'
+            expr: '"Mô tả về  tổ chức:"'
+            fields: {}
+            fieldType: template
+            recomputeOnInputChanged: true
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 12
+          x: 0
+          'y': 9
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 1
+          'y': 5
+        id: af
+        data:
+          id: af
+          type: textinputcomponent
+          actions: []
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            defaultValue:
+              type: static
+            disabled:
+              type: static
+              value: false
+            placeholder:
+              type: static
+              value: Nhập số điện thoại...
+          customCss:
+            input:
+              class: ''
+              style: ''
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 5
+          w: 12
+          x: 0
+          'y': 10
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 8
+          w: 3
+          x: 0
+          'y': 7
+        id: formpass
+        data:
+          id: formpass
+          type: schemaformcomponent
+          actions: []
+          componentInput:
+            type: static
+            value:
+              order:
+                - Mật khẩu
+                - Nhập lại mật khẩu
+              properties:
+                Mật khẩu:
+                  type: string
+                  description: ''
+                  default: ''
+                  enumLabels: {}
+                  minRows: 8
+                  nullable: false
+                  password: true
+                  title: ''
+                Nhập lại mật khẩu:
+                  type: string
+                  description: ''
+                  default: ''
+                  enumLabels: {}
+                  nullable: false
+                  password: true
+              required:
+                - Nhập lại mật khẩu
+                - Mật khẩu
+            connections: []
+            expr: ''
+            fieldType: schema
+          configuration:
+            defaultValues:
+              type: static
+              value: {}
+            displayType:
+              type: static
+              value: false
+            dynamicEnums:
+              type: static
+              value: {}
+            largeGap:
+              type: static
+              value: false
+          customCss:
+            description:
+              class: ''
+              style: ''
+            container:
+              class: ''
+              style: ''
+            label:
+              class: ''
+              style: ''
+      - '12':
+          fixed: false
+          fullHeight: true
+          h: 1
+          w: 1
+          x: 0
+          'y': 15
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 3
+          w: 1
+          x: 0
+          'y': 15
+        id: ah
+        data:
+          id: ah
+          type: iconcomponent
+          actions: []
+          configuration:
+            color:
+              type: static
+              value: currentColor
+            icon:
+              type: evalv2
+              value: circle-x
+              connections:
+                - id: result
+                  componentId: bg_2
+              expr: bg_2.result
+            size:
+              type: static
+              value: 24
+            strokeWidth:
+              type: static
+              value: 2
+          customCss:
+            container:
+              class: ''
+              style: ''
+            icon:
+              class: ''
+              style: ''
+          horizontalAlignment: center
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 10
+          'y': 15
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 6
+        id: ag
+        data:
+          id: ag
+          type: buttoncomponent
+          actions: []
+          componentInput:
+            type: runnable
+            autoRefresh: false
+            fields:
+              address:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: ad
+                expr: ad.result
+                fieldType: string
+              name:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: u
+                expr: u.result
+                fieldType: string
+              description:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: af
+                expr: af.result
+                fieldType: string
+              email:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: z
+                expr: z.result
+                fieldType: string
+              id_provinces:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: ab
+                expr: ab.result
+                fieldType: string
+              pass1:
+                type: evalv2
+                value: null
+                connections:
+                  - id: values
+                    componentId: formpass
+                expr: 'formpass.values["Nhập lại mật khẩu"]'
+                fieldType: string
+              phone:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: x
+                expr: x.result
+                fieldType: string
+            fieldType: any
+            recomputeOnInputChanged: false
+            runnable:
+              type: runnableByName
+              name: Inline Script 1
+              inlineScript:
+                content: '!inline inline_script_1.inline_script.py'
+                lock: '!inline inline_script_1.inline_script.lock'
+                language: python3
+                path: f/login_page/signup_page/Inline_Script_1
+                schema:
+                  $schema: 'https://json-schema.org/draft/2020-12/schema'
+                  type: object
+                  properties:
+                    address:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    name:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    description:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    email:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    id_provinces:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    pass1:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    phone:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                  required:
+                    - email
+                    - pass1
+                    - address
+                    - name
+                    - description
+                    - id_provinces
+                    - phone
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            color:
+              type: static
+              value: blue
+            confirmationModal:
+              type: oneOf
+              configuration:
+                confirmationModal:
+                  description:
+                    type: static
+                    value: Are you sure?
+                  confirmationText:
+                    type: static
+                    value: Confirm
+                  title:
+                    type: static
+                    value: Title
+                none: {}
+              selected: none
+            disabled:
+              type: static
+              value: false
+            fillContainer:
+              type: static
+              value: false
+            label:
+              type: static
+              value: Đăng ký
+            onError:
+              type: oneOf
+              configuration:
+                close:
+                  id:
+                    type: static
+                    value: ''
+                errorOverlay: {}
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: static
+                    value: ''
+                open:
+                  id:
+                    type: static
+                    value: ''
+                sendErrorToast:
+                  appendError:
+                    type: static
+                    value: true
+                  message:
+                    type: static
+                    value: An error occured
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: errorOverlay
+            onSuccess:
+              type: oneOf
+              configuration:
+                clearFiles:
+                  id:
+                    type: static
+                    value: ''
+                close:
+                  id:
+                    type: static
+                    value: ''
+                closeModal:
+                  modalId:
+                    type: static
+                    value: ''
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: static
+                    value: ''
+                none: {}
+                open:
+                  id:
+                    type: static
+                    value: ''
+                openModal:
+                  modalId:
+                    type: static
+                    value: ''
+                sendToast:
+                  message:
+                    type: static
+                    value: Thành công
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: sendToast
+            size:
+              type: static
+              value: xs
+            triggerOnAppLoad:
+              type: static
+              value: false
+          customCss:
+            button:
+              class: ''
+              style: ''
+            container:
+              class: ''
+              style: ''
+          horizontalAlignment: center
+          recomputeIds: []
+          verticalAlignment: center
     q-0:
       - '12':
           fixed: false
@@ -1539,15 +2560,27 @@ policy:
   execution_mode: publisher
   s3_inputs: []
   triggerables_v2:
-    'bg_0:rawscript/7e6ab991b453734f8e2322e61eb9a2b122d070a3cdc11435d02b393dc1b39a2a':
+    'ag:rawscript/ded3b0c863feb1ae30250440cfd264f785194eff8d5455af6121c0f52a2a276b':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_1:rawscript/cb966f9f5d1ef3dfaaa8949cca69b392bce2235b44c04b635ca3ff338e6909e4':
+    'bg_0:rawscript/751ae77cace2cf9f5542bcec7f79fd58e9cd5f01ba571c4b22ddd546b044e2d2':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'l:rawscript/267b7aba11871a7560a587e64b635d5253ab19ffe71c4dd26034804705201f8c':
+    'bg_1:rawscript/20459c9acf7e66479fad6abac0a1f8331ffe5d69fae8af76520ea29d6acc4ad0':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_2:rawscript/a8a5945170eaea9b3a8a2a7782703b8146115357ea5e44678d5fb6c5f1489a86':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_3:rawscript/6ce96c36e7eb03b12393e4c92bc294f20ce644309a73174e2026ca95e5a10a18':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'l:rawscript/f9d3acd14ddcbf327dfd31fb654af2b673b221522c19fcd1e426690d4ee43de7':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
