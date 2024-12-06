@@ -1,36 +1,12 @@
-summary: Trang tình nguyện
+summary: trang tình nguyện
 value:
   css:
-    agchartscomponent:
-      container: {}
-    buttoncomponent:
-      button:
-        class: ''
-        style: ''
-      container:
-        class: ''
-        style: ''
     containercomponent:
-      container:
-        class: ''
-        style: ''
-    htmlcomponent:
-      container:
-        class: ''
-        style: ''
-    listcomponent:
       container:
         class: ''
         style: ''
     menucomponent:
       button:
-        class: ''
-        style: ''
-    navbarcomponent:
-      container:
-        class: ''
-        style: ''
-      image:
         class: ''
         style: ''
     textcomponent:
@@ -40,22 +16,12 @@ value:
       text:
         class: ''
         style: ''
-    timeinputcomponent:
-      input:
-        class: ''
-        style: ''
-    userresourcecomponent:
-      input: {}
-    verticalsplitpanescomponent:
-      container:
-        class: ''
-        style: ''
   fullscreen: true
   grid:
     - '12':
         fixed: true
         fullHeight: false
-        h: 4
+        h: 3
         w: 2
         x: 0
         'y': 0
@@ -76,20 +42,11 @@ value:
           container:
             class: '!p-0'
             style: ''
-        groupFields:
-          username:
-            type: static
-            value: Trí Minh Phạm
-            fieldType: object
-          userPicPath:
-            type: static
-            value: /logo.svg
-            fieldType: object
         numberOfSubgrids: 1
     - '12':
         fixed: false
-        fullHeight: false
-        h: 22
+        fullHeight: true
+        h: 18
         w: 10
         x: 2
         'y': 0
@@ -114,10 +71,10 @@ value:
     - '12':
         fixed: false
         fullHeight: false
-        h: 18
+        h: 19
         w: 2
         x: 0
-        'y': 4
+        'y': 3
       '3':
         fixed: false
         fullHeight: false
@@ -273,7 +230,7 @@ value:
                 app:
                   path:
                     type: static
-                    value: u/page/notFound404
+                    value: ''
                     allowTypeChange: false
                     fieldType: app-path
                     tooltip: >-
@@ -290,6 +247,7 @@ value:
                 href:
                   href:
                     type: static
+                    value: 'https://app.windmill.dev/a/opensource/pageNotFound'
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -298,7 +256,7 @@ value:
               labels:
                 app: Navigate to an app
                 href: Navigate to an external URL
-              selected: app
+              selected: href
           - caption: ''
             disabled:
               type: static
@@ -308,7 +266,7 @@ value:
               type: static
               value: false
               fieldType: boolean
-            icon: calendar
+            icon: ''
             label:
               type: static
               value: tình nguyện
@@ -319,7 +277,7 @@ value:
                 app:
                   path:
                     type: static
-                    value: f/page/volunteer
+                    value: u/page/notFound404
                     allowTypeChange: false
                     fieldType: app-path
                     tooltip: >-
@@ -536,7 +494,7 @@ value:
         content: '!inline background_runnable_0.inline_script.py'
         lock: '!inline background_runnable_0.inline_script.lock'
         language: python3
-        path: f/page/volunteer/Background_Runnable_0
+        path: f/page/test_volunteer/Background_Runnable_0
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
@@ -548,467 +506,12 @@ value:
   mobileViewOnSmallerScreens: false
   norefreshbar: false
   subgrids:
-    a-0:
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 8
-          w: 6
-          x: 0
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 8
-          w: 2
-          x: 0
-          'y': 0
-        id: a
-        data:
-          id: a
-          type: containercomponent
-          actions: []
-          configuration: {}
-          customCss:
-            container:
-              class: ''
-              style: ''
-          groupFields: {}
-          numberOfSubgrids: 1
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 8
-          w: 6
-          x: 6
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 8
-          w: 2
-          x: 0
-          'y': 8
-        id: b
-        data:
-          id: b
-          type: containercomponent
-          actions: []
-          configuration: {}
-          customCss:
-            container:
-              class: ''
-              style: ''
-          numberOfSubgrids: 1
-    b-0: []
-    d-0:
+    b-0:
       - '12':
           fixed: false
           fullHeight: false
           h: 1
           w: 12
-          x: 0
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 6
-          x: 0
-          'y': 0
-        id: AppTitle
-        data:
-          id: AppTitle
-          type: textcomponent
-          actions: []
-          componentInput:
-            type: templatev2
-            connections: []
-            eval: OPEN HEART
-            fieldType: template
-          configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: true
-              fieldType: boolean
-            style:
-              type: static
-              value: Title
-            tooltip:
-              type: static
-              value: ''
-              connections: []
-              expr: ''
-              fieldType: text
-          customCss:
-            container:
-              class: ''
-              style: ''
-            text:
-              class: ''
-              style: 'font-family: san; color: #4ab9ff;'
-          horizontalAlignment: center
-          verticalAlignment: center
-    eventCard-0:
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 13
-          w: 12
-          x: 0
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 2
-          w: 1
-          x: 0
-          'y': 0
-        id: eventContent
-        data:
-          id: eventContent
-          type: htmlcomponent
-          actions: []
-          componentInput:
-            type: templatev2
-            connections:
-              - id: orgPicPath
-                componentId: group
-              - id: totalSpot
-                componentId: group
-              - id: date
-                componentId: group
-              - id: type
-                componentId: group
-              - id: eventName
-                componentId: group
-              - id: orgName
-                componentId: group
-              - id: spot
-                componentId: group
-              - id: eventPicPath
-                componentId: group
-            eval: |
-              <div>
-                <div class="relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg p-4">
-                  <div class="relative m-2 aspect-w-4 aspect-h-3 overflow-hidden text-white rounded-md">
-                    <img
-                      src= ${group.eventPicPath}
-                      alt="ảnh sử kiện"
-                      class="object-fill w-full h-full"
-                    />
-                    <h1 class="absolute top-4 left-2 text-gray-700">
-                    ${group.date}
-                    </h1>
-                  </div>
-                  <div class="p-4">
-                    <div class="mb-4 rounded-full bg-cyan-600 py-0.5 px-2.5 border border-transparent text-xs transition-all shadow-sm w-fit text-center">
-                      ${group.type}
-                    </div class="">
-                    <h6 class="mb-2 text-slate-800 text-xl font-semiboldoverflow-hidden text-ellipsis whitespace-normal"
-                    style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;line-height: 1.5rem; height: calc(1.25rem * 2);">
-                      ${group.eventName}
-                    </h6>
-                  </div>
-
-                  <div class="flex items-center justify-between p-4">
-                    <div class="flex items-center">
-                      <img
-                        alt="ảnh tổ chức"
-                        src=${group.orgPicPath}
-                        class="relative inline-block h-8 w-8 rounded-full"
-                      />
-                      <div class="flex flex-col ml-3 text-sm">
-                        <span class="text-slate-800 font-semibold">
-                        ${group.orgName}
-                        </span>
-                      </div>
-                    </div>
-                    <div class="bg-white shadow-sm border border-slate-200 rounded-lg p-1">
-                      ${group.spot}/${group.totalSpot}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            fieldType: template
-          configuration: {}
-          customCss:
-            container:
-              class: ''
-              style: ''
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 12
-          x: 0
-          'y': 13
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 1
-          'y': 0
-        id: SignupEventBtn
-        data:
-          id: SignupEventBtn
-          type: buttoncomponent
-          actions: []
-          componentInput:
-            type: runnable
-            fields: {}
-            fieldType: any
-          configuration:
-            afterIcon:
-              type: static
-              value: ''
-            beforeIcon:
-              type: static
-              value: ''
-            color:
-              type: static
-              value: blue
-            confirmationModal:
-              type: oneOf
-              configuration:
-                confirmationModal:
-                  description:
-                    type: static
-                    value: Are you sure?
-                  confirmationText:
-                    type: static
-                    value: Confirm
-                  title:
-                    type: static
-                    value: Title
-                none: {}
-              selected: none
-            disabled:
-              type: static
-              value: false
-            fillContainer:
-              type: static
-              value: false
-            label:
-              type: static
-              value: Xem chi tiết
-            onError:
-              type: oneOf
-              configuration:
-                close:
-                  id:
-                    type: static
-                    value: ''
-                errorOverlay: {}
-                gotoUrl:
-                  newTab:
-                    type: static
-                    value: true
-                  url:
-                    type: static
-                    value: ''
-                open:
-                  id:
-                    type: static
-                    value: ''
-                sendErrorToast:
-                  appendError:
-                    type: static
-                    value: true
-                  message:
-                    type: static
-                    value: An error occured
-                setTab:
-                  setTab:
-                    type: static
-                    value: []
-              selected: errorOverlay
-            onSuccess:
-              type: oneOf
-              configuration:
-                clearFiles:
-                  id:
-                    type: static
-                    value: ''
-                close:
-                  id:
-                    type: static
-                    value: ''
-                closeModal:
-                  modalId:
-                    type: static
-                    value: ''
-                gotoUrl:
-                  newTab:
-                    type: static
-                    value: true
-                  url:
-                    type: static
-                    value: ''
-                none: {}
-                open:
-                  id:
-                    type: evalv2
-                    value: ''
-                    connections: []
-                    expr: '"1"'
-                openModal:
-                  modalId:
-                    type: static
-                    value: ''
-                sendToast:
-                  message:
-                    type: static
-                    value: ''
-                setTab:
-                  setTab:
-                    type: static
-                    value: []
-              selected: open
-            size:
-              type: static
-              value: lg
-            triggerOnAppLoad:
-              type: static
-              value: false
-          customCss:
-            button:
-              class: ''
-              style: ''
-            container:
-              class: ''
-              style: ''
-          horizontalAlignment: right
-          recomputeIds: []
-          verticalAlignment: bottom
-    eventFilter-0:
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 3
-          w: 12
-          x: 0
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 8
-          w: 2
-          x: 0
-          'y': 0
-        id: slitPanel
-        data:
-          id: slitPanel
-          type: verticalsplitpanescomponent
-          actions: []
-          configuration: {}
-          customCss:
-            container:
-              class: ''
-              style: ''
-          numberOfSubgrids: 3
-          panes:
-            - 25
-            - 25
-            - 50
-    eventList-0:
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 15
-          w: 12
-          x: 0
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 8
-          w: 2
-          x: 0
-          'y': 0
-        id: eventCard
-        data:
-          id: eventCard
-          type: containercomponent
-          actions: []
-          configuration: {}
-          customCss:
-            container:
-              class: ''
-              style: ''
-          groupFields:
-            type:
-              type: static
-              value: trực tuyến
-              fieldType: object
-            date:
-              type: evalv2
-              value: 12/2
-              connections:
-                - id: index
-                  componentId: iter
-                - id: result
-                  componentId: eventList
-              expr: 'eventList.result[iter.index].start_date'
-              fieldType: object
-            eventId:
-              type: static
-              value: '1'
-              fieldType: object
-            eventName:
-              type: evalv2
-              value: cứu trợ bão tại Thanh Hóa và các tỉnh thành khác
-              connections:
-                - id: result
-                  componentId: eventList
-                - id: index
-                  componentId: iter
-              expr: 'eventList.result[iter.index].name'
-              fieldType: object
-            eventPicPath:
-              type: static
-              value: >-
-                https://w-dog.org/android-wallpapers/16/17/478857865223221/dog-puppy-portrait.jpg
-              fieldType: object
-            orgName:
-              type: evalv2
-              value: Chùa Phúc Linh
-              connections:
-                - id: index
-                  componentId: iter
-                - id: result
-                  componentId: eventList
-              expr: 'eventList.result[iter.index].organizations.name'
-              fieldType: object
-            orgPicPath:
-              type: evalv2
-              value: /logo.svg
-              connections:
-                - id: result
-                  componentId: eventList
-                - id: index
-                  componentId: iter
-              expr: 'eventList.result[iter.index].organizations.image'
-              fieldType: object
-            spot:
-              type: static
-              value: '20'
-              fieldType: object
-            totalSpot:
-              type: static
-              value: '200'
-              fieldType: object
-          numberOfSubgrids: 1
-    main-0:
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 7
           x: 0
           'y': 0
         '3':
@@ -1016,7 +519,7 @@ value:
           fullHeight: false
           h: 1
           w: 1
-          x: 2
+          x: 0
           'y': 0
         id: c
         data:
@@ -1024,155 +527,10 @@ value:
           type: textcomponent
           actions: []
           componentInput:
-            type: evalv2
-            connections:
-              - id: summary
-                componentId: ctx
-            eval: 'Hello ${ctx.username}'
-            expr: ctx.summary
-            fieldType: template
-          configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: false
-            style:
-              type: static
-              value: Title
-            tooltip:
-              type: static
-              value: ''
-          customCss:
-            container:
-              class: ''
-              style: ''
-            text:
-              class: ''
-              style: 'color: #050315;'
-          horizontalAlignment: left
-          verticalAlignment: top
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 4
-          w: 12
-          x: 0
-          'y': 1
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 8
-          w: 2
-          x: 0
-          'y': 0
-        id: eventFilter
-        data:
-          id: eventFilter
-          type: containercomponent
-          actions: []
-          configuration: {}
-          customCss:
-            container:
-              class: ''
-              style: ''
-          groupFields: {}
-          numberOfSubgrids: 1
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 16
-          w: 12
-          x: 0
-          'y': 5
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 8
-          w: 3
-          x: 0
-          'y': 8
-        id: eventList
-        data:
-          id: eventList
-          type: listcomponent
-          actions: []
-          componentInput:
-            type: evalv2
-            value:
-              - {}
-              - {}
-              - {}
-              - {}
-              - {}
-              - {}
-            connections:
-              - id: result
-                componentId: bg_0
-            expr: bg_0.result
-            fieldType: array
-            subFieldType: object
-          configuration:
-            displayBorders:
-              type: static
-              value: true
-            heightPx:
-              type: static
-              value: 560
-            pagination:
-              type: oneOf
-              configuration:
-                auto:
-                  pageSize:
-                    type: static
-                    value: 9
-                manual:
-                  pageCount:
-                    type: static
-                    value: -1
-              selected: auto
-            width:
-              type: oneOf
-              configuration:
-                card:
-                  minWidthPx:
-                    type: static
-                    value: 390
-                row: {}
-              selected: card
-          customCss:
-            container:
-              class: ''
-              style: 'overflow: hidden;'
-          numberOfSubgrids: 1
-    slitPanel-0:
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 12
-          x: 0
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 2
-          'y': 1
-        id: orgLabel
-        data:
-          id: orgLabel
-          type: textcomponent
-          actions: []
-          componentInput:
-            type: evalv2
-            connections:
-              - id: result
-                componentId: bg_0
+            type: templatev2
+            connections: []
             eval: Tổ chức
-            expr: 'bg_0.result[0][''name'']'
+            expr: ''
             fieldType: template
           configuration:
             copyButton:
@@ -1208,11 +566,11 @@ value:
           fullHeight: false
           h: 1
           w: 2
-          x: 0
+          x: 1
           'y': 0
-        id: orgSelect
+        id: d
         data:
-          id: orgSelect
+          id: d
           type: selectcomponent
           actions: []
           configuration:
@@ -1253,7 +611,7 @@ value:
                 https://github.com/rob-balfre/svelte-select/blob/master/docs/theming_variables.md
           recomputeIds: []
           verticalAlignment: center
-    slitPanel-1:
+    b-1:
       - '12':
           fixed: false
           fullHeight: false
@@ -1268,9 +626,9 @@ value:
           w: 1
           x: 0
           'y': 0
-        id: placeLabel
+        id: e
         data:
-          id: placeLabel
+          id: e
           type: textcomponent
           actions: []
           componentInput:
@@ -1314,9 +672,9 @@ value:
           w: 2
           x: 1
           'y': 0
-        id: placeSelect
+        id: f
         data:
-          id: placeSelect
+          id: f
           type: selectcomponent
           actions: []
           configuration:
@@ -1357,7 +715,7 @@ value:
                 https://github.com/rob-balfre/svelte-select/blob/master/docs/theming_variables.md
           recomputeIds: []
           verticalAlignment: center
-    slitPanel-2:
+    b-2:
       - '12':
           fixed: false
           fullHeight: false
@@ -1372,9 +730,9 @@ value:
           w: 1
           x: 0
           'y': 0
-        id: timeLabel
+        id: g
         data:
-          id: timeLabel
+          id: g
           type: textcomponent
           actions: []
           componentInput:
@@ -1416,11 +774,11 @@ value:
           fullHeight: false
           h: 1
           w: 1
-          x: 0
-          'y': 1
-        id: resetFilterBtn
+          x: 1
+          'y': 0
+        id: h
         data:
-          id: resetFilterBtn
+          id: h
           type: buttoncomponent
           actions: []
           componentInput:
@@ -1460,7 +818,7 @@ value:
               value: false
             label:
               type: static
-              value: reset
+              value: ''
             onError:
               type: oneOf
               configuration:
@@ -1560,11 +918,11 @@ value:
           fullHeight: false
           h: 1
           w: 1
-          x: 1
-          'y': 1
-        id: searchFilterBtn
+          x: 2
+          'y': 0
+        id: i
         data:
-          id: searchFilterBtn
+          id: i
           type: buttoncomponent
           actions: []
           componentInput:
@@ -1704,11 +1062,11 @@ value:
           fullHeight: false
           h: 1
           w: 2
-          x: 1
-          'y': 0
-        id: timeSelect
+          x: 0
+          'y': 1
+        id: j
         data:
-          id: timeSelect
+          id: j
           type: dateinputcomponent
           actions: []
           configuration:
@@ -1728,11 +1086,11 @@ value:
               class: ''
               style: ''
           verticalAlignment: center
-    topbar-0:
+    eventFilter-0:
       - '12':
           fixed: false
           fullHeight: false
-          h: 2
+          h: 3
           w: 12
           x: 0
           'y': 0
@@ -1741,11 +1099,311 @@ value:
           fullHeight: false
           h: 8
           w: 2
-          x: 3
+          x: 0
           'y': 0
-        id: d
+        id: b
         data:
-          id: d
+          id: b
+          type: verticalsplitpanescomponent
+          actions: []
+          configuration: {}
+          customCss:
+            container:
+              class: ''
+              style: ''
+          numberOfSubgrids: 3
+          panes:
+            - 25
+            - 25
+            - 50
+    eventList-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 9
+          w: 12
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 1
+          x: 0
+          'y': 0
+        id: eventContent
+        data:
+          id: eventContent
+          type: htmlcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections:
+              - id: index
+                componentId: iter
+              - id: result
+                componentId: eventList
+            eval: |
+              <div>
+                <div class="relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg">
+                  <div class="relative m-2 aspect-w-4 aspect-h-3 overflow-hidden text-white rounded-md">
+                    <img
+                      src= ${eventList.result[iter.index].image || "https://w-dog.org/android-wallpapers/16/17/478857865223221/dog-puppy-portrait.jpg"}
+                      alt="ảnh sử kiện"
+                      class="object-fill w-full h-full"
+                    />
+                    <div class="absolute top-2 left-2 text-black bg-white p-1 rounded-lg text-sm font-bold">
+                    ${eventList.result[iter.index].start_date.split('T')[0].split('-').reverse().slice(0, 3).join('-')}
+                    </div>
+                  </div>
+                  <div class="p-1">
+                    <div class="mb-1 rounded-full bg-cyan-600 py-0.5 px-2.5 border border-transparent text-xs transition-all shadow-sm w-fit text-center">
+                      ${eventList.result[iter.index].location}
+                    </div class="">
+                    <h6 class="mb-1 text-slate-800 text-xl font-semiboldoverflow-hidden text-ellipsis whitespace-normal"
+                    style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;line-height: 1.5rem; height: calc(1.25rem * 2);">
+                      ${eventList.result[iter.index].name}
+                    </h6>
+                  </div>
+
+                  <div class="flex items-center justify-between p-1">
+                    <div class="flex items-center">
+                      <img
+                        alt="ảnh tổ chức"
+                        src=${eventList.result[iter.index].organizations.image|| 'logo.svg'}
+                        class="relative inline-block h-8 w-8 rounded-full"
+                      />
+                      <div class="flex flex-col ml-3 text-sm">
+                        <span class="text-slate-800 font-semibold">
+                        ${eventList.result[iter.index].organizations.name}
+                        </span>
+                      </div>
+                    </div>
+                    <div class="bg-white shadow-sm border border-slate-200 rounded-lg p-1">
+                      ${eventList.result[iter.index].slot ||20}/${eventList.result[iter.index].amount || 200}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            fieldType: template
+          configuration: {}
+          customCss:
+            container:
+              class: ''
+              style: ''
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 12
+          x: 0
+          'y': 9
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 1
+          'y': 0
+        id: resgisterBtn
+        data:
+          id: resgisterBtn
+          type: buttoncomponent
+          actions: []
+          componentInput:
+            type: runnable
+            fields: {}
+            fieldType: any
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            color:
+              type: static
+              value: blue
+            confirmationModal:
+              type: oneOf
+              configuration:
+                confirmationModal:
+                  description:
+                    type: static
+                    value: Are you sure?
+                  confirmationText:
+                    type: static
+                    value: Confirm
+                  title:
+                    type: static
+                    value: Title
+                none: {}
+              selected: none
+            disabled:
+              type: static
+              value: false
+            fillContainer:
+              type: static
+              value: true
+            label:
+              type: static
+              value: xem chi tiết
+              connections: []
+              expr: Đăng Ký
+            onError:
+              type: oneOf
+              configuration:
+                close:
+                  id:
+                    type: static
+                    value: ''
+                errorOverlay: {}
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: static
+                    value: ''
+                open:
+                  id:
+                    type: static
+                    value: ''
+                sendErrorToast:
+                  appendError:
+                    type: static
+                    value: true
+                  message:
+                    type: static
+                    value: An error occured
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: errorOverlay
+            onSuccess:
+              type: oneOf
+              configuration:
+                clearFiles:
+                  id:
+                    type: static
+                    value: ''
+                close:
+                  id:
+                    type: static
+                    value: ''
+                closeModal:
+                  modalId:
+                    type: static
+                    value: ''
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: static
+                    value: ''
+                none: {}
+                open:
+                  id:
+                    type: static
+                    value: ''
+                openModal:
+                  modalId:
+                    type: static
+                    value: ''
+                sendToast:
+                  message:
+                    type: static
+                    value: ''
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: none
+            size:
+              type: static
+              value: md
+            triggerOnAppLoad:
+              type: static
+              value: false
+          customCss:
+            button:
+              class: ''
+              style: ''
+            container:
+              class: ''
+              style: ''
+          horizontalAlignment: center
+          recomputeIds: []
+          verticalAlignment: center
+    main-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 10
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 0
+        id: welcomeTitle
+        data:
+          id: welcomeTitle
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            connections:
+              - id: summary
+                componentId: ctx
+            eval: ''
+            expr: ctx.summary
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Title
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 4
+          w: 11
+          x: 0
+          'y': 1
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 8
+          w: 2
+          x: 1
+          'y': 0
+        id: eventFilter
+        data:
+          id: eventFilter
           type: containercomponent
           actions: []
           configuration: {}
@@ -1753,14 +1411,166 @@ value:
             container:
               class: ''
               style: ''
+          groupFields: {}
           numberOfSubgrids: 1
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 12
+          w: 11
+          x: 0
+          'y': 5
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 8
+          w: 3
+          x: 0
+          'y': 8
+        id: eventList
+        data:
+          id: eventList
+          type: listcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            value:
+              - foo: 1
+              - foo: 2
+              - foo: 3
+            connections:
+              - id: result
+                componentId: bg_0
+            expr: bg_0.result
+            fieldType: array
+            subFieldType: object
+          configuration:
+            displayBorders:
+              type: static
+              value: true
+            heightPx:
+              type: static
+              value: 380
+            pagination:
+              type: oneOf
+              configuration:
+                auto:
+                  pageSize:
+                    type: static
+                    value: 3
+                manual:
+                  pageCount:
+                    type: static
+                    value: -1
+              selected: auto
+            width:
+              type: oneOf
+              configuration:
+                card:
+                  minWidthPx:
+                    type: static
+                    value: 300
+                row: {}
+              selected: card
+          customCss:
+            container:
+              class: ''
+              style: ''
+          numberOfSubgrids: 1
+    topbar-0:
       - '12':
           fixed: false
           fullHeight: false
           h: 1
           w: 12
           x: 0
-          'y': 2
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 0
+          'y': 0
+        id: AppTitle
+        data:
+          id: AppTitle
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections: []
+            eval: OPEN HEART
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: true
+              fieldType: boolean
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+              connections: []
+              expr: ''
+              fieldType: text
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: text-xl font-semibold whitespace-nowrap truncate
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 0
+          'y': 1
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 4
+          w: 3
+          x: 0
+          'y': 1
+        id: userLogo
+        data:
+          id: userLogo
+          type: imagecomponent
+          actions: []
+          configuration:
+            altText:
+              type: static
+              value: ''
+            imageFit:
+              type: static
+              value: contain
+            source:
+              type: static
+              value: /logo.svg
+            sourceKind:
+              type: static
+              value: url
+          customCss:
+            image:
+              class: ''
+              style: ''
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 9
+          x: 3
+          'y': 1
         '3':
           fixed: false
           fullHeight: false
@@ -1785,30 +1595,28 @@ value:
               value: none
             fillContainer:
               type: static
-              value: true
+              value: false
             label:
-              type: evalv2
+              type: static
               value: your name
-              connections:
-                - id: username
-                  componentId: group
-              expr: group.username
             size:
               type: static
-              value: md
+              value: xs
           customCss:
             button:
               class: max-w-xs
               style: ''
-          horizontalAlignment: left
+          horizontalAlignment: center
           menuItems:
             - id: userMenu_a
               type: buttoncomponent
               actions: []
               componentInput:
                 type: runnable
+                autoRefresh: false
                 fields: {}
                 fieldType: any
+                recomputeOnInputChanged: false
               configuration:
                 afterIcon:
                   type: static
@@ -1895,7 +1703,7 @@ value:
                         value: true
                       url:
                         type: static
-                        value: ''
+                        value: apps/get/f/login_page/login_page
                     none: {}
                     open:
                       id:
@@ -1913,7 +1721,7 @@ value:
                       setTab:
                         type: static
                         value: []
-                  selected: none
+                  selected: gotoUrl
                 size:
                   type: static
                   value: xs
@@ -2151,7 +1959,7 @@ value:
                         value: true
                       url:
                         type: static
-                        value: ''
+                        value: /login
                     none: {}
                     open:
                       id:
@@ -2169,7 +1977,7 @@ value:
                       setTab:
                         type: static
                         value: []
-                  selected: none
+                  selected: gotoUrl
                 size:
                   type: static
                   value: xs
@@ -2188,8 +1996,8 @@ value:
               verticalAlignment: center
           verticalAlignment: center
   theme:
-    type: inlined
-    css: ''
+    type: path
+    path: f/app_themes/theme_0
   unusedInlineScripts: []
 policy:
   execution_mode: anonymous
