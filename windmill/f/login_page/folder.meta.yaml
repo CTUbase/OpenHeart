@@ -1,4 +1,4 @@
-summary: ''
+summary: lưu các trang liên quan đến auth
 display_name: login_page
 extra_perms:
   g/all: true
