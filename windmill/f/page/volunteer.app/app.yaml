@@ -71,7 +71,7 @@ value:
     - '12':
         fixed: false
         fullHeight: false
-        h: 19
+        h: 15
         w: 2
         x: 0
         'y': 3
@@ -82,9 +82,9 @@ value:
         w: 12
         x: 0
         'y': 0
-      id: navbar
+      id: k
       data:
-        id: navbar
+        id: k
         type: navbarcomponent
         actions: []
         configuration:
@@ -121,18 +121,19 @@ value:
             style: ''
         horizontalAlignment: center
         navbarItems:
-          - disabled:
+          - caption: tính năng đang phát triển
+            disabled:
               type: static
-              value: false
+              value: true
               fieldType: boolean
             hidden:
               type: static
               value: false
               fieldType: boolean
-            icon: ''
+            icon: briefcase
             label:
               type: static
-              value: tổ chức của tôi
+              value: Tổ chức của tôi
               fieldType: text
             path:
               type: oneOf
@@ -156,7 +157,14 @@ value:
                       example, `?key=value` or `#hash`.
                 href:
                   href:
-                    type: static
+                    type: evalv2
+                    value: bg_1.result +'page/notFound404?'+'user='+bg_0.result.id
+                    connections:
+                      - id: result
+                        componentId: bg_1
+                      - id: result
+                        componentId: bg_2
+                    expr: bg_2.result +'page/notFound404?'+'user='+bg_1.result.id
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -165,7 +173,7 @@ value:
               labels:
                 app: Navigate to an app
                 href: Navigate to an external URL
-              selected: app
+              selected: href
           - disabled:
               type: static
               value: false
@@ -177,52 +185,7 @@ value:
             icon: home
             label:
               type: static
-              value: trang chủ
-              fieldType: text
-            path:
-              type: oneOf
-              configuration:
-                app:
-                  path:
-                    type: static
-                    value: u/page/home
-                    allowTypeChange: false
-                    fieldType: app-path
-                    tooltip: >-
-                      The app to navigate to when the item is clicked. Will be
-                      opened in the same tab. If you want to navigate to an
-                      external URL, use the "Href" option.
-                  queryParamsOrHash:
-                    type: static
-                    fieldType: text
-                    placeholder: '?key=value#hash'
-                    tooltip: >-
-                      Query parameters or hash to append to the URL. For
-                      example, `?key=value` or `#hash`.
-                href:
-                  href:
-                    type: static
-                    fieldType: text
-                    tooltip: >-
-                      The URL to navigate to when the item is clicked. Will be
-                      opened in a new tab. If you want to navigate to an other
-                      app, use the 'App' option.
-              labels:
-                app: Navigate to an app
-                href: Navigate to an external URL
-              selected: app
-          - disabled:
-              type: static
-              value: false
-              fieldType: boolean
-            hidden:
-              type: static
-              value: false
-              fieldType: boolean
-            icon: bell
-            label:
-              type: static
-              value: thông báo
+              value: Trang chủ
               fieldType: text
             path:
               type: oneOf
@@ -246,8 +209,67 @@ value:
                       example, `?key=value` or `#hash`.
                 href:
                   href:
+                    type: evalv2
+                    value: bg_1.result +"org/home?"+"user="+bg_0.result.id
+                    connections:
+                      - id: result
+                        componentId: bg_2
+                      - id: result
+                        componentId: bg_1
+                    expr: bg_2.result +'page/home?'+'user='+bg_1.result.id
+                    fieldType: text
+                    tooltip: >-
+                      The URL to navigate to when the item is clicked. Will be
+                      opened in a new tab. If you want to navigate to an other
+                      app, use the 'App' option.
+              labels:
+                app: Navigate to an app
+                href: Navigate to an external URL
+              selected: href
+          - caption: Tính năng Đang Phát triển
+            disabled:
+              type: static
+              value: true
+              fieldType: boolean
+            hidden:
+              type: static
+              value: false
+              fieldType: boolean
+            icon: bell
+            label:
+              type: static
+              value: Thông báo
+              fieldType: text
+            path:
+              type: oneOf
+              configuration:
+                app:
+                  path:
                     type: static
-                    value: 'https://app.windmill.dev/a/opensource/pageNotFound'
+                    value: ''
+                    allowTypeChange: false
+                    fieldType: app-path
+                    tooltip: >-
+                      The app to navigate to when the item is clicked. Will be
+                      opened in the same tab. If you want to navigate to an
+                      external URL, use the "Href" option.
+                  queryParamsOrHash:
+                    type: static
+                    fieldType: text
+                    placeholder: '?key=value#hash'
+                    tooltip: >-
+                      Query parameters or hash to append to the URL. For
+                      example, `?key=value` or `#hash`.
+                href:
+                  href:
+                    type: evalv2
+                    value: ''
+                    connections:
+                      - id: result
+                        componentId: bg_1
+                      - id: result
+                        componentId: bg_2
+                    expr: bg_2.result +'page/notFound404?'+'user='+bg_1.result.id
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -266,7 +288,7 @@ value:
               type: static
               value: false
               fieldType: boolean
-            icon: ''
+            icon: calendar
             label:
               type: static
               value: tình nguyện
@@ -277,7 +299,7 @@ value:
                 app:
                   path:
                     type: static
-                    value: u/page/notFound404
+                    value: f/page/volunteer
                     allowTypeChange: false
                     fieldType: app-path
                     tooltip: >-
@@ -293,7 +315,13 @@ value:
                       example, `?key=value` or `#hash`.
                 href:
                   href:
-                    type: static
+                    type: evalv2
+                    connections:
+                      - id: result
+                        componentId: bg_0
+                      - id: result
+                        componentId: bg_1
+                    expr: bg_1.result +'page/volunteer?'+'user='+bg_0.result.id
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -303,8 +331,7 @@ value:
                 app: Navigate to an app
                 href: Navigate to an external URL
               selected: app
-          - caption: các hoạt động tình nguyện đã đăng ký
-            disabled:
+          - disabled:
               type: static
               value: false
               fieldType: boolean
@@ -312,10 +339,10 @@ value:
               type: static
               value: false
               fieldType: boolean
-            icon: ''
+            icon: bookmark
             label:
               type: static
-              value: Đăng ký
+              value: Hoạt động
               fieldType: text
             path:
               type: oneOf
@@ -339,7 +366,14 @@ value:
                       example, `?key=value` or `#hash`.
                 href:
                   href:
-                    type: static
+                    type: evalv2
+                    value: ''
+                    connections:
+                      - id: result
+                        componentId: bg_1
+                      - id: result
+                        componentId: bg_2
+                    expr: bg_2.result +'page/notFound404?'+'user='+bg_1.result.id
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -348,55 +382,10 @@ value:
               labels:
                 app: Navigate to an app
                 href: Navigate to an external URL
-              selected: app
+              selected: href
           - disabled:
               type: static
-              value: false
-              fieldType: boolean
-            hidden:
-              type: static
-              value: false
-              fieldType: boolean
-            icon: ''
-            label:
-              type: static
-              value: hoạt động
-              fieldType: text
-            path:
-              type: oneOf
-              configuration:
-                app:
-                  path:
-                    type: static
-                    value: u/page/notFound404
-                    allowTypeChange: false
-                    fieldType: app-path
-                    tooltip: >-
-                      The app to navigate to when the item is clicked. Will be
-                      opened in the same tab. If you want to navigate to an
-                      external URL, use the "Href" option.
-                  queryParamsOrHash:
-                    type: static
-                    fieldType: text
-                    placeholder: '?key=value#hash'
-                    tooltip: >-
-                      Query parameters or hash to append to the URL. For
-                      example, `?key=value` or `#hash`.
-                href:
-                  href:
-                    type: static
-                    fieldType: text
-                    tooltip: >-
-                      The URL to navigate to when the item is clicked. Will be
-                      opened in a new tab. If you want to navigate to an other
-                      app, use the 'App' option.
-              labels:
-                app: Navigate to an app
-                href: Navigate to an external URL
-              selected: app
-          - disabled:
-              type: static
-              value: false
+              value: true
               fieldType: boolean
             hidden:
               type: static
@@ -429,7 +418,14 @@ value:
                       example, `?key=value` or `#hash`.
                 href:
                   href:
-                    type: static
+                    type: evalv2
+                    value: bg_1.result +'page/notFound404?'+'user='+bg_0.result.id
+                    connections:
+                      - id: result
+                        componentId: bg_2
+                      - id: result
+                        componentId: bg_1
+                    expr: bg_2.result +'page/notFound404?'+'user='+bg_1.result.id
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -438,10 +434,11 @@ value:
               labels:
                 app: Navigate to an app
                 href: Navigate to an external URL
-              selected: app
-          - disabled:
+              selected: href
+          - caption: tính năng đang phát triển
+            disabled:
               type: static
-              value: false
+              value: true
               fieldType: boolean
             hidden:
               type: static
@@ -474,7 +471,14 @@ value:
                       example, `?key=value` or `#hash`.
                 href:
                   href:
-                    type: static
+                    type: evalv2
+                    value: bg_2.result +'page/notFound404?'+'user='+bg_1.result.id
+                    connections:
+                      - id: result
+                        componentId: bg_1
+                      - id: result
+                        componentId: bg_2
+                    expr: bg_2.result +'page/notFound404?'+'user='+bg_1.result.id
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -483,23 +487,81 @@ value:
               labels:
                 app: Navigate to an app
                 href: Navigate to an external URL
-              selected: app
+              selected: href
         verticalAlignment: center
   hiddenInlineScripts:
     - type: runnableByName
-      name: Background Runnable 0
+      name: get event data
       autoRefresh: true
       fields: {}
       inlineScript:
-        content: '!inline background_runnable_0.inline_script.py'
-        lock: '!inline background_runnable_0.inline_script.lock'
+        content: '!inline get_event_data.inline_script.py'
+        lock: '!inline get_event_data.inline_script.lock'
         language: python3
-        path: f/page/test_volunteer/Background_Runnable_0
+        path: f/page/volunteer/get_event_data
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
           properties: {}
           required: []
+      recomputeIds: []
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: get url param
+      autoRefresh: true
+      fields: {}
+      inlineScript:
+        content: '!inline get_url_param.inline_script.frontend.js'
+        language: frontend
+        path: f/page/volunteer/get_url_param
+        suggestedRefreshOn: []
+      recomputeIds:
+        - bg_3
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: get wmill path
+      autoRefresh: true
+      fields: {}
+      inlineScript:
+        content: '!inline get_wmill_path.inline_script.py'
+        lock: '!inline get_wmill_path.inline_script.lock'
+        language: python3
+        path: f/page/volunteer/get_wmill_path
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties: {}
+          required: []
+      recomputeIds: []
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: get volunteer
+      autoRefresh: false
+      fields:
+        user_id:
+          type: evalv2
+          value: bg_1?.result?.id ?? 1
+          connections:
+            - id: result
+              componentId: bg_1
+          expr: bg_1?.result?.id ?? 1
+          fieldType: string
+      inlineScript:
+        content: '!inline get_volunteer.inline_script.py'
+        lock: '!inline get_volunteer.inline_script.lock'
+        language: python3
+        path: f/page/volunteer/get_volunteer
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties:
+            user_id:
+              type: string
+              description: ''
+              default: null
+              originalType: string
+          required:
+            - user_id
       recomputeIds: []
       recomputeOnInputChanged: true
   hideLegacyTopBar: true
@@ -1301,8 +1363,20 @@ value:
                     type: static
                     value: true
                   url:
-                    type: static
-                    value: ''
+                    type: evalv2
+                    value: bg_2.result +'page/notFound404?'+'user='+bg_1.result.id
+                    connections:
+                      - id: result
+                        componentId: bg_1
+                      - id: index
+                        componentId: iter
+                      - id: result
+                        componentId: bg_2
+                      - id: result
+                        componentId: bg_0
+                    expr: >-
+                      bg_2.result
+                      +'page/eventDetail?'+'user='+bg_1.result.id+'&event='+bg_0.result[iter.index].id
                 none: {}
                 open:
                   id:
@@ -1320,7 +1394,7 @@ value:
                   setTab:
                     type: static
                     value: []
-              selected: none
+              selected: gotoUrl
             size:
               type: static
               value: md
@@ -1555,8 +1629,12 @@ value:
               type: static
               value: contain
             source:
-              type: static
+              type: evalv2
               value: /logo.svg
+              connections:
+                - id: result
+                  componentId: bg_3
+              expr: 'bg_3?.result[0]?.picPath ?? ''/logo.svg'''
             sourceKind:
               type: static
               value: url
@@ -1597,8 +1675,12 @@ value:
               type: static
               value: false
             label:
-              type: static
-              value: your name
+              type: evalv2
+              value: bg_3?.result?.id ?? 1
+              connections:
+                - id: result
+                  componentId: bg_3
+              expr: 'bg_3.result[0].full_name'
             size:
               type: static
               value: xs
@@ -2004,6 +2086,18 @@ policy:
   s3_inputs: []
   triggerables_v2:
     'bg_0:rawscript/6607340839f6ab05ffa0904bf13c971767729d67a658e995482bc5320d7b572b':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_1:rawscript/9e6a35ba160672e367ece8b59aeedb714bf054ad9b4a151e890dbce3fcf2bef1':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_2:rawscript/98c0b88043860d998f00362f6634306b09bee776e0a421eb7803fc4e1c50c6ca':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_3:rawscript/b85081bfcddf0efd90880304c8dc8105402d1b28f7305ada52484bce7814d7d2':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
