@@ -1139,10 +1139,10 @@ value:
           componentInput:
             type: templatev2
             connections:
-              - id: index
-                componentId: iter
               - id: result
                 componentId: eventList
+              - id: index
+                componentId: iter
             eval: |
               <div>
                 <div class="relative flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg">
@@ -1160,7 +1160,7 @@ value:
                     <div class="mb-1 rounded-full bg-cyan-600 py-0.5 px-2.5 border border-transparent text-xs transition-all shadow-sm w-fit text-center">
                       ${eventList.result[iter.index].location}
                     </div class="">
-                    <h6 class="mb-1 text-slate-800 text-xl font-semiboldoverflow-hidden text-ellipsis whitespace-normal"
+                    <h6 class="m-1 text-slate-800 text-xl text-ellipsis whitespace-normal"
                     style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;line-height: 1.5rem; height: calc(1.25rem * 2);">
                       ${eventList.result[iter.index].name}
                     </h6>
