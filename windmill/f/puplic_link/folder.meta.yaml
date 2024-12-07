@@ -1,0 +1,6 @@
+summary: lưu link của các trang đã deploy để route
+display_name: puplic_link
+extra_perms:
+  u/admin: true
+owners:
+  - u/admin

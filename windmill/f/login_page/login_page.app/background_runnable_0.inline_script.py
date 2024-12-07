@@ -17,10 +17,10 @@ def handle_login(username, password):
         print("Request thất bại với mã lỗi")
     else:
         if(response.data[0]['id_role'] == 2):
-            url_profile = wmill.get_variable("f/page/windmill_path")+ 'page/home?id_user=' + str(response.data[0]['id'])
+            url_profile = wmill.get_variable("f/page/windmill_path")+ 'page/home?user=' + str(response.data[0]['id'])
             return url_profile
         if(response.data[0]['id_role'] == 3):
-            url_profile = wmill.get_variable("f/page/windmill_path")+ 'org/home?id_user=' + str(response.data[0]['id'])
+            url_profile = wmill.get_variable("f/page/windmill_path")+ 'org/home?user=' + str(response.data[0]['id'])
             return url_profile
 def main(email: str,pass1: str):
     return handle_login(email,pass1)
