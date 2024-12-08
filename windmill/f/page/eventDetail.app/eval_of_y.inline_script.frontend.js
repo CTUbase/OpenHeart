@@ -1,0 +1,1 @@
+return bg_0.result.slot/bg_0.result.amount
