@@ -1,4 +1,4 @@
-summary: ''
+summary: Trang chi tiết tình nguyện
 value:
   css:
     buttoncomponent:
@@ -19,8 +19,19 @@ value:
       popup:
         class: ''
         style: ''
+    imagecomponent:
+      image:
+        class: ''
+        style: ''
     menucomponent:
       button:
+        class: ''
+        style: ''
+    navbarcomponent:
+      container:
+        class: ''
+        style: ''
+      image:
         class: ''
         style: ''
     textcomponent:
@@ -46,9 +57,9 @@ value:
         w: 6
         x: 0
         'y': 1
-      id: topbar
+      id: af
       data:
-        id: topbar
+        id: af
         type: containercomponent
         actions: []
         configuration: {}
@@ -56,11 +67,12 @@ value:
           container:
             class: '!p-0'
             style: ''
+        groupFields: {}
         numberOfSubgrids: 1
     - '12':
         fixed: false
         fullHeight: false
-        h: 24
+        h: 25
         w: 10
         x: 2
         'y': 0
@@ -84,8 +96,8 @@ value:
         numberOfSubgrids: 1
     - '12':
         fixed: false
-        fullHeight: true
-        h: 19
+        fullHeight: false
+        h: 14
         w: 2
         x: 0
         'y': 3
@@ -96,9 +108,9 @@ value:
         w: 12
         x: 0
         'y': 0
-      id: navbar
+      id: ag
       data:
-        id: navbar
+        id: ag
         type: navbarcomponent
         actions: []
         configuration:
@@ -135,9 +147,10 @@ value:
             style: ''
         horizontalAlignment: center
         navbarItems:
-          - disabled:
+          - caption: tính năng đang phát triển
+            disabled:
               type: static
-              value: false
+              value: true
               fieldType: boolean
             hidden:
               type: static
@@ -170,7 +183,14 @@ value:
                       example, `?key=value` or `#hash`.
                 href:
                   href:
-                    type: static
+                    type: evalv2
+                    value: bg_1.result +'page/notFound404?'+'user='+bg_0.result.id
+                    connections:
+                      - id: result
+                        componentId: bg_4
+                      - id: result
+                        componentId: bg_5
+                    expr: bg_5.result +'page/notFound404?'+'user='+bg_4.result.id
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -179,7 +199,7 @@ value:
               labels:
                 app: Navigate to an app
                 href: Navigate to an external URL
-              selected: app
+              selected: href
           - disabled:
               type: static
               value: false
@@ -199,7 +219,7 @@ value:
                 app:
                   path:
                     type: static
-                    value: u/page/home
+                    value: ''
                     allowTypeChange: false
                     fieldType: app-path
                     tooltip: >-
@@ -215,7 +235,14 @@ value:
                       example, `?key=value` or `#hash`.
                 href:
                   href:
-                    type: static
+                    type: evalv2
+                    value: bg_1.result +"org/home?"+"user="+bg_0.result.id
+                    connections:
+                      - id: result
+                        componentId: bg_5
+                      - id: result
+                        componentId: bg_4
+                    expr: bg_5.result +"page/home?"+"user="+bg_4.result.id
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -224,10 +251,11 @@ value:
               labels:
                 app: Navigate to an app
                 href: Navigate to an external URL
-              selected: app
-          - disabled:
+              selected: href
+          - caption: Tính năng Đang Phát triển
+            disabled:
               type: static
-              value: false
+              value: true
               fieldType: boolean
             hidden:
               type: static
@@ -260,8 +288,14 @@ value:
                       example, `?key=value` or `#hash`.
                 href:
                   href:
-                    type: static
-                    value: 'https://app.windmill.dev/a/opensource/pageNotFound'
+                    type: evalv2
+                    value: ''
+                    connections:
+                      - id: result
+                        componentId: bg_5
+                      - id: result
+                        componentId: bg_4
+                    expr: bg_5.result +'page/notFound404?'+'user='+bg_4.result.id
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -307,7 +341,13 @@ value:
                       example, `?key=value` or `#hash`.
                 href:
                   href:
-                    type: static
+                    type: evalv2
+                    connections:
+                      - id: result
+                        componentId: bg_5
+                      - id: result
+                        componentId: bg_4
+                    expr: bg_5.result +'page/volunteer?'+'user='+bg_4.result.id
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -316,7 +356,7 @@ value:
               labels:
                 app: Navigate to an app
                 href: Navigate to an external URL
-              selected: app
+              selected: href
           - disabled:
               type: static
               value: false
@@ -352,7 +392,14 @@ value:
                       example, `?key=value` or `#hash`.
                 href:
                   href:
-                    type: static
+                    type: evalv2
+                    value: ''
+                    connections:
+                      - id: result
+                        componentId: bg_5
+                      - id: result
+                        componentId: bg_4
+                    expr: bg_5.result +"page/myRegistration?"+"user="+bg_4.result.id
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -361,10 +408,10 @@ value:
               labels:
                 app: Navigate to an app
                 href: Navigate to an external URL
-              selected: app
+              selected: href
           - disabled:
               type: static
-              value: false
+              value: true
               fieldType: boolean
             hidden:
               type: static
@@ -397,7 +444,14 @@ value:
                       example, `?key=value` or `#hash`.
                 href:
                   href:
-                    type: static
+                    type: evalv2
+                    value: bg_1.result +'page/notFound404?'+'user='+bg_0.result.id
+                    connections:
+                      - id: result
+                        componentId: bg_5
+                      - id: result
+                        componentId: bg_4
+                    expr: bg_5.result +'page/notFound404?'+'user='+bg_4.result.id
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -406,10 +460,11 @@ value:
               labels:
                 app: Navigate to an app
                 href: Navigate to an external URL
-              selected: app
-          - disabled:
+              selected: href
+          - caption: tính năng đang phát triển
+            disabled:
               type: static
-              value: false
+              value: true
               fieldType: boolean
             hidden:
               type: static
@@ -442,7 +497,14 @@ value:
                       example, `?key=value` or `#hash`.
                 href:
                   href:
-                    type: static
+                    type: evalv2
+                    value: bg_5.result +'page/notFound404?'+'user='+bg_4.result.id
+                    connections:
+                      - id: result
+                        componentId: bg_5
+                      - id: result
+                        componentId: bg_4
+                    expr: bg_5.result +'page/notFound404?'+'user='+bg_4.result.id
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -451,22 +513,26 @@ value:
               labels:
                 app: Navigate to an app
                 href: Navigate to an external URL
-              selected: app
+              selected: href
         verticalAlignment: center
   hiddenInlineScripts:
     - type: runnableByName
-      name: get_data_event
+      name: get_event
       autoRefresh: true
       fields:
         id_evt:
-          type: static
+          type: evalv2
           value: '1'
+          connections:
+            - id: result
+              componentId: bg_4
+          expr: bg_4?.result?.event_id ?? 1
           fieldType: string
       inlineScript:
-        content: '!inline get_data_event.inline_script.py'
-        lock: '!inline get_data_event.inline_script.lock'
+        content: '!inline get_event.inline_script.py'
+        lock: '!inline get_event.inline_script.lock'
         language: python3
-        path: f/page/eventDetail/get_data_event
+        path: f/page/eventDetail/get_event
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
@@ -481,18 +547,22 @@ value:
       recomputeIds: []
       recomputeOnInputChanged: true
     - type: runnableByName
-      name: get_data_org
+      name: get_org
       autoRefresh: true
       fields:
         id_evt:
-          type: static
-          value: '1'
+          type: evalv2
+          value: '2'
+          connections:
+            - id: result
+              componentId: bg_4
+          expr: bg_4?.result?.event_id ?? 1
           fieldType: string
       inlineScript:
-        content: '!inline get_data_org.inline_script.py'
-        lock: '!inline get_data_org.inline_script.lock'
+        content: '!inline get_org.inline_script.py'
+        lock: '!inline get_org.inline_script.lock'
         language: python3
-        path: f/page/eventDetail/get_data_org
+        path: f/page/eventDetail/get_org
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
@@ -507,18 +577,22 @@ value:
       recomputeIds: []
       recomputeOnInputChanged: true
     - type: runnableByName
-      name: get_data_date_from_event
+      name: get_date_from_event
       autoRefresh: true
       fields:
         x:
-          type: static
+          type: evalv2
           value: '1'
+          connections:
+            - id: result
+              componentId: bg_4
+          expr: bg_4?.result?.event_id ?? 1
           fieldType: string
       inlineScript:
-        content: '!inline get_data_date_from_event.inline_script.py'
-        lock: '!inline get_data_date_from_event.inline_script.lock'
+        content: '!inline get_date_from_event.inline_script.py'
+        lock: '!inline get_date_from_event.inline_script.lock'
         language: python3
-        path: f/page/eventDetail/get_data_date_from_event
+        path: f/page/eventDetail/get_date_from_event
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
@@ -533,18 +607,22 @@ value:
       recomputeIds: []
       recomputeOnInputChanged: true
     - type: runnableByName
-      name: get_data_volunteer
+      name: get_registeredVolunteer
       autoRefresh: true
       fields:
         x:
-          type: static
+          type: evalv2
           value: '1'
+          connections:
+            - id: result
+              componentId: bg_4
+          expr: bg_4?.result?.event_id ?? 1
           fieldType: string
       inlineScript:
-        content: '!inline get_data_volunteer.inline_script.py'
-        lock: '!inline get_data_volunteer.inline_script.lock'
+        content: '!inline get_registeredvolunteer.inline_script.py'
+        lock: '!inline get_registeredvolunteer.inline_script.lock'
         language: python3
-        path: f/page/eventDetail/get_data_volunteer
+        path: f/page/eventDetail/get_registeredVolunteer
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
@@ -556,6 +634,68 @@ value:
               originalType: string
           required:
             - x
+      recomputeIds: []
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: get_url_param
+      autoRefresh: true
+      fields: {}
+      inlineScript:
+        content: '!inline get_url_param.inline_script.frontend.js'
+        language: frontend
+        path: f/page/eventDetail/get_url_param
+        suggestedRefreshOn: []
+      recomputeIds:
+        - bg_6
+        - bg_0
+        - bg_1
+        - bg_2
+        - bg_3
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: get_wmill_path
+      autoRefresh: true
+      fields: {}
+      inlineScript:
+        content: '!inline get_wmill_path.inline_script.py'
+        lock: '!inline get_wmill_path.inline_script.lock'
+        language: python3
+        path: f/page/eventDetail/get_wmill_path
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties: {}
+          required: []
+      recomputeIds: []
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: get_volunteer_profile
+      autoRefresh: false
+      fields:
+        user_id:
+          type: evalv2
+          value: null
+          connections:
+            - id: result
+              componentId: bg_4
+          expr: bg_4.result.id
+          fieldType: string
+      inlineScript:
+        content: '!inline get_volunteer_profile.inline_script.py'
+        lock: '!inline get_volunteer_profile.inline_script.lock'
+        language: python3
+        path: f/page/eventDetail/get_volunteer_profile
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties:
+            user_id:
+              type: string
+              description: ''
+              default: null
+              originalType: string
+          required:
+            - user_id
       recomputeIds: []
       recomputeOnInputChanged: true
   hideLegacyTopBar: true
@@ -612,52 +752,28 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 1
-          w: 4
+          h: 12
+          w: 9
           x: 0
           'y': 2
         '3':
           fixed: false
           fullHeight: false
-          h: 1
-          w: 1
-          x: 0
-          'y': 0
-        id: b
+          h: 8
+          w: 2
+          x: 1
+          'y': 29
+        id: k
         data:
-          id: b
-          type: textcomponent
+          id: k
+          type: containercomponent
           actions: []
-          componentInput:
-            type: evalv2
-            connections:
-              - id: result
-                componentId: bg_0
-            eval: 'Hello ${ctx.username}'
-            expr: bg_0.result.name
-            fieldType: template
-          configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: false
-            style:
-              type: static
-              value: Subtitle
-            tooltip:
-              type: static
-              value: ''
+          configuration: {}
           customCss:
             container:
               class: ''
-              style: ''
-            text:
-              class: ''
-              style: ''
-          horizontalAlignment: left
-          verticalAlignment: center
+              style: 'border-radius: 5px; border: 1px solid #dadada;'
+          numberOfSubgrids: 1
       - '12':
           fixed: false
           fullHeight: false
@@ -686,47 +802,7 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 13
-          w: 9
-          x: 0
-          'y': 3
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 4
-          w: 3
-          x: 0
-          'y': 1
-        id: d
-        data:
-          id: d
-          type: imagecomponent
-          actions: []
-          configuration:
-            altText:
-              type: static
-              value: ''
-            imageFit:
-              type: static
-              value: contain
-            source:
-              type: evalv2
-              value: /logo.svg
-              connections:
-                - id: result
-                  componentId: bg_0
-              expr: bg_0.result.image
-            sourceKind:
-              type: static
-              value: url
-          customCss:
-            image:
-              class: ''
-              style: ''
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 7
+          h: 6
           w: 3
           x: 9
           'y': 6
@@ -754,7 +830,7 @@ value:
           h: 2
           w: 3
           x: 9
-          'y': 13
+          'y': 12
         '3':
           fixed: false
           fullHeight: false
@@ -786,16 +862,24 @@ value:
               configuration:
                 confirmationModal:
                   description:
-                    type: static
-                    value: Are you sure?
+                    type: evalv2
+                    value: >-
+                      Bạn đã đáp ứng các yêu cầu  và mong muốn tham gia hoạt
+                      động trên?
+                    connections:
+                      - id: result
+                        componentId: bg_0
+                    expr: >-
+                      "Bạn đã đáp ứng các yêu cầu và mong muốn tham gia hoạt
+                      động " + bg_0.result.name +"?"
                   confirmationText:
                     type: static
-                    value: Confirm
+                    value: Đồng ý
                   title:
                     type: static
-                    value: Title
+                    value: Xác nhận đăng ký
                 none: {}
-              selected: none
+              selected: confirmationModal
             disabled:
               type: static
               value: false
@@ -895,10 +979,10 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 7
+          h: 10
           w: 9
           x: 0
-          'y': 16
+          'y': 14
         '3':
           fixed: false
           fullHeight: false
@@ -922,8 +1006,8 @@ value:
           fixed: false
           fullHeight: false
           h: 1
-          w: 3
-          x: 0
+          w: 1
+          x: 4
           'y': 0
         '3':
           fixed: false
@@ -931,10 +1015,10 @@ value:
           h: 4
           w: 3
           x: 0
-          'y': 0
-        id: ad
+          'y': 5
+        id: ak
         data:
-          id: ad
+          id: ak
           type: imagecomponent
           actions: []
           configuration:
@@ -949,23 +1033,23 @@ value:
               value: /logo.svg
               connections:
                 - id: result
-                  componentId: bg_3
+                  componentId: ac
                 - id: index
                   componentId: iter
-              expr: 'bg_3.result[iter.index].picpath'
+              expr: 'ac?.result[iter.index]?.picpath ?? ''/logo.svg'''
             sourceKind:
               type: static
               value: url
           customCss:
             image:
-              class: ''
+              class: rounded-full border-4
               style: ''
       - '12':
           fixed: false
           fullHeight: false
           h: 1
-          w: 8
-          x: 3
+          w: 4
+          x: 5
           'y': 0
         '3':
           fixed: false
@@ -982,12 +1066,12 @@ value:
           componentInput:
             type: evalv2
             connections:
+              - id: result
+                componentId: ac
               - id: index
                 componentId: iter
-              - id: result
-                componentId: bg_3
             eval: ''
-            expr: 'bg_3.result[iter.index].hoten'
+            expr: 'ac?.result[iter.index]?.hoten ?? ''họ tên'''
             fieldType: template
           configuration:
             copyButton:
@@ -1009,14 +1093,424 @@ value:
             text:
               class: ''
               style: ''
+          horizontalAlignment: left
+          verticalAlignment: center
+    af-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 12
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 0
+          'y': 0
+        id: ah
+        data:
+          id: ah
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections: []
+            eval: OPEN HEART
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: true
+              fieldType: boolean
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+              connections: []
+              expr: ''
+              fieldType: text
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: text-xl font-semibold whitespace-nowrap truncate
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 0
+          'y': 1
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 4
+          w: 3
+          x: 0
+          'y': 1
+        id: ai
+        data:
+          id: ai
+          type: imagecomponent
+          actions: []
+          configuration:
+            altText:
+              type: static
+              value: ''
+            imageFit:
+              type: static
+              value: contain
+            source:
+              type: evalv2
+              value: /logo.svg
+              connections:
+                - id: result
+                  componentId: bg_6
+              expr: 'bg_6?.result[0]?.picPath ?? ''/logo.svg'''
+            sourceKind:
+              type: static
+              value: url
+          customCss:
+            image:
+              class: ''
+              style: ''
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 9
+          x: 3
+          'y': 1
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 5
+        id: aj
+        data:
+          id: aj
+          type: menucomponent
+          actions: []
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ''
+            color:
+              type: static
+              value: none
+            fillContainer:
+              type: static
+              value: false
+            label:
+              type: evalv2
+              value: your name
+              connections:
+                - id: result
+                  componentId: bg_6
+              expr: 'bg_6?.result[0]?.full_name ?? ''tên của bạn'''
+            size:
+              type: static
+              value: xs
+          customCss:
+            button:
+              class: max-w-xs
+              style: ''
           horizontalAlignment: center
+          menuItems:
+            - id: aj_a
+              type: buttoncomponent
+              actions: []
+              componentInput:
+                type: runnable
+                autoRefresh: false
+                fields: {}
+                fieldType: any
+                recomputeOnInputChanged: false
+              configuration:
+                afterIcon:
+                  type: static
+                  value: ''
+                beforeIcon:
+                  type: static
+                  value: ''
+                color:
+                  type: static
+                  value: light
+                confirmationModal:
+                  type: oneOf
+                  configuration:
+                    confirmationModal:
+                      description:
+                        type: static
+                        value: Are you sure?
+                      confirmationText:
+                        type: static
+                        value: Confirm
+                      title:
+                        type: static
+                        value: Title
+                    none: {}
+                  selected: none
+                disabled:
+                  type: static
+                  value: false
+                fillContainer:
+                  type: static
+                  value: false
+                label:
+                  type: static
+                  value: quản lý tài khoản
+                onError:
+                  type: oneOf
+                  configuration:
+                    close:
+                      id:
+                        type: static
+                        value: ''
+                    errorOverlay: {}
+                    gotoUrl:
+                      newTab:
+                        type: static
+                        value: true
+                      url:
+                        type: static
+                        value: ''
+                    open:
+                      id:
+                        type: static
+                        value: ''
+                    sendErrorToast:
+                      appendError:
+                        type: static
+                        value: true
+                      message:
+                        type: static
+                        value: An error occured
+                    setTab:
+                      setTab:
+                        type: static
+                        value: []
+                  selected: errorOverlay
+                onSuccess:
+                  type: oneOf
+                  configuration:
+                    clearFiles:
+                      id:
+                        type: static
+                        value: ''
+                    close:
+                      id:
+                        type: static
+                        value: ''
+                    closeModal:
+                      modalId:
+                        type: static
+                        value: ''
+                    gotoUrl:
+                      newTab:
+                        type: static
+                        value: false
+                      url:
+                        type: evalv2
+                        value: bg_1.result +"org/home?"+"user="+bg_0.result.id
+                        connections:
+                          - id: result
+                            componentId: bg_1
+                          - id: result
+                            componentId: bg_0
+                        expr: >-
+                          bg_1.result
+                          +"info_page/info_page_volunteer?"+"user="+bg_0.result.id
+                    none: {}
+                    open:
+                      id:
+                        type: static
+                        value: ''
+                    openModal:
+                      modalId:
+                        type: static
+                        value: ''
+                    sendToast:
+                      message:
+                        type: static
+                        value: ''
+                    setTab:
+                      setTab:
+                        type: static
+                        value: []
+                  selected: gotoUrl
+                size:
+                  type: static
+                  value: xs
+                triggerOnAppLoad:
+                  type: static
+                  value: false
+              customCss:
+                button:
+                  class: ''
+                  style: ''
+                container:
+                  class: ''
+                  style: ''
+              horizontalAlignment: center
+              recomputeIds: []
+              verticalAlignment: center
+            - id: aj_c
+              type: buttoncomponent
+              actions: []
+              componentInput:
+                type: runnable
+                fields: {}
+                fieldType: any
+              configuration:
+                afterIcon:
+                  type: static
+                  value: ''
+                beforeIcon:
+                  type: static
+                  value: ''
+                color:
+                  type: static
+                  value: red
+                confirmationModal:
+                  type: oneOf
+                  configuration:
+                    confirmationModal:
+                      description:
+                        type: static
+                        value: Are you sure?
+                      confirmationText:
+                        type: static
+                        value: Confirm
+                      title:
+                        type: static
+                        value: Title
+                    none: {}
+                  selected: none
+                disabled:
+                  type: static
+                  value: false
+                fillContainer:
+                  type: static
+                  value: false
+                label:
+                  type: static
+                  value: Đăng xuất
+                onError:
+                  type: oneOf
+                  configuration:
+                    close:
+                      id:
+                        type: static
+                        value: ''
+                    errorOverlay: {}
+                    gotoUrl:
+                      newTab:
+                        type: static
+                        value: true
+                      url:
+                        type: static
+                        value: ''
+                    open:
+                      id:
+                        type: static
+                        value: ''
+                    sendErrorToast:
+                      appendError:
+                        type: static
+                        value: true
+                      message:
+                        type: static
+                        value: An error occured
+                    setTab:
+                      setTab:
+                        type: static
+                        value: []
+                  selected: errorOverlay
+                onSuccess:
+                  type: oneOf
+                  configuration:
+                    clearFiles:
+                      id:
+                        type: static
+                        value: ''
+                    close:
+                      id:
+                        type: static
+                        value: ''
+                    closeModal:
+                      modalId:
+                        type: static
+                        value: ''
+                    gotoUrl:
+                      newTab:
+                        type: static
+                        value: false
+                      url:
+                        type: evalv2
+                        value: bg_1.result +"org/home?"+"user="+bg_0.result.id
+                        connections:
+                          - id: result
+                            componentId: bg_1
+                        expr: bg_1.result +"login_page/login_page"
+                    none: {}
+                    open:
+                      id:
+                        type: static
+                        value: ''
+                    openModal:
+                      modalId:
+                        type: static
+                        value: ''
+                    sendToast:
+                      message:
+                        type: static
+                        value: ''
+                    setTab:
+                      setTab:
+                        type: static
+                        value: []
+                  selected: gotoUrl
+                size:
+                  type: static
+                  value: xs
+                triggerOnAppLoad:
+                  type: static
+                  value: false
+              customCss:
+                button:
+                  class: ''
+                  style: ''
+                container:
+                  class: ''
+                  style: ''
+              horizontalAlignment: center
+              recomputeIds: []
+              verticalAlignment: center
           verticalAlignment: center
     e-0:
       - '12':
           fixed: false
           fullHeight: false
           h: 1
-          w: 11
+          w: 8
           x: 0
           'y': 0
         '3':
@@ -1034,7 +1528,7 @@ value:
           componentInput:
             type: templatev2
             connections: []
-            eval: Liên hệ với tổ chức
+            eval: 'Liên hệ '
             fieldType: template
           configuration:
             copyButton:
@@ -1061,7 +1555,7 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 2
+          h: 1
           w: 3
           x: 0
           'y': 1
@@ -1096,61 +1590,50 @@ value:
               value: url
           customCss:
             image:
-              class: ''
+              class: rounded-full border-4
               style: ''
       - '12':
           fixed: false
           fullHeight: false
           h: 1
-          w: 3
+          w: 9
           x: 3
           'y': 1
         '3':
           fixed: false
           fullHeight: false
-          h: 1
+          h: 2
           w: 1
           x: 0
           'y': 5
         id: j
         data:
           id: j
-          type: textcomponent
+          type: htmlcomponent
           actions: []
           componentInput:
             type: templatev2
-            connections: []
-            eval: 'SĐT:'
+            connections:
+              - id: result
+                componentId: bg_1
+            eval: |-
+
+              <p class="absolute flex align-center text-sm ">
+              ${bg_1?.result?.name ?? 'tên tổ chức' }
+              </p>
             fieldType: template
-          configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: false
-            style:
-              type: static
-              value: Body
-            tooltip:
-              type: static
-              value: ''
+          configuration: {}
           customCss:
             container:
               class: ''
               style: ''
-            text:
-              class: ''
-              style: ''
-          horizontalAlignment: left
-          verticalAlignment: top
       - '12':
           fixed: false
           fullHeight: false
           h: 1
-          w: 6
-          x: 6
-          'y': 1
+          w: 2
+          x: 4
+          'y': 2
         '3':
           fixed: false
           fullHeight: false
@@ -1161,90 +1644,143 @@ value:
         id: h
         data:
           id: h
-          type: textcomponent
+          type: buttoncomponent
           actions: []
           componentInput:
-            type: evalv2
-            connections:
-              - id: result
-                componentId: bg_1
-            eval: 'Hello ${ctx.username}'
-            expr: bg_1.result.phone
-            fieldType: template
+            type: runnable
+            fields: {}
+            fieldType: any
           configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: false
-            style:
-              type: static
-              value: Body
-            tooltip:
+            afterIcon:
               type: static
               value: ''
+            beforeIcon:
+              type: static
+              value: phone-call
+            color:
+              type: static
+              value: blue
+            confirmationModal:
+              type: oneOf
+              configuration:
+                confirmationModal:
+                  description:
+                    type: static
+                    value: Are you sure?
+                  confirmationText:
+                    type: static
+                    value: Confirm
+                  title:
+                    type: static
+                    value: Title
+                none: {}
+              selected: none
+            disabled:
+              type: static
+              value: false
+            fillContainer:
+              type: static
+              value: false
+            label:
+              type: static
+              value: SĐT
+            onError:
+              type: oneOf
+              configuration:
+                close:
+                  id:
+                    type: static
+                    value: ''
+                errorOverlay: {}
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: static
+                    value: ''
+                open:
+                  id:
+                    type: static
+                    value: ''
+                sendErrorToast:
+                  appendError:
+                    type: static
+                    value: true
+                  message:
+                    type: static
+                    value: An error occured
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: errorOverlay
+            onSuccess:
+              type: oneOf
+              configuration:
+                clearFiles:
+                  id:
+                    type: static
+                    value: ''
+                close:
+                  id:
+                    type: static
+                    value: ''
+                closeModal:
+                  modalId:
+                    type: static
+                    value: ''
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: evalv2
+                    value: ''
+                    connections:
+                      - id: result
+                        componentId: bg_1
+                    expr: '''tel: +84 ''+ bg_1.result.phone'
+                none: {}
+                open:
+                  id:
+                    type: static
+                    value: ''
+                openModal:
+                  modalId:
+                    type: static
+                    value: ''
+                sendToast:
+                  message:
+                    type: static
+                    value: ''
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: gotoUrl
+            size:
+              type: static
+              value: xs
+            triggerOnAppLoad:
+              type: static
+              value: false
           customCss:
+            button:
+              class: ''
+              style: ''
             container:
               class: ''
               style: ''
-            text:
-              class: ''
-              style: ''
-          horizontalAlignment: left
-          verticalAlignment: top
+          horizontalAlignment: center
+          recomputeIds: []
+          verticalAlignment: center
       - '12':
           fixed: false
           fullHeight: false
           h: 1
-          w: 3
-          x: 3
-          'y': 2
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 1
-          'y': 5
-        id: k
-        data:
-          id: k
-          type: textcomponent
-          actions: []
-          componentInput:
-            type: templatev2
-            connections: []
-            eval: 'Email:'
-            fieldType: template
-          configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: false
-            style:
-              type: static
-              value: Body
-            tooltip:
-              type: static
-              value: ''
-          customCss:
-            container:
-              class: ''
-              style: ''
-            text:
-              class: ''
-              style: ''
-          horizontalAlignment: left
-          verticalAlignment: top
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 6
-          x: 6
+          w: 2
+          x: 9
           'y': 2
         '3':
           fixed: false
@@ -1256,15 +1792,164 @@ value:
         id: i
         data:
           id: i
+          type: buttoncomponent
+          actions: []
+          componentInput:
+            type: runnable
+            fields: {}
+            fieldType: any
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: mail
+            color:
+              type: static
+              value: blue
+            confirmationModal:
+              type: oneOf
+              configuration:
+                confirmationModal:
+                  description:
+                    type: static
+                    value: Are you sure?
+                  confirmationText:
+                    type: static
+                    value: Confirm
+                  title:
+                    type: static
+                    value: Title
+                none: {}
+              selected: none
+            disabled:
+              type: static
+              value: false
+            fillContainer:
+              type: static
+              value: false
+            label:
+              type: static
+              value: Email
+            onError:
+              type: oneOf
+              configuration:
+                close:
+                  id:
+                    type: static
+                    value: ''
+                errorOverlay: {}
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: static
+                    value: ''
+                open:
+                  id:
+                    type: static
+                    value: ''
+                sendErrorToast:
+                  appendError:
+                    type: static
+                    value: true
+                  message:
+                    type: static
+                    value: An error occured
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: errorOverlay
+            onSuccess:
+              type: oneOf
+              configuration:
+                clearFiles:
+                  id:
+                    type: static
+                    value: ''
+                close:
+                  id:
+                    type: static
+                    value: ''
+                closeModal:
+                  modalId:
+                    type: static
+                    value: ''
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: evalv2
+                    value: '''tel: +84 ''+ bg_1.result.phone'
+                    connections:
+                      - id: result
+                        componentId: bg_1
+                    expr: '''mailto: ''+ bg_1.result.email'
+                none: {}
+                open:
+                  id:
+                    type: static
+                    value: ''
+                openModal:
+                  modalId:
+                    type: static
+                    value: ''
+                sendToast:
+                  message:
+                    type: static
+                    value: ''
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: gotoUrl
+            size:
+              type: static
+              value: xs
+            triggerOnAppLoad:
+              type: static
+              value: false
+          customCss:
+            button:
+              class: ''
+              style: ''
+            container:
+              class: ''
+              style: ''
+          horizontalAlignment: center
+          recomputeIds: []
+          verticalAlignment: center
+    k-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 4
+        id: b
+        data:
+          id: b
           type: textcomponent
           actions: []
           componentInput:
             type: evalv2
             connections:
               - id: result
-                componentId: bg_1
+                componentId: bg_0
             eval: 'Hello ${ctx.username}'
-            expr: bg_1.result.email
+            expr: bg_0?.result?.name ?? 'tên sự kiện'
             fieldType: template
           configuration:
             copyButton:
@@ -1275,7 +1960,7 @@ value:
               value: false
             style:
               type: static
-              value: Body
+              value: Subtitle
             tooltip:
               type: static
               value: ''
@@ -1287,7 +1972,47 @@ value:
               class: ''
               style: ''
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 10
+          w: 12
+          x: 0
+          'y': 1
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 4
+          w: 3
+          x: 0
+          'y': 0
+        id: d
+        data:
+          id: d
+          type: imagecomponent
+          actions: []
+          configuration:
+            altText:
+              type: static
+              value: ''
+            imageFit:
+              type: static
+              value: cover
+            source:
+              type: evalv2
+              value: /logo.svg
+              connections:
+                - id: result
+                  componentId: bg_0
+              expr: bg_0.result.image
+            sourceKind:
+              type: static
+              value: url
+          customCss:
+            image:
+              class: ''
+              style: ''
     l-0:
       - '12':
           fixed: false
@@ -1311,7 +2036,7 @@ value:
           componentInput:
             type: templatev2
             connections: []
-            eval: Yêu cầu về tình nguyện viên
+            eval: Yêu cầu
             fieldType: template
           configuration:
             copyButton:
@@ -1342,43 +2067,6 @@ value:
           w: 12
           x: 0
           'y': 1
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 3
-          x: 0
-          'y': 1
-        id: 'n'
-        data:
-          id: 'n'
-          type: horizontaldividercomponent
-          actions: []
-          configuration:
-            color:
-              type: static
-              value: '#f8f2f2'
-            size:
-              type: static
-              value: 2
-          customCss:
-            container:
-              class: ''
-              style: ''
-            divider:
-              class: ''
-              style: ''
-              tooltip: >-
-                `background-color` and `height` are handled by the component
-                configuration
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 12
-          x: 0
-          'y': 2
         '3':
           fixed: false
           fullHeight: false
@@ -1502,7 +2190,7 @@ value:
               selected: none
             size:
               type: static
-              value: md
+              value: sm
             triggerOnAppLoad:
               type: static
               value: false
@@ -1522,7 +2210,7 @@ value:
           h: 1
           w: 12
           x: 0
-          'y': 3
+          'y': 2
         '3':
           fixed: false
           fullHeight: false
@@ -1572,7 +2260,7 @@ value:
               value: false
             label:
               type: static
-              value: Đã được tập huấn các sự kiện cứu trợ
+              value: Đã được tập huấn cứu trợ
             onError:
               type: oneOf
               configuration:
@@ -1646,7 +2334,7 @@ value:
               selected: none
             size:
               type: static
-              value: md
+              value: sm
             triggerOnAppLoad:
               type: static
               value: false
@@ -1666,7 +2354,7 @@ value:
           h: 1
           w: 12
           x: 0
-          'y': 4
+          'y': 3
         '3':
           fixed: false
           fullHeight: false
@@ -1790,7 +2478,7 @@ value:
               selected: none
             size:
               type: static
-              value: md
+              value: sm
             triggerOnAppLoad:
               type: static
               value: false
@@ -1810,7 +2498,7 @@ value:
           h: 1
           w: 12
           x: 0
-          'y': 5
+          'y': 4
         '3':
           fixed: false
           fullHeight: false
@@ -1860,7 +2548,7 @@ value:
               value: false
             label:
               type: static
-              value: Có tình trạng sức khỏe ổn định
+              value: sức khỏe ổn định
             onError:
               type: oneOf
               configuration:
@@ -1934,7 +2622,7 @@ value:
               selected: none
             size:
               type: static
-              value: md
+              value: sm
             triggerOnAppLoad:
               type: static
               value: false
@@ -1953,7 +2641,7 @@ value:
           fixed: false
           fullHeight: false
           h: 1
-          w: 2
+          w: 3
           x: 0
           'y': 0
         '3':
@@ -1999,175 +2687,9 @@ value:
           fixed: false
           fullHeight: false
           h: 1
-          w: 2
-          x: 5
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 2
-          'y': 0
-        id: w
-        data:
-          id: w
-          type: textcomponent
-          actions: []
-          componentInput:
-            type: templatev2
-            connections: []
-            eval: 'Thời gian kết thúc :'
-            fieldType: template
-          configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: false
-            style:
-              type: static
-              value: Subtitle
-            tooltip:
-              type: static
-              value: ''
-          customCss:
-            container:
-              class: ''
-              style: ''
-            text:
-              class: ''
-              style: ''
-          horizontalAlignment: left
-          verticalAlignment: top
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 2
-          x: 9
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 1
-          'y': 1
-        id: 'y'
-        data:
-          id: 'y'
-          type: textcomponent
-          actions: []
-          componentInput:
-            type: evalv2
-            autoRefresh: true
-            connections:
-              - id: result
-                componentId: bg_2
-            eval: 'Số lượng: 20/50'
-            expr: bg_2.result.amount
-            fields: {}
-            fieldType: template
-            hideRefreshButton: false
-            recomputeOnInputChanged: true
-            runnable:
-              type: runnableByName
-              name: Eval of y
-              inlineScript:
-                content: '!inline eval_of_y.inline_script.frontend.js'
-                language: frontend
-                path: f/page/eventDetail/Eval_of_y
-                refreshOn:
-                  - id: bg_0
-                    key: result
-                suggestedRefreshOn: []
-          configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: false
-            style:
-              type: static
-              value: Body
-            tooltip:
-              type: static
-              value: ''
-          customCss:
-            container:
-              class: ''
-              style: ''
-            text:
-              class: ''
-              style: ''
-          horizontalAlignment: center
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 11
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 8
-          'y': 0
-        id: z
-        data:
-          id: z
-          type: modalcomponent
-          actions: []
-          configuration:
-            buttonColor:
-              type: static
-              value: blue
-            buttonDisabled:
-              type: static
-              value: false
-            buttonFillContainer:
-              type: static
-              value: true
-            buttonLabel:
-              type: static
-              value: Chi tiết
-            buttonSize:
-              type: static
-              value: xs
-            hideButtonOnView:
-              type: static
-              value: false
-            modalTitle:
-              type: static
-              value: Modal title
-          customCss:
-            button:
-              class: ''
-              style: ''
-            buttonContainer:
-              class: ''
-              style: ''
-            popup:
-              class: ''
-              style: ''
-          horizontalAlignment: center
-          numberOfSubgrids: 1
-          onCloseRecomputeIds: []
-          onOpenRecomputeIds: []
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
           w: 5
-          x: 0
-          'y': 1
+          x: 3
+          'y': 0
         '3':
           fixed: false
           fullHeight: false
@@ -2221,10 +2743,238 @@ value:
           verticalAlignment: top
       - '12':
           fixed: false
+          fullHeight: false
+          h: 2
+          w: 2
+          x: 8
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 1
+          x: 4
+          'y': 1
+        id: al
+        data:
+          id: al
+          type: htmlcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections:
+              - id: result
+                componentId: bg_2
+            eval: |
+              <span class='text-lg font-bold'>
+              Số lượng: 
+              </span>
+              <span>
+              ${bg_2?.result?.amount ?? '../..' }
+              </span>
+            expr: ''
+            fieldType: template
+          configuration: {}
+          customCss:
+            container:
+              class: ''
+              style: ''
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 10
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 3
+          'y': 1
+        id: ad
+        data:
+          id: ad
+          type: buttoncomponent
+          actions: []
+          componentInput:
+            type: runnable
+            fields: {}
+            fieldType: any
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: ellipsis-vertical
+            color:
+              type: static
+              value: light
+            confirmationModal:
+              type: oneOf
+              configuration:
+                confirmationModal:
+                  description:
+                    type: static
+                    value: Are you sure?
+                  confirmationText:
+                    type: static
+                    value: Confirm
+                  title:
+                    type: static
+                    value: Title
+                none: {}
+              selected: none
+            disabled:
+              type: static
+              value: false
+            fillContainer:
+              type: static
+              value: false
+            label:
+              type: static
+              value: ''
+            onError:
+              type: oneOf
+              configuration:
+                close:
+                  id:
+                    type: static
+                    value: ''
+                errorOverlay: {}
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: static
+                    value: ''
+                open:
+                  id:
+                    type: static
+                    value: ''
+                sendErrorToast:
+                  appendError:
+                    type: static
+                    value: true
+                  message:
+                    type: static
+                    value: An error occured
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: errorOverlay
+            onSuccess:
+              type: oneOf
+              configuration:
+                clearFiles:
+                  id:
+                    type: static
+                    value: ''
+                close:
+                  id:
+                    type: static
+                    value: ''
+                closeModal:
+                  modalId:
+                    type: static
+                    value: ''
+                gotoUrl:
+                  newTab:
+                    type: static
+                    value: true
+                  url:
+                    type: static
+                    value: ''
+                none: {}
+                open:
+                  id:
+                    type: static
+                    value: z
+                openModal:
+                  modalId:
+                    type: static
+                    value: ''
+                sendToast:
+                  message:
+                    type: static
+                    value: ''
+                setTab:
+                  setTab:
+                    type: static
+                    value: []
+              selected: open
+            size:
+              type: static
+              value: xs
+            triggerOnAppLoad:
+              type: static
+              value: false
+          customCss:
+            button:
+              class: ''
+              style: ''
+            container:
+              class: ''
+              style: ''
+          horizontalAlignment: center
+          recomputeIds: []
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 0
+          'y': 1
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 2
+          'y': 0
+        id: w
+        data:
+          id: w
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections: []
+            eval: 'Thời gian kết thúc :'
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Subtitle
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
           fullHeight: true
           h: 1
           w: 5
-          x: 5
+          x: 3
           'y': 1
         '3':
           fixed: false
@@ -2281,9 +3031,103 @@ value:
           fixed: false
           fullHeight: false
           h: 1
-          w: 4
+          w: 1
+          x: 11
+          'y': 1
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 8
+          'y': 0
+        id: z
+        data:
+          id: z
+          type: modalcomponent
+          actions: []
+          configuration:
+            buttonColor:
+              type: static
+              value: light
+            buttonDisabled:
+              type: static
+              value: false
+            buttonFillContainer:
+              type: static
+              value: false
+            buttonLabel:
+              type: static
+              value: ''
+            buttonSize:
+              type: static
+              value: xs
+            hideButtonOnView:
+              type: static
+              value: true
+            modalTitle:
+              type: static
+              value: Thành viên
+          customCss:
+            button:
+              class: ''
+              style: ''
+            buttonContainer:
+              class: ''
+              style: ''
+            popup:
+              class: ''
+              style: ''
+          horizontalAlignment: center
+          numberOfSubgrids: 1
+          onCloseRecomputeIds: []
+          onOpenRecomputeIds:
+            - bg_3
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 12
           x: 0
           'y': 2
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 4
+          'y': 0
+        id: 'n'
+        data:
+          id: 'n'
+          type: horizontaldividercomponent
+          actions: []
+          configuration:
+            color:
+              type: static
+              value: '#00000060'
+            size:
+              type: static
+              value: 1
+          customCss:
+            container:
+              class: ''
+              style: ''
+            divider:
+              class: ''
+              style: ''
+              tooltip: >-
+                `background-color` and `height` are handled by the component
+                configuration
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 4
+          x: 0
+          'y': 3
         '3':
           fixed: false
           fullHeight: false
@@ -2326,10 +3170,10 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 1
+          h: 5
           w: 12
           x: 0
-          'y': 3
+          'y': 4
         '3':
           fixed: false
           fullHeight: false
@@ -2381,529 +3225,11 @@ value:
               style: ''
           horizontalAlignment: left
           verticalAlignment: top
-    topbar-0:
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 12
-          x: 0
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 6
-          x: 0
-          'y': 0
-        id: AppTitle
-        data:
-          id: AppTitle
-          type: textcomponent
-          actions: []
-          componentInput:
-            type: templatev2
-            connections: []
-            eval: OPEN HEART
-            fieldType: template
-          configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: true
-              fieldType: boolean
-            style:
-              type: static
-              value: Body
-            tooltip:
-              type: static
-              value: ''
-              connections: []
-              expr: ''
-              fieldType: text
-          customCss:
-            container:
-              class: ''
-              style: ''
-            text:
-              class: text-xl font-semibold whitespace-nowrap truncate
-              style: ''
-          horizontalAlignment: left
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 3
-          x: 0
-          'y': 1
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 4
-          w: 3
-          x: 0
-          'y': 1
-        id: userLogo
-        data:
-          id: userLogo
-          type: imagecomponent
-          actions: []
-          configuration:
-            altText:
-              type: static
-              value: ''
-            imageFit:
-              type: static
-              value: contain
-            source:
-              type: static
-              value: /logo.svg
-            sourceKind:
-              type: static
-              value: url
-          customCss:
-            image:
-              class: ''
-              style: ''
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 9
-          x: 3
-          'y': 1
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 6
-          'y': 0
-        id: userMenu
-        data:
-          id: userMenu
-          type: menucomponent
-          actions: []
-          configuration:
-            afterIcon:
-              type: static
-              value: ''
-            beforeIcon:
-              type: static
-              value: ''
-            color:
-              type: static
-              value: none
-            fillContainer:
-              type: static
-              value: false
-            label:
-              type: static
-              value: your name
-            size:
-              type: static
-              value: xs
-          customCss:
-            button:
-              class: max-w-xs
-              style: ''
-          horizontalAlignment: center
-          menuItems:
-            - id: userMenu_a
-              type: buttoncomponent
-              actions: []
-              componentInput:
-                type: runnable
-                autoRefresh: false
-                fields: {}
-                fieldType: any
-                recomputeOnInputChanged: false
-              configuration:
-                afterIcon:
-                  type: static
-                  value: ''
-                beforeIcon:
-                  type: static
-                  value: ''
-                color:
-                  type: static
-                  value: light
-                confirmationModal:
-                  type: oneOf
-                  configuration:
-                    confirmationModal:
-                      description:
-                        type: static
-                        value: Are you sure?
-                      confirmationText:
-                        type: static
-                        value: Confirm
-                      title:
-                        type: static
-                        value: Title
-                    none: {}
-                  selected: none
-                disabled:
-                  type: static
-                  value: false
-                fillContainer:
-                  type: static
-                  value: false
-                label:
-                  type: static
-                  value: quản lý tài khoản
-                onError:
-                  type: oneOf
-                  configuration:
-                    close:
-                      id:
-                        type: static
-                        value: ''
-                    errorOverlay: {}
-                    gotoUrl:
-                      newTab:
-                        type: static
-                        value: true
-                      url:
-                        type: static
-                        value: ''
-                    open:
-                      id:
-                        type: static
-                        value: ''
-                    sendErrorToast:
-                      appendError:
-                        type: static
-                        value: true
-                      message:
-                        type: static
-                        value: An error occured
-                    setTab:
-                      setTab:
-                        type: static
-                        value: []
-                  selected: errorOverlay
-                onSuccess:
-                  type: oneOf
-                  configuration:
-                    clearFiles:
-                      id:
-                        type: static
-                        value: ''
-                    close:
-                      id:
-                        type: static
-                        value: ''
-                    closeModal:
-                      modalId:
-                        type: static
-                        value: ''
-                    gotoUrl:
-                      newTab:
-                        type: static
-                        value: true
-                      url:
-                        type: static
-                        value: apps/get/f/login_page/login_page
-                    none: {}
-                    open:
-                      id:
-                        type: static
-                        value: ''
-                    openModal:
-                      modalId:
-                        type: static
-                        value: ''
-                    sendToast:
-                      message:
-                        type: static
-                        value: ''
-                    setTab:
-                      setTab:
-                        type: static
-                        value: []
-                  selected: gotoUrl
-                size:
-                  type: static
-                  value: xs
-                triggerOnAppLoad:
-                  type: static
-                  value: false
-              customCss:
-                button:
-                  class: ''
-                  style: ''
-                container:
-                  class: ''
-                  style: ''
-              horizontalAlignment: center
-              recomputeIds: []
-              verticalAlignment: center
-            - id: userMenu_b
-              type: buttoncomponent
-              actions: []
-              componentInput:
-                type: runnable
-                fields: {}
-                fieldType: any
-              configuration:
-                afterIcon:
-                  type: static
-                  value: ''
-                beforeIcon:
-                  type: static
-                  value: ''
-                color:
-                  type: static
-                  value: light
-                confirmationModal:
-                  type: oneOf
-                  configuration:
-                    confirmationModal:
-                      description:
-                        type: static
-                        value: Are you sure?
-                      confirmationText:
-                        type: static
-                        value: Confirm
-                      title:
-                        type: static
-                        value: Title
-                    none: {}
-                  selected: none
-                disabled:
-                  type: static
-                  value: false
-                fillContainer:
-                  type: static
-                  value: false
-                label:
-                  type: static
-                  value: chuyển đến trang admin
-                onError:
-                  type: oneOf
-                  configuration:
-                    close:
-                      id:
-                        type: static
-                        value: ''
-                    errorOverlay: {}
-                    gotoUrl:
-                      newTab:
-                        type: static
-                        value: true
-                      url:
-                        type: static
-                        value: ''
-                    open:
-                      id:
-                        type: static
-                        value: ''
-                    sendErrorToast:
-                      appendError:
-                        type: static
-                        value: true
-                      message:
-                        type: static
-                        value: An error occured
-                    setTab:
-                      setTab:
-                        type: static
-                        value: []
-                  selected: errorOverlay
-                onSuccess:
-                  type: oneOf
-                  configuration:
-                    clearFiles:
-                      id:
-                        type: static
-                        value: ''
-                    close:
-                      id:
-                        type: static
-                        value: ''
-                    closeModal:
-                      modalId:
-                        type: static
-                        value: ''
-                    gotoUrl:
-                      newTab:
-                        type: static
-                        value: true
-                      url:
-                        type: static
-                        value: ''
-                    none: {}
-                    open:
-                      id:
-                        type: static
-                        value: ''
-                    openModal:
-                      modalId:
-                        type: static
-                        value: ''
-                    sendToast:
-                      message:
-                        type: static
-                        value: ''
-                    setTab:
-                      setTab:
-                        type: static
-                        value: []
-                  selected: none
-                size:
-                  type: static
-                  value: xs
-                triggerOnAppLoad:
-                  type: static
-                  value: false
-              customCss:
-                button:
-                  class: ''
-                  style: ''
-                container:
-                  class: ''
-                  style: ''
-              horizontalAlignment: center
-              recomputeIds: []
-              verticalAlignment: center
-            - id: userMenu_c
-              type: buttoncomponent
-              actions: []
-              componentInput:
-                type: runnable
-                fields: {}
-                fieldType: any
-              configuration:
-                afterIcon:
-                  type: static
-                  value: ''
-                beforeIcon:
-                  type: static
-                  value: ''
-                color:
-                  type: static
-                  value: red
-                confirmationModal:
-                  type: oneOf
-                  configuration:
-                    confirmationModal:
-                      description:
-                        type: static
-                        value: Are you sure?
-                      confirmationText:
-                        type: static
-                        value: Confirm
-                      title:
-                        type: static
-                        value: Title
-                    none: {}
-                  selected: none
-                disabled:
-                  type: static
-                  value: false
-                fillContainer:
-                  type: static
-                  value: false
-                label:
-                  type: static
-                  value: Đăng xuất
-                onError:
-                  type: oneOf
-                  configuration:
-                    close:
-                      id:
-                        type: static
-                        value: ''
-                    errorOverlay: {}
-                    gotoUrl:
-                      newTab:
-                        type: static
-                        value: true
-                      url:
-                        type: static
-                        value: ''
-                    open:
-                      id:
-                        type: static
-                        value: ''
-                    sendErrorToast:
-                      appendError:
-                        type: static
-                        value: true
-                      message:
-                        type: static
-                        value: An error occured
-                    setTab:
-                      setTab:
-                        type: static
-                        value: []
-                  selected: errorOverlay
-                onSuccess:
-                  type: oneOf
-                  configuration:
-                    clearFiles:
-                      id:
-                        type: static
-                        value: ''
-                    close:
-                      id:
-                        type: static
-                        value: ''
-                    closeModal:
-                      modalId:
-                        type: static
-                        value: ''
-                    gotoUrl:
-                      newTab:
-                        type: static
-                        value: true
-                      url:
-                        type: static
-                        value: /login
-                    none: {}
-                    open:
-                      id:
-                        type: static
-                        value: ''
-                    openModal:
-                      modalId:
-                        type: static
-                        value: ''
-                    sendToast:
-                      message:
-                        type: static
-                        value: ''
-                    setTab:
-                      setTab:
-                        type: static
-                        value: []
-                  selected: gotoUrl
-                size:
-                  type: static
-                  value: xs
-                triggerOnAppLoad:
-                  type: static
-                  value: false
-              customCss:
-                button:
-                  class: ''
-                  style: ''
-                container:
-                  class: ''
-                  style: ''
-              horizontalAlignment: center
-              recomputeIds: []
-              verticalAlignment: center
-          verticalAlignment: center
     z-0:
       - '12':
           fixed: false
           fullHeight: false
-          h: 8
+          h: 4
           w: 12
           x: 0
           'y': 0
@@ -2921,7 +3247,9 @@ value:
           actions: []
           componentInput:
             type: evalv2
-            value: []
+            value:
+              - {}
+              - {}
             connections:
               - id: result
                 componentId: bg_3
@@ -2946,7 +3274,7 @@ value:
                   pageCount:
                     type: static
                     value: -1
-              selected: manual
+              selected: auto
             width:
               type: oneOf
               configuration:
@@ -2972,20 +3300,28 @@ policy:
     'bg_0:rawscript/2c175ba66f722a2a0e11651a890bce9085d64d306fe6a7cc8afa5c003a8ff094':
       allow_user_resources: []
       one_of_inputs: {}
-      static_inputs:
-        id_evt: '1'
+      static_inputs: {}
     'bg_1:rawscript/e0117523facb8d3fbabfd2c7a9709f8f88de2e4d9984a4ae4d99f851edb6f399':
       allow_user_resources: []
       one_of_inputs: {}
-      static_inputs:
-        id_evt: '1'
-    'bg_2:rawscript/b48a350d28238ffe39a58f3a999046b947b1fa9caa848616151b31b2c7fd53c1':
+      static_inputs: {}
+    'bg_2:rawscript/5a97d722cf71b391845f1bc64a9a6724d3e887921c126e84de3014871b4253ca':
       allow_user_resources: []
       one_of_inputs: {}
-      static_inputs:
-        x: '1'
+      static_inputs: {}
     'bg_3:rawscript/35812b6c852e95cdadafeab4bdb8a728116cd7a8bab658861aa34c0289b2ab50':
       allow_user_resources: []
       one_of_inputs: {}
-      static_inputs:
-        x: '1'
+      static_inputs: {}
+    'bg_4:rawscript/f37c131839da78735a9a12a9eb5ec1699677050c996760ed186257ce043197aa':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_5:rawscript/98c0b88043860d998f00362f6634306b09bee776e0a421eb7803fc4e1c50c6ca':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_6:rawscript/b85081bfcddf0efd90880304c8dc8105402d1b28f7305ada52484bce7814d7d2':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
