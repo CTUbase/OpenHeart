@@ -1,6 +1,4 @@
 # import wmill
-
-
 from supabase import create_client, Client
 import wmill
 from datetime import datetime
