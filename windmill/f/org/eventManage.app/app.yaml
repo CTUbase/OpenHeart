@@ -1,0 +1,928 @@
+summary: ''
+value:
+  css:
+    htmlcomponent:
+      container:
+        class: ''
+        style: ''
+    imagecomponent:
+      image:
+        class: ''
+        style: ''
+    menucomponent:
+      button:
+        class: ''
+        style: ''
+    textcomponent:
+      container:
+        class: ''
+        style: ''
+      text:
+        class: ''
+        style: ''
+  fullscreen: true
+  grid:
+    - '12':
+        fixed: true
+        fullHeight: false
+        h: 3
+        w: 2
+        x: 0
+        'y': 0
+      '3':
+        fixed: true
+        fullHeight: false
+        h: 2
+        w: 6
+        x: 0
+        'y': 1
+      id: topbar
+      data:
+        id: topbar
+        type: containercomponent
+        actions: []
+        configuration: {}
+        customCss:
+          container:
+            class: '!p-0'
+            style: ''
+        numberOfSubgrids: 1
+    - '12':
+        fixed: false
+        fullHeight: false
+        h: 29
+        w: 10
+        x: 2
+        'y': 0
+      '3':
+        fixed: false
+        fullHeight: false
+        h: 8
+        w: 2
+        x: 0
+        'y': 3
+      id: a
+      data:
+        id: a
+        type: containercomponent
+        actions: []
+        configuration: {}
+        customCss:
+          container:
+            class: ''
+            style: ''
+        numberOfSubgrids: 1
+    - '12':
+        fixed: false
+        fullHeight: false
+        h: 25
+        w: 2
+        x: 0
+        'y': 3
+      '3':
+        fixed: false
+        fullHeight: false
+        h: 1
+        w: 12
+        x: 0
+        'y': 0
+      id: navbar
+      data:
+        id: navbar
+        type: navbarcomponent
+        actions: []
+        configuration:
+          borderColor:
+            type: static
+            value: '#555'
+          logo:
+            type: oneOf
+            configuration:
+              'no': {}
+              'yes':
+                altText:
+                  type: static
+                  value: ''
+                source:
+                  type: static
+                  value: /logo.svg
+                sourceKind:
+                  type: static
+                  value: url
+            selected: 'no'
+          orientation:
+            type: static
+            value: vertical
+          title:
+            type: static
+            value: ''
+        customCss:
+          container:
+            class: ''
+            style: ''
+          image:
+            class: ''
+            style: ''
+        horizontalAlignment: center
+        navbarItems:
+          - disabled:
+              type: static
+              value: false
+              fieldType: boolean
+            hidden:
+              type: static
+              value: false
+              fieldType: boolean
+            icon: home
+            label:
+              type: static
+              value: Trang chủ
+              fieldType: text
+            path:
+              type: oneOf
+              configuration:
+                app:
+                  path:
+                    type: static
+                    value: ''
+                    allowTypeChange: false
+                    fieldType: app-path
+                    tooltip: >-
+                      The app to navigate to when the item is clicked. Will be
+                      opened in the same tab. If you want to navigate to an
+                      external URL, use the "Href" option.
+                  queryParamsOrHash:
+                    type: evalv2
+                    value: '?user='
+                    connections:
+                      - id: result
+                        componentId: bg_0
+                    expr: '''?user=''+bg_0.result.id'
+                    fieldType: text
+                    placeholder: '?key=value#hash'
+                    tooltip: >-
+                      Query parameters or hash to append to the URL. For
+                      example, `?key=value` or `#hash`.
+                href:
+                  href:
+                    type: evalv2
+                    value: bg_1.result +'org/home'+
+                    connections:
+                      - id: result
+                        componentId: bg_0
+                      - id: result
+                        componentId: bg_1
+                    expr: bg_1.result +"org/home?"+"user="+bg_0.result.id
+                    fieldType: text
+                    tooltip: >-
+                      The URL to navigate to when the item is clicked. Will be
+                      opened in a new tab. If you want to navigate to an other
+                      app, use the 'App' option.
+              labels:
+                app: Navigate to an app
+                href: Navigate to an external URL
+              selected: href
+          - caption: tính năng đang phát triển
+            disabled:
+              type: static
+              value: true
+              fieldType: boolean
+            hidden:
+              type: static
+              value: false
+              fieldType: boolean
+            icon: bell
+            label:
+              type: static
+              value: thông báo
+              fieldType: text
+            path:
+              type: oneOf
+              configuration:
+                app:
+                  path:
+                    type: static
+                    value: ''
+                    allowTypeChange: false
+                    fieldType: app-path
+                    tooltip: >-
+                      The app to navigate to when the item is clicked. Will be
+                      opened in the same tab. If you want to navigate to an
+                      external URL, use the "Href" option.
+                  queryParamsOrHash:
+                    type: static
+                    fieldType: text
+                    placeholder: '?key=value#hash'
+                    tooltip: >-
+                      Query parameters or hash to append to the URL. For
+                      example, `?key=value` or `#hash`.
+                href:
+                  href:
+                    type: evalv2
+                    value: bg_1.result +'page/notFound404'
+                    connections:
+                      - id: result
+                        componentId: bg_1
+                    expr: bg_1.result +'page/notFound404'
+                    fieldType: text
+                    tooltip: >-
+                      The URL to navigate to when the item is clicked. Will be
+                      opened in a new tab. If you want to navigate to an other
+                      app, use the 'App' option.
+              labels:
+                app: Navigate to an app
+                href: Navigate to an external URL
+              selected: href
+          - caption: ''
+            disabled:
+              type: static
+              value: false
+              fieldType: boolean
+            hidden:
+              type: static
+              value: false
+              fieldType: boolean
+            icon: app-window-mac
+            label:
+              type: static
+              value: Quản lý sự kiện
+              fieldType: text
+            path:
+              type: oneOf
+              configuration:
+                app:
+                  path:
+                    type: static
+                    value: u/page/notFound404
+                    allowTypeChange: false
+                    fieldType: app-path
+                    tooltip: >-
+                      The app to navigate to when the item is clicked. Will be
+                      opened in the same tab. If you want to navigate to an
+                      external URL, use the "Href" option.
+                  queryParamsOrHash:
+                    type: static
+                    fieldType: text
+                    placeholder: '?key=value#hash'
+                    tooltip: >-
+                      Query parameters or hash to append to the URL. For
+                      example, `?key=value` or `#hash`.
+                href:
+                  href:
+                    type: evalv2
+                    connections:
+                      - id: result
+                        componentId: bg_1
+                    expr: bg_1.result +'org/manageEvent'
+                    fieldType: text
+                    tooltip: >-
+                      The URL to navigate to when the item is clicked. Will be
+                      opened in a new tab. If you want to navigate to an other
+                      app, use the 'App' option.
+              labels:
+                app: Navigate to an app
+                href: Navigate to an external URL
+              selected: href
+          - caption: tính năng đang phát triển
+            disabled:
+              type: static
+              value: true
+              fieldType: boolean
+            hidden:
+              type: static
+              value: false
+              fieldType: boolean
+            icon: message-circle-more
+            label:
+              type: static
+              value: Tin nhắn
+              fieldType: text
+            path:
+              type: oneOf
+              configuration:
+                app:
+                  path:
+                    type: static
+                    value: u/page/notFound404
+                    allowTypeChange: false
+                    fieldType: app-path
+                    tooltip: >-
+                      The app to navigate to when the item is clicked. Will be
+                      opened in the same tab. If you want to navigate to an
+                      external URL, use the "Href" option.
+                  queryParamsOrHash:
+                    type: static
+                    fieldType: text
+                    placeholder: '?key=value#hash'
+                    tooltip: >-
+                      Query parameters or hash to append to the URL. For
+                      example, `?key=value` or `#hash`.
+                href:
+                  href:
+                    type: static
+                    value: bg_1.result +'page/notFound404?'+'user='+bg_0.result.id
+                    fieldType: text
+                    tooltip: >-
+                      The URL to navigate to when the item is clicked. Will be
+                      opened in a new tab. If you want to navigate to an other
+                      app, use the 'App' option.
+              labels:
+                app: Navigate to an app
+                href: Navigate to an external URL
+              selected: href
+          - caption: tính năng đang phát triển
+            disabled:
+              type: static
+              value: true
+              fieldType: boolean
+            hidden:
+              type: static
+              value: false
+              fieldType: boolean
+            icon: activity
+            label:
+              type: static
+              value: thống kê
+              fieldType: text
+            path:
+              type: oneOf
+              configuration:
+                app:
+                  path:
+                    type: static
+                    value: u/page/notFound404
+                    allowTypeChange: false
+                    fieldType: app-path
+                    tooltip: >-
+                      The app to navigate to when the item is clicked. Will be
+                      opened in the same tab. If you want to navigate to an
+                      external URL, use the "Href" option.
+                  queryParamsOrHash:
+                    type: static
+                    fieldType: text
+                    placeholder: '?key=value#hash'
+                    tooltip: >-
+                      Query parameters or hash to append to the URL. For
+                      example, `?key=value` or `#hash`.
+                href:
+                  href:
+                    type: static
+                    value: bg_1.result +'page/notFound404?'+'user='+bg_0.result.id
+                    fieldType: text
+                    tooltip: >-
+                      The URL to navigate to when the item is clicked. Will be
+                      opened in a new tab. If you want to navigate to an other
+                      app, use the 'App' option.
+              labels:
+                app: Navigate to an app
+                href: Navigate to an external URL
+              selected: href
+        verticalAlignment: center
+  hiddenInlineScripts:
+    - type: runnableByName
+      name: getURL_Params
+      autoRefresh: true
+      fields: {}
+      inlineScript:
+        content: '!inline geturl_params.inline_script.frontend.js'
+        language: frontend
+        path: f/org/eventManage/getURL_Params
+        suggestedRefreshOn: []
+      recomputeIds:
+        - bg_2
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: get_wmill_path
+      autoRefresh: true
+      fields: {}
+      inlineScript:
+        content: '!inline get_wmill_path.inline_script.py'
+        lock: '!inline get_wmill_path.inline_script.lock'
+        language: python3
+        path: f/org/eventManage/get_wmill_path
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties: {}
+          required: []
+      recomputeIds: []
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: get_userParam
+      autoRefresh: false
+      fields:
+        user_id:
+          type: evalv2
+          value: null
+          connections:
+            - id: result
+              componentId: bg_0
+          expr: bg_0.result.id
+          fieldType: string
+      inlineScript:
+        content: '!inline get_userparam.inline_script.py'
+        lock: '!inline get_userparam.inline_script.lock'
+        language: python3
+        path: f/org/eventManage/get_userParam
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties:
+            user_id:
+              type: string
+              description: ''
+              default: null
+              originalType: string
+          required:
+            - user_id
+      recomputeIds: []
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: get_data_event
+      autoRefresh: true
+      fields:
+        x:
+          type: static
+          value: '1'
+          fieldType: string
+      inlineScript:
+        content: '!inline get_data_event.inline_script.py'
+        lock: '!inline get_data_event.inline_script.lock'
+        language: python3
+        path: f/org/eventManage/get_data_event
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties:
+            x:
+              type: string
+              description: ''
+              default: null
+              originalType: string
+          required:
+            - x
+      recomputeIds: []
+      recomputeOnInputChanged: true
+    - type: runnableByName
+      name: Background Runnable 0
+      autoRefresh: true
+      fields:
+        x:
+          type: static
+          value: '1'
+          fieldType: string
+      inlineScript:
+        content: '!inline background_runnable_0.inline_script.py'
+        lock: '!inline background_runnable_0.inline_script.lock'
+        language: python3
+        path: f/org/eventManage/Background_Runnable_0
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties:
+            x:
+              type: string
+              description: ''
+              default: null
+              originalType: string
+          required:
+            - x
+      recomputeIds: []
+      recomputeOnInputChanged: true
+  hideLegacyTopBar: true
+  mobileViewOnSmallerScreens: false
+  norefreshbar: false
+  subgrids:
+    a-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 13
+          w: 12
+          x: 0
+          'y': 15
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 8
+          w: 3
+          x: 0
+          'y': 3
+        id: c
+        data:
+          id: c
+          type: listcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            value: []
+            connections:
+              - id: result
+                componentId: bg_3
+            expr: bg_3.result
+            fieldType: array
+            subFieldType: object
+          configuration:
+            displayBorders:
+              type: static
+              value: true
+            heightPx:
+              type: static
+              value: null
+            pagination:
+              type: oneOf
+              configuration:
+                auto:
+                  pageSize:
+                    type: static
+                    value: 3
+                manual:
+                  pageCount:
+                    type: static
+                    value: 3
+                    connections: []
+                    expr: '2'
+              selected: auto
+            width:
+              type: oneOf
+              configuration:
+                card:
+                  minWidthPx:
+                    type: static
+                    value: 300
+                row: {}
+              selected: row
+          customCss:
+            container:
+              class: ''
+              style: ''
+          numberOfSubgrids: 1
+    c-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 4
+          w: 2
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 4
+          w: 3
+          x: 0
+          'y': 0
+        id: d
+        data:
+          id: d
+          type: imagecomponent
+          actions: []
+          configuration:
+            altText:
+              type: static
+              value: ''
+            imageFit:
+              type: static
+              value: contain
+            source:
+              type: evalv2
+              value: /logo.svg
+              connections:
+                - id: index
+                  componentId: iter
+                - id: result
+                  componentId: bg_3
+              expr: 'bg_3.result[iter.index].image'
+            sourceKind:
+              type: static
+              value: url
+          customCss:
+            image:
+              class: ''
+              style: ''
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 4
+          x: 2
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 2
+          'y': 4
+        id: g
+        data:
+          id: g
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            connections:
+              - id: index
+                componentId: iter
+              - id: result
+                componentId: bg_3
+            eval: 'Hello ${ctx.username}'
+            expr: '"Tên:  " + bg_3.result[iter.index].name'
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 2
+          'y': 1
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 4
+        id: e
+        data:
+          id: e
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            connections:
+              - id: index
+                componentId: iter
+              - id: result
+                componentId: bg_4
+            eval: 'Hello ${ctx.username}'
+            expr: 'bg_4.result[iter.index].event_time'
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 5
+          x: 2
+          'y': 2
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 1
+          'y': 4
+        id: f
+        data:
+          id: f
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            autoRefresh: true
+            connections:
+              - id: index
+                componentId: iter
+              - id: result
+                componentId: bg_3
+            eval: 'Hello ${ctx.username}'
+            expr: '"Địa chỉ cụ thể:  " + bg_3.result[iter.index].location'
+            fields: {}
+            fieldType: template
+            hideRefreshButton: false
+            recomputeOnInputChanged: true
+            runnable:
+              type: runnableByName
+              name: Eval of f
+              inlineScript:
+                content: '!inline eval_of_f.inline_script.frontend.js'
+                language: frontend
+                path: f/org/eventManage/Eval_of_f
+                refreshOn:
+                  - id: iter
+                    key: index
+                  - id: bg_3
+                    key: result
+                suggestedRefreshOn: []
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+    topbar-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 12
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 0
+          'y': 0
+        id: AppTitle
+        data:
+          id: AppTitle
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections: []
+            eval: OPEN HEART
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: true
+              fieldType: boolean
+            style:
+              type: static
+              value: Title
+            tooltip:
+              type: static
+              value: ''
+              connections: []
+              expr: ''
+              fieldType: text
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: text-xl font-semibold whitespace-nowrap truncate
+              style: ''
+          horizontalAlignment: center
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 0
+          'y': 1
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 4
+          w: 3
+          x: 0
+          'y': 1
+        id: userLogo
+        data:
+          id: userLogo
+          type: imagecomponent
+          actions: []
+          configuration:
+            altText:
+              type: static
+              value: ''
+            imageFit:
+              type: static
+              value: contain
+            source:
+              type: evalv2
+              value: /logo.svg
+              connections:
+                - id: result
+                  componentId: bg_2
+              expr: 'bg_2?.result[0]?.image ?? ''/logo.svg'''
+            sourceKind:
+              type: static
+              value: url
+          customCss:
+            image:
+              class: border-2 rounded-full
+              style: ''
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 9
+          x: 3
+          'y': 1
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 1
+          x: 0
+          'y': 5
+        id: b
+        data:
+          id: b
+          type: htmlcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections:
+              - id: result
+                componentId: bg_2
+            eval: |-
+
+              <p class="absolute text-sm font-bold">
+              ${bg_2?.result[0]?.name ?? 'tên tổ chức'}
+              </p>
+            fieldType: template
+          configuration: {}
+          customCss:
+            container:
+              class: ''
+              style: ''
+  theme:
+    type: path
+    path: f/app_themes/theme_0
+  unusedInlineScripts: []
+policy:
+  execution_mode: publisher
+  s3_inputs: []
+  triggerables_v2:
+    'bg_0:rawscript/0d0b1dd5a8d61bbb92146ccd3fdd2684d8d1db42b1e2d407ad57ecff26f96e39':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_1:rawscript/32681e8550c73f938b70d19350dc7d4a6d5fa652410fe99e5c64c8acd6639a0d':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_2:rawscript/be02ef4de04ac593e25d65744d2ea85f290f2f3fa834be1c7da7ced601255284':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_3:rawscript/0cd501e9c29fa192a6fea1219aa2c4680f39b92510fd648e582cfbdc4e20214a':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs:
+        x: '1'
+    'bg_4:rawscript/fc1301b04ef9340a2f811992451ac86c5903f478fd36192f9c9e6f68f0b8038d':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs:
+        x: '1'
