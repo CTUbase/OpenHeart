@@ -9,6 +9,10 @@ value:
       image:
         class: ''
         style: ''
+    listcomponent:
+      container:
+        class: ''
+        style: ''
     menucomponent:
       button:
         class: ''
@@ -97,7 +101,7 @@ value:
     - '12':
         fixed: false
         fullHeight: false
-        h: 25
+        h: 22
         w: 10
         x: 2
         'y': 1
@@ -122,7 +126,7 @@ value:
     - '12':
         fixed: false
         fullHeight: false
-        h: 23
+        h: 20
         w: 2
         x: 0
         'y': 3
@@ -551,14 +555,12 @@ value:
         x:
           type: evalv2
           value: null
-          connections:
-            - id: values
-              componentId: ae
-          expr: 'ae.values["Ngày bắt đầu"]'
+          connections: []
+          expr: '1'
           fieldType: string
       inlineScript:
         content: '!inline background_runnable_0.inline_script.py'
-        lock: ''
+        lock: '!inline background_runnable_0.inline_script.lock'
         language: python3
         path: f/org/eventManage/Background_Runnable_0
         schema:
@@ -582,10 +584,35 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 17
+          h: 4
           w: 12
           x: 0
-          'y': 8
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 8
+          w: 2
+          x: 0
+          'y': 19
+        id: x
+        data:
+          id: x
+          type: containercomponent
+          actions: []
+          configuration: {}
+          customCss:
+            container:
+              class: ''
+              style: ''
+          numberOfSubgrids: 1
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 18
+          w: 12
+          x: 0
+          'y': 4
         '3':
           fixed: false
           fullHeight: false
@@ -625,16 +652,12 @@ value:
             - type: static
               value: false
               fieldType: boolean
-            - type: static
-              value: false
-              fieldType: boolean
-          numberOfSubgrids: 4
+          numberOfSubgrids: 3
           onTabChange: []
           tabs:
             - Tất cả
             - Sắp diễn ra
             - Đã qua
-            - Nháp
     eventList-0:
       - '12':
           fixed: false
@@ -1353,7 +1376,7 @@ value:
           fixed: false
           fullHeight: false
           h: 1
-          w: 1
+          w: 2
           x: 0
           'y': 0
         '3':
@@ -1454,7 +1477,7 @@ value:
           h: 1
           w: 2
           x: 10
-          'y': 1
+          'y': 2
         '3':
           fixed: false
           fullHeight: false
@@ -1510,7 +1533,7 @@ value:
           h: 13
           w: 12
           x: 0
-          'y': 2
+          'y': 3
         '3':
           fixed: false
           fullHeight: false
@@ -1565,11 +1588,10 @@ value:
           customCss:
             container:
               class: ''
-              style: ''
+              style: 'border: 2px solid #000000;'
           numberOfSubgrids: 1
     h-1: []
     h-2: []
-    h-3: []
     t-0:
       - '12':
           fixed: false
@@ -2315,6 +2337,191 @@ value:
             container:
               class: ''
               style: ''
+    x-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 3
+          w: 3
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 4
+          w: 3
+          x: 0
+          'y': 0
+        id: 'y'
+        data:
+          id: 'y'
+          type: imagecomponent
+          actions: []
+          configuration:
+            altText:
+              type: static
+              value: ''
+            imageFit:
+              type: static
+              value: contain
+            source:
+              type: evalv2
+              value: /logo.svg
+              connections:
+                - id: result
+                  componentId: bg_2
+              expr: 'bg_2.result[0].image'
+            sourceKind:
+              type: static
+              value: url
+          customCss:
+            image:
+              class: ''
+              style: ''
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 9
+          x: 3
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 4
+        id: z
+        data:
+          id: z
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            connections:
+              - id: result
+                componentId: bg_2
+            eval: 'Hello ${ctx.username}'
+            expr: 'bg_2.result[0].name'
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Subtitle
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 4
+          x: 3
+          'y': 1
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 3
+          'y': 1
+        id: w
+        data:
+          id: w
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            connections:
+              - id: result
+                componentId: bg_5
+            eval: + Tổng sự kiện đã tổ chức
+            expr: '"+ Tổng sự kiện đã tổ chức:  " + bg_5.result'
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 4
+          x: 3
+          'y': 2
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 1
+          'y': 4
+        id: v
+        data:
+          id: v
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections: []
+            eval: + Tổng tình nguyện viên đã tham gia các sự kiện
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: center
   theme:
     type: path
     path: f/app_themes/theme_0
@@ -2343,7 +2550,7 @@ policy:
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_5:rawscript/d190cb3a5ee13e84ef7d5db9f94d153dc70d5d1218072943f603eec642b1935a':
+    'bg_5:rawscript/e13121f67e1509d6beb65bf48c299e18f6765129e12c78795a1baa60cefe488c':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}

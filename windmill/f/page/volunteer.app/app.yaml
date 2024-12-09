@@ -1432,11 +1432,9 @@ value:
           type: textcomponent
           actions: []
           componentInput:
-            type: evalv2
-            connections:
-              - id: summary
-                componentId: ctx
-            eval: ''
+            type: templatev2
+            connections: []
+            eval: Trang tình nguyện
             expr: ctx.summary
             fieldType: template
           configuration:
@@ -2085,19 +2083,19 @@ policy:
   execution_mode: anonymous
   s3_inputs: []
   triggerables_v2:
-    'bg_0:rawscript/6607340839f6ab05ffa0904bf13c971767729d67a658e995482bc5320d7b572b':
+    'bg_0:rawscript/c60c0d40ae69728e16c2267e3584aafb6db4a385036c3708ff137d432b50f2c0':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_1:rawscript/9e6a35ba160672e367ece8b59aeedb714bf054ad9b4a151e890dbce3fcf2bef1':
+    'bg_1:rawscript/179b707e3e377541477fb6fa3a833f5ea7f0f74b3c055d667514ee7f6214a415':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_2:rawscript/98c0b88043860d998f00362f6634306b09bee776e0a421eb7803fc4e1c50c6ca':
+    'bg_2:rawscript/32681e8550c73f938b70d19350dc7d4a6d5fa652410fe99e5c64c8acd6639a0d':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_3:rawscript/b85081bfcddf0efd90880304c8dc8105402d1b28f7305ada52484bce7814d7d2':
+    'bg_3:rawscript/017401e8f763a2604aee0ecb4acd7ae5a8b94bb7c78673b103da0ca2c278262b':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}

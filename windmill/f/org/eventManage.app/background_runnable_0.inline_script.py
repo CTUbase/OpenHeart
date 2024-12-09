@@ -1,7 +1,10 @@
 # import wmill
+from supabase import create_client, Client
+import wmill
 
-from datetime import datetime
 def main(x: str):
-    ds = datetime.fromisoformat(x)
-    formatted_timestamp1 = ds.strftime("%Y-%m-%d %H:%M:%S")
-    return formatted_timestamp1
+    url = wmill.get_variable("f/info_page/supabase_url")
+    key = wmill.get_variable("f/info_page/supabase_service_key")
+    supabase: Client = create_client(url, key)
+    response = supabase.rpc('get_amount_vlr_by_org', {"org_id": x}).execute()
+    return response.data
