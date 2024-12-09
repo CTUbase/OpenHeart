@@ -12,6 +12,10 @@ value:
       container:
         class: ''
         style: ''
+    dateinputcomponent:
+      input:
+        class: ''
+        style: ''
     htmlcomponent:
       container:
         class: ''
@@ -29,6 +33,28 @@ value:
         style: ''
       label:
         class: ''
+        style: 'font-size: 13px;'
+    selectcomponent:
+      input:
+        class: ''
+        style: |2-
+           border-radius: 6px;
+          margin-left: 10px;
+          width: calc(100% - 20px);
+        tooltip: >-
+          https://github.com/rob-balfre/svelte-select/blob/master/docs/theming_variables.md
+    tabscomponent:
+      allTabs:
+        class: ''
+        style: ''
+      container:
+        class: ''
+        style: ''
+      selectedTab:
+        class: ''
+        style: ''
+      tabRow:
+        class: ''
         style: ''
     textcomponent:
       container:
@@ -37,12 +63,17 @@ value:
       text:
         class: ''
         style: |-
-          font-family: 'Montserrat', san-serif;
-          font-size: 2vh;
+          font-size: 2.2vh;
+          font-weight: 600;
+          margin-left: 10px;
     textinputcomponent:
       input:
         class: ''
-        style: 'height: 5vh; border-radius: 4px;'
+        style: |-
+          height: 5.2vh; border-radius: 6px;
+          padding: 0 6px; 
+          width: calc(100% - 20px);
+          margin-left: 10px;
     verticalsplitpanescomponent:
       container:
         class: ''
@@ -52,7 +83,7 @@ value:
     - '12':
         fixed: false
         fullHeight: false
-        h: 31
+        h: 30
         w: 12
         x: 0
         'y': 0
@@ -66,18 +97,14 @@ value:
       id: a
       data:
         id: a
-        type: verticalsplitpanescomponent
+        type: containercomponent
         actions: []
         configuration: {}
         customCss:
           container:
             class: ''
-            style: |-
-
-              overflow: hidden;
+            style: ''
         numberOfSubgrids: 1
-        panes:
-          - 100
   hiddenInlineScripts:
     - type: runnableByName
       name: City
@@ -207,16 +234,16 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 30
-          w: 12
-          x: 0
+          h: 28
+          w: 8
+          x: 2
           'y': 0
         '3':
           fixed: false
           fullHeight: false
           h: 8
           w: 2
-          x: 0
+          x: 1
           'y': 1
         id: w
         data:
@@ -281,11 +308,11 @@ value:
               class: ''
               style: ''
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: bottom
       - '12':
           fixed: false
           fullHeight: false
-          h: 2
+          h: 1
           w: 12
           x: 0
           'y': 1
@@ -325,7 +352,7 @@ value:
           fixed: false
           fullHeight: false
           h: 1
-          w: 3
+          w: 6
           x: 0
           'y': 3
         '3':
@@ -370,7 +397,7 @@ value:
               class: ''
               style: ''
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: bottom
       - '12':
           fixed: false
           fullHeight: false
@@ -420,11 +447,11 @@ value:
               class: ''
               style: ''
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: bottom
       - '12':
           fixed: false
           fullHeight: false
-          h: 2
+          h: 1
           w: 6
           x: 0
           'y': 4
@@ -461,14 +488,14 @@ value:
               style: ''
           verticalAlignment: center
       - '12':
-          fixed: false
+          fixed: true
           fullHeight: false
-          h: 2
+          h: 1
           w: 6
           x: 6
           'y': 4
         '3':
-          fixed: false
+          fixed: true
           fullHeight: false
           h: 1
           w: 2
@@ -548,12 +575,12 @@ value:
               class: ''
               style: ''
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: bottom
       - '12':
           fixed: false
           fullHeight: false
           h: 1
-          w: 3
+          w: 5
           x: 6
           'y': 6
         '3':
@@ -598,7 +625,7 @@ value:
               class: ''
               style: ''
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: bottom
       - '12':
           fixed: false
           fullHeight: false
@@ -654,7 +681,7 @@ value:
                 https://github.com/rob-balfre/svelte-select/blob/master/docs/theming_variables.md
           onSelect: []
           recomputeIds: []
-          verticalAlignment: center
+          verticalAlignment: top
       - '12':
           fixed: false
           fullHeight: false
@@ -714,6 +741,92 @@ value:
                 https://github.com/rob-balfre/svelte-select/blob/master/docs/theming_variables.md
           onSelect: []
           recomputeIds: []
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 5
+          x: 0
+          'y': 9
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 2
+          'y': 6
+        id: ak
+        data:
+          id: ak
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: evalv2
+            autoRefresh: true
+            connections: []
+            eval: 'Hello ${ctx.username}'
+            expr: '"Ngày sinh"'
+            fields: {}
+            fieldType: template
+            recomputeOnInputChanged: true
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: bottom
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 0
+          'y': 10
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 1
+          'y': 2
+        id: p
+        data:
+          id: p
+          type: dateinputcomponent
+          actions: []
+          configuration:
+            defaultValue:
+              type: static
+            maxDate:
+              type: static
+              value: ''
+            minDate:
+              type: static
+              value: ''
+            outputFormat:
+              type: static
+              value: yyyy-MM-dd
+          customCss:
+            input:
+              class: ''
+              style: ''
           verticalAlignment: center
       - '12':
           fixed: false
@@ -721,7 +834,7 @@ value:
           h: 1
           w: 3
           x: 0
-          'y': 8
+          'y': 12
         '3':
           fixed: false
           fullHeight: false
@@ -764,14 +877,14 @@ value:
               class: ''
               style: ''
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: bottom
       - '12':
           fixed: false
           fullHeight: false
           h: 1
-          w: 3
+          w: 5
           x: 6
-          'y': 8
+          'y': 12
         '3':
           fixed: false
           fullHeight: false
@@ -814,14 +927,14 @@ value:
               class: ''
               style: ''
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: bottom
       - '12':
           fixed: false
           fullHeight: false
           h: 1
           w: 6
           x: 0
-          'y': 9
+          'y': 13
         '3':
           fixed: false
           fullHeight: false
@@ -858,7 +971,7 @@ value:
           h: 1
           w: 6
           x: 6
-          'y': 9
+          'y': 13
         '3':
           fixed: false
           fullHeight: false
@@ -892,10 +1005,10 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 2
-          w: 1
-          x: 0
-          'y': 11
+          h: 1
+          w: 2
+          x: 5
+          'y': 14
         '3':
           fixed: false
           fullHeight: false
@@ -937,46 +1050,10 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 1
-          w: 6
-          x: 6
-          'y': 11
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 2
-          x: 1
-          'y': 2
-        id: p
-        data:
-          id: p
-          type: dateinputcomponent
-          actions: []
-          configuration:
-            defaultValue:
-              type: static
-            maxDate:
-              type: static
-              value: ''
-            minDate:
-              type: static
-              value: ''
-            outputFormat:
-              type: static
-              value: yyyy-MM-dd
-          customCss:
-            input:
-              class: ''
-              style: ''
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 2
-          x: 5
-          'y': 13
+          h: 2
+          w: 12
+          x: 0
+          'y': 15
         '3':
           fixed: false
           fullHeight: false
@@ -1220,7 +1297,10 @@ value:
           customCss:
             button:
               class: ''
-              style: ''
+              style: >-
+                height: 7vh; padding: 8px 80px; border-radius: 10px;
+                font-family: 'Montserrat', san-serif;; text-transform:
+                uppercase;
             container:
               class: ''
               style: ''
@@ -1277,11 +1357,11 @@ value:
               class: ''
               style: ''
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: bottom
       - '12':
           fixed: false
           fullHeight: false
-          h: 2
+          h: 1
           w: 12
           x: 0
           'y': 1
@@ -1321,7 +1401,7 @@ value:
           fixed: false
           fullHeight: false
           h: 1
-          w: 3
+          w: 5
           x: 0
           'y': 3
         '3':
@@ -1366,7 +1446,7 @@ value:
               class: ''
               style: ''
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: bottom
       - '12':
           fixed: false
           fullHeight: false
@@ -1416,11 +1496,11 @@ value:
               class: ''
               style: ''
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: bottom
       - '12':
           fixed: false
           fullHeight: false
-          h: 2
+          h: 1
           w: 6
           x: 0
           'y': 4
@@ -1459,7 +1539,7 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 2
+          h: 1
           w: 6
           x: 6
           'y': 4
@@ -1499,7 +1579,7 @@ value:
           fixed: false
           fullHeight: false
           h: 1
-          w: 3
+          w: 6
           x: 0
           'y': 6
         '3':
@@ -1544,12 +1624,12 @@ value:
               class: ''
               style: ''
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: bottom
       - '12':
           fixed: false
           fullHeight: false
           h: 1
-          w: 3
+          w: 5
           x: 6
           'y': 6
         '3':
@@ -1594,7 +1674,7 @@ value:
               class: ''
               style: ''
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: bottom
       - '12':
           fixed: false
           fullHeight: false
@@ -1654,7 +1734,7 @@ value:
                 https://github.com/rob-balfre/svelte-select/blob/master/docs/theming_variables.md
           onSelect: []
           recomputeIds: []
-          verticalAlignment: center
+          verticalAlignment: top
       - '12':
           fixed: false
           fullHeight: false
@@ -1693,14 +1773,14 @@ value:
             input:
               class: ''
               style: ''
-          verticalAlignment: center
+          verticalAlignment: top
       - '12':
           fixed: false
           fullHeight: false
           h: 1
-          w: 3
+          w: 6
           x: 0
-          'y': 8
+          'y': 9
         '3':
           fixed: false
           fullHeight: false
@@ -1743,14 +1823,14 @@ value:
               class: ''
               style: ''
           horizontalAlignment: left
-          verticalAlignment: top
+          verticalAlignment: bottom
       - '12':
           fixed: false
           fullHeight: false
           h: 1
           w: 12
           x: 0
-          'y': 9
+          'y': 10
         '3':
           fixed: false
           fullHeight: false
@@ -1777,7 +1857,7 @@ value:
               value: false
             placeholder:
               type: static
-              value: Nhập số điện thoại...
+              value: Nhập mô tả...
           customCss:
             input:
               class: ''
@@ -1789,7 +1869,7 @@ value:
           h: 5
           w: 12
           x: 0
-          'y': 10
+          'y': 12
         '3':
           fixed: false
           fullHeight: false
@@ -1847,20 +1927,21 @@ value:
           customCss:
             description:
               class: ''
-              style: ''
+              style: 'color: "gray";'
             container:
               class: ''
-              style: ''
+              style: 'overflow: hidden;'
             label:
               class: ''
-              style: ''
+              style: |
+                color: 'gray';
       - '12':
           fixed: false
           fullHeight: true
-          h: 1
+          h: 2
           w: 1
-          x: 0
-          'y': 15
+          x: 1
+          'y': 17
         '3':
           fixed: false
           fullHeight: false
@@ -1902,10 +1983,10 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 1
-          w: 2
-          x: 10
-          'y': 15
+          h: 2
+          w: 9
+          x: 3
+          'y': 17
         '3':
           fixed: false
           fullHeight: false
@@ -2149,11 +2230,14 @@ value:
           customCss:
             button:
               class: ''
-              style: ''
+              style: >-
+                height: 7vh; padding: 8px 80px; border-radius: 10px;
+                font-family: 'Montserrat', san-serif;; text-transform:
+                uppercase;
             container:
               class: ''
               style: ''
-          horizontalAlignment: center
+          horizontalAlignment: right
           recomputeIds: []
           verticalAlignment: center
     q-0:
@@ -2393,7 +2477,7 @@ value:
               class: ''
               style: >-
                 font-size: 4vh; text-align: center; text-transform: uppercase;
-                font-weight: 500; color: #0071b3; letter-spacing: 2px;
+                font-weight: 800; color: #0071b3; letter-spacing: 2px;
           horizontalAlignment: left
           verticalAlignment: center
       - '12':
@@ -2439,7 +2523,7 @@ value:
               style: ''
             text:
               class: ''
-              style: 'font-size: 2.6vh; font-weight: 600;'
+              style: 'font-size: 2.5vh; font-weight: 600;'
           horizontalAlignment: center
           verticalAlignment: center
       - '12':
@@ -2482,7 +2566,7 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 23
+          h: 21
           w: 12
           x: 0
           'y': 4
@@ -2533,14 +2617,14 @@ value:
           h: 2
           w: 12
           x: 0
-          'y': 27
+          'y': 25
         '3':
           fixed: false
           fullHeight: false
           h: 8
           w: 2
           x: 0
-          'y': 17
+          'y': 25
         id: q
         data:
           id: q
@@ -2560,7 +2644,7 @@ policy:
   execution_mode: publisher
   s3_inputs: []
   triggerables_v2:
-    'ag:rawscript/ded3b0c863feb1ae30250440cfd264f785194eff8d5455af6121c0f52a2a276b':
+    'ag:rawscript/d9002b19902924d36d2431035a18e8d4a54bb5502fe0b744f09716b78e41a8a7':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
@@ -2572,11 +2656,11 @@ policy:
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_2:rawscript/a8a5945170eaea9b3a8a2a7782703b8146115357ea5e44678d5fb6c5f1489a86':
+    'bg_2:rawscript/6565bfe045eda63b09dee1eff3a888c5c072d6fd4bf1f60c30fdc21bf8e007eb':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_3:rawscript/6ce96c36e7eb03b12393e4c92bc294f20ce644309a73174e2026ca95e5a10a18':
+    'bg_3:rawscript/0fd1042f172d045613e644dccf1ece3f598025b37a8037a7388788b2218e110a':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
