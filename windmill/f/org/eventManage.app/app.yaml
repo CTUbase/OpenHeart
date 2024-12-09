@@ -97,63 +97,7 @@ value:
     - '12':
         fixed: false
         fullHeight: false
-        h: 1
-        w: 2
-        x: 10
-        'y': 0
-      '3':
-        fixed: false
-        fullHeight: false
-        h: 1
-        w: 1
-        x: 2
-        'y': 6
-      id: t
-      data:
-        id: t
-        type: drawercomponent
-        actions: []
-        configuration:
-          color:
-            type: static
-            value: blue
-          disabled:
-            type: static
-            value: false
-          drawerTitle:
-            type: static
-            value: Thông tin sự Kiện
-          fillContainer:
-            type: static
-            value: false
-          hideButtonOnView:
-            type: static
-            value: false
-          label:
-            type: static
-            value: Tạo sự kiện
-          size:
-            type: static
-            value: md
-        customCss:
-          button:
-            class: ''
-            style: ''
-          container:
-            class: ''
-            style: ''
-          drawer:
-            class: ''
-            style: ''
-        horizontalAlignment: right
-        numberOfSubgrids: 1
-        onCloseRecomputeIds: []
-        onOpenRecomputeIds: []
-        verticalAlignment: center
-    - '12':
-        fixed: false
-        fullHeight: false
-        h: 19
+        h: 25
         w: 10
         x: 2
         'y': 1
@@ -178,7 +122,7 @@ value:
     - '12':
         fixed: false
         fullHeight: false
-        h: 25
+        h: 23
         w: 2
         x: 0
         'y': 3
@@ -600,6 +544,36 @@ value:
             - x
       recomputeIds: []
       recomputeOnInputChanged: true
+    - type: runnableByName
+      name: Background Runnable 0
+      autoRefresh: true
+      fields:
+        x:
+          type: evalv2
+          value: null
+          connections:
+            - id: values
+              componentId: ae
+          expr: 'ae.values["Ngày bắt đầu"]'
+          fieldType: string
+      inlineScript:
+        content: '!inline background_runnable_0.inline_script.py'
+        lock: ''
+        language: python3
+        path: f/org/eventManage/Background_Runnable_0
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties:
+            x:
+              type: string
+              description: ''
+              default: null
+              originalType: string
+          required:
+            - x
+      recomputeIds: []
+      recomputeOnInputChanged: true
   hideLegacyTopBar: true
   mobileViewOnSmallerScreens: false
   norefreshbar: false
@@ -611,7 +585,7 @@ value:
           h: 17
           w: 12
           x: 0
-          'y': 0
+          'y': 8
         '3':
           fixed: false
           fullHeight: false
@@ -1379,7 +1353,7 @@ value:
           fixed: false
           fullHeight: false
           h: 1
-          w: 3
+          w: 1
           x: 0
           'y': 0
         '3':
@@ -1479,123 +1453,56 @@ value:
           fullHeight: false
           h: 1
           w: 2
-          x: 0
+          x: 10
           'y': 1
         '3':
           fixed: false
           fullHeight: false
           h: 1
           w: 1
-          x: 2
-          'y': 8
-        id: x
+          x: 10
+          'y': 1
+        id: t
         data:
-          id: x
-          type: formbuttoncomponent
+          id: t
+          type: drawercomponent
           actions: []
-          componentInput:
-            type: runnable
-            autoRefresh: false
-            fields: {}
-            fieldType: any
-            recomputeOnInputChanged: false
           configuration:
             color:
               type: static
-              value: dark
+              value: blue
             disabled:
+              type: static
+              value: false
+            drawerTitle:
+              type: static
+              value: Thông tin sự Kiện
+            fillContainer:
+              type: static
+              value: false
+            hideButtonOnView:
               type: static
               value: false
             label:
               type: static
-              value: Open popup
-            modalTitle:
-              type: static
-              value: Modal title
-            onError:
-              type: oneOf
-              configuration:
-                close:
-                  id:
-                    type: static
-                    value: ''
-                errorOverlay: {}
-                gotoUrl:
-                  newTab:
-                    type: static
-                    value: true
-                  url:
-                    type: static
-                    value: ''
-                open:
-                  id:
-                    type: static
-                    value: ''
-                sendErrorToast:
-                  appendError:
-                    type: static
-                    value: true
-                  message:
-                    type: static
-                    value: An error occured
-                setTab:
-                  setTab:
-                    type: static
-                    value: []
-              selected: errorOverlay
-            onSuccess:
-              type: oneOf
-              configuration:
-                clearFiles:
-                  id:
-                    type: static
-                    value: ''
-                close:
-                  id:
-                    type: static
-                    value: ''
-                closeModal:
-                  modalId:
-                    type: static
-                    value: ''
-                gotoUrl:
-                  newTab:
-                    type: static
-                    value: true
-                  url:
-                    type: static
-                    value: ''
-                none: {}
-                open:
-                  id:
-                    type: static
-                    value: ''
-                openModal:
-                  modalId:
-                    type: static
-                    value: ''
-                sendToast:
-                  message:
-                    type: static
-                    value: ''
-                setTab:
-                  setTab:
-                    type: static
-                    value: []
-              selected: none
+              value: Tạo sự kiện
             size:
               type: static
-              value: xs
+              value: md
           customCss:
             button:
               class: ''
               style: ''
-            popup:
+            container:
               class: ''
               style: ''
-          horizontalAlignment: center
-          recomputeIds:
-            - bg_0
+            drawer:
+              class: ''
+              style: ''
+          horizontalAlignment: right
+          numberOfSubgrids: 1
+          onCloseRecomputeIds: []
+          onOpenRecomputeIds: []
           verticalAlignment: center
       - '12':
           fixed: false
@@ -1667,7 +1574,7 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 19
+          h: 15
           w: 12
           x: 0
           'y': 0
@@ -1693,7 +1600,6 @@ value:
                 - Ngày bắt đầu
                 - Ngày kết thúc
                 - số lượng
-                - Hình ảnh
               properties:
                 địa điểm:
                   type: string
@@ -1701,15 +1607,6 @@ value:
                   default: ''
                   enumLabels: {}
                   nullable: false
-                Hình ảnh:
-                  type: object
-                  description: >-
-                    chọn một hình ảnh chất lượng từ sự kiện trước đó. Tối đa
-                    5MB.
-                  format: resource-s3_object
-                  order: []
-                  properties: {}
-                  required: []
                 Mô tả:
                   type: string
                   description: >-
@@ -1773,6 +1670,97 @@ value:
             label:
               class: ''
               style: ''
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 2
+          x: 0
+          'y': 15
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 2
+          'y': 8
+        id: s
+        data:
+          id: s
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections: []
+            eval: Hình ảnh
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: center
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 3
+          w: 12
+          x: 0
+          'y': 16
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 4
+          w: 3
+          x: 0
+          'y': 9
+        id: u
+        data:
+          id: u
+          type: fileinputcomponent
+          actions: []
+          configuration:
+            acceptedFileTypes:
+              type: static
+              value:
+                - image/*
+                - application/pdf
+            allowMultiple:
+              type: static
+              value: false
+            disabled:
+              type: static
+              value: false
+            includeMimeType:
+              type: static
+              value: false
+            submittedFileText:
+              type: static
+              value: Selected file
+            text:
+              type: static
+              value: Drag and drop files or click to select them
+          customCss:
+            container:
+              class: ''
+              style: ''
+          onFileChange: []
       - '12':
           fixed: false
           fullHeight: false
@@ -1938,8 +1926,148 @@ value:
           actions: []
           componentInput:
             type: runnable
-            fields: {}
+            autoRefresh: false
+            fields:
+              name:
+                type: evalv2
+                value: null
+                connections:
+                  - id: values
+                    componentId: ae
+                expr: 'ae.values["Tên sự kiện"]'
+                fieldType: string
+              description:
+                type: evalv2
+                value: null
+                connections:
+                  - id: values
+                    componentId: ae
+                expr: 'ae.values["Mô tả"]'
+                fieldType: string
+              amount:
+                type: evalv2
+                value: null
+                connections:
+                  - id: values
+                    componentId: ae
+                expr: 'ae.values["số lượng"]'
+                fieldType: string
+              base64_data:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: u
+                expr: 'u.result[0].data'
+                fieldType: string
+              e_date:
+                type: evalv2
+                value: null
+                connections:
+                  - id: values
+                    componentId: ae
+                expr: 'ae.values["Ngày kết thúc"]'
+                fieldType: string
+              file_name:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: u
+                expr: 'u.result[0].name'
+                fieldType: string
+              id_org:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: bg_2
+                expr: 'bg_2.result[0].id'
+                fieldType: object
+              location:
+                type: evalv2
+                value: null
+                connections:
+                  - id: values
+                    componentId: ae
+                expr: 'ae.values["địa điểm"]'
+                fieldType: string
+              s_date:
+                type: evalv2
+                value: null
+                connections:
+                  - id: values
+                    componentId: ae
+                expr: 'ae.values["Ngày bắt đầu"]'
+                fieldType: string
             fieldType: any
+            recomputeOnInputChanged: false
+            runnable:
+              type: runnableByName
+              name: Inline Script 0
+              inlineScript:
+                content: '!inline inline_script_0.inline_script.py'
+                lock: '!inline inline_script_0.inline_script.lock'
+                language: python3
+                path: f/org/eventManage/Inline_Script_0
+                schema:
+                  $schema: 'https://json-schema.org/draft/2020-12/schema'
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    description:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    amount:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    base64_data:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    e_date:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    file_name:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    id_org:
+                      type: object
+                      description: ''
+                      default: null
+                    location:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    s_date:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                  required:
+                    - base64_data
+                    - file_name
+                    - name
+                    - description
+                    - s_date
+                    - e_date
+                    - location
+                    - amount
+                    - id_org
           configuration:
             afterIcon:
               type: static
@@ -2004,7 +2132,7 @@ value:
                   setTab:
                     type: static
                     value: []
-              selected: errorOverlay
+              selected: sendErrorToast
             onSuccess:
               type: oneOf
               configuration:
@@ -2039,12 +2167,12 @@ value:
                 sendToast:
                   message:
                     type: static
-                    value: ''
+                    value: Thành công
                 setTab:
                   setTab:
                     type: static
                     value: []
-              selected: none
+              selected: sendToast
             size:
               type: static
               value: xs
@@ -2193,29 +2321,33 @@ value:
   unusedInlineScripts: []
 policy:
   execution_mode: publisher
-  s3_inputs:
-    - allow_user_resources: false
-      allow_workspace_resource: true
-      allowed_resources: []
-      file_key_regex: ''
+  s3_inputs: []
   triggerables_v2:
-    'bg_0:rawscript/8556a9f30d11a762e66da53a5e825b85e97bded2c48fe15001e19907f14cb436':
+    'bg_0:rawscript/0d0b1dd5a8d61bbb92146ccd3fdd2684d8d1db42b1e2d407ad57ecff26f96e39':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_1:rawscript/98c0b88043860d998f00362f6634306b09bee776e0a421eb7803fc4e1c50c6ca':
+    'bg_1:rawscript/32681e8550c73f938b70d19350dc7d4a6d5fa652410fe99e5c64c8acd6639a0d':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_2:rawscript/084d8033835cf41be7c4746ad184ba947a8002904ae0b464c188539d1c5291eb':
+    'bg_2:rawscript/133defd54f44addafedd4a3b4fc269bb791b8386516f3ca26a253720306e30f6':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_3:rawscript/0cd501e9c29fa192a6fea1219aa2c4680f39b92510fd648e582cfbdc4e20214a':
+    'bg_3:rawscript/c8802a4937c7adb73cab57fbc71b63490ed68703f6d71d6f45e9cf10490b23c1':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_4:rawscript/af3b9b49c06e435aefdc381dd3e20a20ffa9ec1fdc0acd131552f5ba6816c6a7':
+    'bg_4:rawscript/2b2a8abd904c44adc29723be3190a20c6fb42dfed64aa49e6bd55625b13c660c':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_5:rawscript/d190cb3a5ee13e84ef7d5db9f94d153dc70d5d1218072943f603eec642b1935a':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'q:rawscript/d0043da0f26453acb81bf2e594ab80a3fe817c5fdfc85c26b511ac708f961a0c':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
