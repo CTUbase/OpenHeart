@@ -3,11 +3,6 @@
 [![Open Pull Requests](https://img.shields.io/github/issues-pr/CTUbase/OpenHeart.svg 'Open Pull Requests')](https://github.com/CTUbase/OpenHeart/pulls)
 [![Commit activity](https://img.shields.io/github/commit-activity/m/CTUbase/OpenHeart.svg 'Commit activity')](https://github.com/CTUbase/OpenHeart/graphs/commit-activity)
 [![GitHub contributors](https://img.shields.io/github/contributors/CTUbase/OpenHeart.svg 'Github contributors')](https://github.com/CTUbase/OpenHeart/graphs/contributors)
-![](./docs/images/new_banner.png)
-
-![](./docs/images/vbqppl.png)
-
-![](./docs/images/qna.png)
 
 # OpenHeart
 
@@ -28,23 +23,18 @@ Mục tiêu của hệ thống là:
 
 Dự án được thực hiện trong cuộc thi [Phần Mềm Nguồn Mở-Olympic Tin học Sinh viên Việt Nam 2024]([https://www.olp.vn/procon-pmmn/ph%E1%BA%A7n-m%E1%BB%81m-ngu%E1%BB%93n-m%E1%BB%9F](https://www.olp.vn/procon-pmmn/ph%E1%BA%A7n-m%E1%BB%81m-ngu%E1%BB%93n-m%E1%BB%9F)). Được open source theo giấy phép [Apache v2.0](https://opensource.org/license/apache-2-0) bởi đội tác giả CTUBase.
 
-## Giới Thiệu
-
--   
 
 ## Chức Năng Chính
 
 Project tập trung vào các chức năng chính như sau:
 
--   
+-   Tạo và quản lý các sự kiện tình nguyện đối với tổ chức.
+-   Theo dỗi và đăng ký các sự kiện tình nguyện đối với tình nguyện viên.
 
 ## 👩‍💻 Tổng Quan Hệ Thống
 
-Backend của hệ thống được thiết kế theo kiến trúc microservices, với các công nghệ sử dụng như sau:
-
--   
-
-<img loading="lazy" src="./docs/images/system_architecture.svg" alt="Architecture" width="100%" height=600>
+Hệ thống sử dụng [Windmill](https://www.windmill.dev/) cho front-end và workflow cùng với [Supabase](https://supabase.com/) cho backend:
+<img loading="lazy" src="./docs/images/lowcode_architecture.png" alt="Architecture" max-height=600>
 
 ## Hướng Dẫn Cài Đặt
 
@@ -54,6 +44,7 @@ Backend của hệ thống được thiết kế theo kiến trúc microservices
 -   [Node JS](https://nodejs.org/en/download/prebuilt-installer): sử dụng npm giúp cài đặt windmill CLI và supabase CLI.
 -   [Windmill CLI](https://docs.docker.com/get-docker/): cài đặt frontend của hệ thống
 -   [Supabase CLI](https://supabase.com/docs/guides/local-development/cli/getting-started?queryGroups=platform&platform=npx&queryGroups=access-method&access-method=studio): cài đặt backend của hệ thống.
+-   [Docker Desktop](https://docs.docker.com/desktop/setup/install/windows-install/): (tùy chọn) dành cho cài đặt self-host.
 
 ### 🔨 Cài Đặt
 
