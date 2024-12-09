@@ -51,9 +51,9 @@ Backend của hệ thống được thiết kế theo kiến trúc microservices
 ### Yêu Cầu 📋
 
 Để cài đặt và chạy được dự án, trước tiên bạn cần phải cài đặt các công cụ bên dưới. Hãy thực hiện theo các hướng dẫn cài đặt sau, lưu ý chọn hệ điều hành phù hợp với máy tính của bạn:
--   [Node JS](https://nodejs.org/en/download/prebuilt-installer)
--   [Windmill CLI](https://docs.docker.com/get-docker/)
--   [SUpabase CLI](https://supabase.com/docs/guides/local-development/cli/getting-started?queryGroups=platform&platform=npx&queryGroups=access-method&access-method=studio)
+-   [Node JS](https://nodejs.org/en/download/prebuilt-installer): sử dụng npm giúp cài đặt windmill CLI và supabase CLI.
+-   [Windmill CLI](https://docs.docker.com/get-docker/): cài đặt frontend của hệ thống
+-   [Supabase CLI](https://supabase.com/docs/guides/local-development/cli/getting-started?queryGroups=platform&platform=npx&queryGroups=access-method&access-method=studio): cài đặt backend của hệ thống.
 
 ### 🔨 Cài Đặt
 
@@ -69,35 +69,26 @@ cd OpenHeart
 ### Chạy backend với Supabase
 
 ### Chạy frontend với Windmill
-Cài đặt với Windmill cloud:
+-   **Bước 1:** Tạo một tài khoản trên [windmill](https://app.windmill.dev/user/login) hoặc cài đặt [windmill self-host với Docker](https://www.windmill.dev/docs/advanced/self_host#docker) 
 
-Đầu tiên, hãy tạo một tài khoản windmill và tạo một workspace với tên **OpenHeart** (bạn có thể tùy chọn tên workspace).
-
-Sau đó, trở về thư mục OpenHeart và làm theo các bước:
-1. tạo workspace với tên tương tự tại máy local bằng windmill CLI: 
-```bash
-wmill workspace add [workspace_name] [workspace_id] [remote_URL]
-```
-- ví dụ:
-```bash
-wmill workspace add OpenHeart OpenHeart123 https://app.windmill.dev/
-```
-2. Terminal sẽ yêu cầu đăng nhập windmill qua browser hoặc token. Để đơn giản, hãy chọn browser, windmill sẽ hiển thị liên kết với trình duyệt để bạn xác nhận.
-3. sau khi xác nhận xong, cd đến thư mục */windmill*:
+-   **Bước 2**: Tạo một workspace với tên **OpenHeart** (bạn có thể tùy chọn tên workspace).
+-   **Bước 3**: cd đến thư mục *windmill* và tạo workspace với tên tương ứng bằng windmill CLI:
 ```bash
 cd windmill
-```
-4. Đẩy code lên windmill:
+wmill workspace add [workspace_name] [workspace_id] [remote]
+# vi du:
+wmill workspace add OpenHeart OpenHeart123 https://app.windmill.dev/
+``` 
+-   **Bước 4**:  Sau đó, Terminal sẽ yêu cầu đăng nhập windmill qua browser hoặc token. Để đơn giản, hãy chọn browser, windmill sẽ hiển thị liên kết với trình duyệt để bạn xác nhận.
+-   **Bước 5**: Đẩy code lên windmill:
 ```bash
 wmill sync push
 ```
-5. thiết lập varibles với windmill:
+-   **Bước 6**: tìm chọn script *cập nhật variable* để kết nối với [windmill với supbase](https://www.windmill.dev/docs/integrations/supabase#get-the-api-keys):
+![cập nhật variable](image-1.png)
 
-........
+-   **Bước 7**: Truy cập vào **trang đăng nhập** để bắt đầu sử dụng.
 
-........
-
-........
 ### Cài đặt plugin AI trên Windmill
 ## 🙌 Đóng góp cho dự án
 
@@ -112,8 +103,8 @@ Mọi đóng góp của các bạn đều được trân trọng, đừng ngần
 ## Liên hệ
 
 -   Nguyễn Đăng Khoa: ndkhoa1000@gmail.com
--   Phạm Trí Minh: triminh@gmail.com
--   Nguyễn Đoàn Hoàng Phúc: phuc@gmail.com
+-   Phạm Trí Minh: triminh00@gmail.com
+-   Nguyễn Đoàn Hoàng Phúc: hoangphuc090104@gmail.com
 
 ## 📝 License
 
