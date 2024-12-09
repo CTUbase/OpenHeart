@@ -102,7 +102,7 @@ wmill workspace add OpenHeart OpenHeart123 https://app.windmill.dev/
 wmill sync push
 ```
 -   **Bước 6**: tìm chọn script *cập nhật variable* để kết nối với [windmill với supbase](https://www.windmill.dev/docs/integrations/supabase#get-the-api-keys):
-![cập nhật variable](image-1.png)
+<img loading="lazy" src="./docs/images/installation_windmil_guide_1.png" alt="installation_guide" max-height=600>
 
 -   **Bước 7**: Truy cập vào **trang đăng nhập** để bắt đầu sử dụng.
 
