@@ -777,35 +777,10 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 4
-          w: 3
-          x: 9
-          'y': 2
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 8
-          w: 2
-          x: 0
-          'y': 5
-        id: e
-        data:
-          id: e
-          type: containercomponent
-          actions: []
-          configuration: {}
-          customCss:
-            container:
-              class: ''
-              style: 'border-radius: 5px; border: 1px solid #dadada;'
-          numberOfSubgrids: 1
-      - '12':
-          fixed: false
-          fullHeight: false
           h: 6
           w: 3
           x: 9
-          'y': 6
+          'y': 2
         '3':
           fixed: false
           fullHeight: false
@@ -827,10 +802,35 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 2
-          w: 3
+          h: 4
+          w: 2
           x: 9
-          'y': 12
+          'y': 8
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 8
+          w: 2
+          x: 0
+          'y': 5
+        id: e
+        data:
+          id: e
+          type: containercomponent
+          actions: []
+          configuration: {}
+          customCss:
+            container:
+              class: ''
+              style: 'border-radius: 5px; border: 1px solid #dadada;'
+          numberOfSubgrids: 1
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 2
+          w: 1
+          x: 11
+          'y': 8
         '3':
           fixed: false
           fullHeight: false
@@ -845,8 +845,51 @@ value:
           actions: []
           componentInput:
             type: runnable
-            fields: {}
+            autoRefresh: false
+            fields:
+              evt_id:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: bg_0
+                expr: bg_0.result.id
+                fieldType: string
+              user_id:
+                type: evalv2
+                value: null
+                connections:
+                  - id: result
+                    componentId: bg_6
+                expr: 'bg_6.result[0].id'
+                fieldType: string
             fieldType: any
+            recomputeOnInputChanged: false
+            runnable:
+              type: runnableByName
+              name: Inline Script 0
+              inlineScript:
+                content: '!inline inline_script_0.inline_script.py'
+                lock: '!inline inline_script_0.inline_script.lock'
+                language: python3
+                path: f/page/eventDetail/Inline_Script_0
+                schema:
+                  $schema: 'https://json-schema.org/draft/2020-12/schema'
+                  type: object
+                  properties:
+                    evt_id:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                    user_id:
+                      type: string
+                      description: ''
+                      default: null
+                      originalType: string
+                  required:
+                    - user_id
+                    - evt_id
           configuration:
             afterIcon:
               type: static
@@ -911,15 +954,15 @@ value:
                 sendErrorToast:
                   appendError:
                     type: static
-                    value: true
+                    value: false
                   message:
                     type: static
-                    value: An error occured
+                    value: Bạn đã đăng kí sự kiện này trước đó
                 setTab:
                   setTab:
                     type: static
                     value: []
-              selected: errorOverlay
+              selected: sendErrorToast
             onSuccess:
               type: oneOf
               configuration:
@@ -954,12 +997,12 @@ value:
                 sendToast:
                   message:
                     type: static
-                    value: ''
+                    value: Đăng kí sự kiện thành công
                 setTab:
                   setTab:
                     type: static
                     value: []
-              selected: none
+              selected: sendToast
             size:
               type: static
               value: xl
@@ -1632,7 +1675,7 @@ value:
           fullHeight: false
           h: 1
           w: 2
-          x: 4
+          x: 2
           'y': 2
         '3':
           fixed: false
@@ -1780,7 +1823,7 @@ value:
           fullHeight: false
           h: 1
           w: 2
-          x: 9
+          x: 8
           'y': 2
         '3':
           fixed: false
@@ -3297,31 +3340,35 @@ policy:
   execution_mode: publisher
   s3_inputs: []
   triggerables_v2:
-    'bg_0:rawscript/2c175ba66f722a2a0e11651a890bce9085d64d306fe6a7cc8afa5c003a8ff094':
+    'bg_0:rawscript/d85bea2aa89d761812780f5f620c47e3f67ead3265835526720fefc6ecb76a36':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_1:rawscript/e0117523facb8d3fbabfd2c7a9709f8f88de2e4d9984a4ae4d99f851edb6f399':
+    'bg_1:rawscript/b0d47ef5f80385629079ec4d2d4269241b8ff59f518e68c41220d3d7f6b53190':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_2:rawscript/5a97d722cf71b391845f1bc64a9a6724d3e887921c126e84de3014871b4253ca':
+    'bg_2:rawscript/93be3c291b2614618c780b5f249ba78ad14834e9b58951dae33727e557e5dd56':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_3:rawscript/35812b6c852e95cdadafeab4bdb8a728116cd7a8bab658861aa34c0289b2ab50':
+    'bg_3:rawscript/770516e514947547e3b13eefabf6f2cbd9ec5a366864baafd9e449d622268b63':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_4:rawscript/f37c131839da78735a9a12a9eb5ec1699677050c996760ed186257ce043197aa':
+    'bg_4:rawscript/4845db669c28883ecd85a57b02adc78810b9860badfe78b2c569692339a575a0':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_5:rawscript/98c0b88043860d998f00362f6634306b09bee776e0a421eb7803fc4e1c50c6ca':
+    'bg_5:rawscript/32681e8550c73f938b70d19350dc7d4a6d5fa652410fe99e5c64c8acd6639a0d':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_6:rawscript/b85081bfcddf0efd90880304c8dc8105402d1b28f7305ada52484bce7814d7d2':
+    'bg_6:rawscript/017401e8f763a2604aee0ecb4acd7ae5a8b94bb7c78673b103da0ca2c278262b':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    's:rawscript/7edeae568a36d0aa0d42aa18a913cb7ebbff399966a79f696c2b026f44b03403':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
