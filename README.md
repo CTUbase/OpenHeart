@@ -59,7 +59,33 @@ cd OpenHeart
 ```
 ### Chạy backend với Supabase
 
+**Đối với self-host:** cd đến thư mục /supabase và chạy CLI:
+```bash
+cd supabase
+npx supabase start 
+```
+Sau khi hoành thành, supabase sẽ chạy ở địa chỉ <a href="http://localhost:8000/">localhost:8000</a>.
+
+**Đối với supabase cloud:** 
+-   **Bước 1:** cd đến thư mục /supbase và login vào tài khoản supabase của bạn bằng [personal access token](https://supabase.com/dashboard/account/tokens):
+```
+cd supabase
+npx supabase login
+```
+-   **Bước 2:** Tạo một project mới trên Supabase, sau đó kết với project thông qua project ID:
+```bash
+npx supbase link --project-ref [PROJECT_ID]
+```
+Bạn có thể tìm thấy project ID trên thanh URL tại Dashboard:
+```bash
+https://supabase.com/dashboard/project/<project-id>
+```
+-   **Bước 3:** Đẩy dữ liệu lên project:
+```bash
+npx supabase db push
+```
 ### Chạy frontend với Windmill
+
 -   **Bước 1:** Tạo một tài khoản trên [windmill](https://app.windmill.dev/user/login) hoặc cài đặt [windmill self-host với Docker](https://www.windmill.dev/docs/advanced/self_host#docker) 
 
 -   **Bước 2**: Tạo một workspace với tên **OpenHeart** (bạn có thể tùy chọn tên workspace).
@@ -81,6 +107,7 @@ wmill sync push
 -   **Bước 7**: Truy cập vào **trang đăng nhập** để bắt đầu sử dụng.
 
 ### Cài đặt plugin AI trên Windmill
+Xem hướng dẫn [tại đây](https://github.com/CTUbase/windmill-plugins).
 ## 🙌 Đóng góp cho dự án
 
 <a href="https://github.com/CTUbase/OpenHeart/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=%F0%9F%90%9B+Bug+Report%3A+">Bug Report ⚠️
