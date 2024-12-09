@@ -1,0 +1,15 @@
+summary: Predicting the extent of natural disasters
+description: ''
+lock: '!inline f/windmill_plugins/model2_script.script.lock'
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    article:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+  required:
+    - article

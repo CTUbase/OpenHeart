@@ -1,2 +1,9 @@
 locks:
   f/info_page/get_account_info: 2d099f596523b6ef9eb2ac9942c03a25168554df285f1f0bef4f600fa0d0c42d
+  f\windmill_plugins\model2_flow.flow:
+    __flow_hash: 3b1fa38efe1b6ff686e4324bc020d4f3c26bf058e8330c80477a388aa2afd20c
+    clean_data.inline_script.py: 4d0b4641680d57b9c8f98eb6ceda72575b97ff2fcab932a96a713342f931dbd3
+    crawl_data_from_url.inline_script.py: 58ce1e5020e01d60da35794cefa0409444ff7bb308acdb4bb8af20def7f49c0a
+    get_url.inline_script.py: dfdeeea1e8f49015a827db3033998786df66c957383f6578a2ca7e293d22a83c
+    turn_the_data_to_the_model_input.inline_script.py: cbf1fd51653f167903e6eb1823eb1f94ce54c40256ac8c13ca260bd77c6cc7e6
+    use_model_to_check.inline_script.py: 8ff2ed768a962b32300edd51466877d56e2b3e178e0ea2445435c060284f7246

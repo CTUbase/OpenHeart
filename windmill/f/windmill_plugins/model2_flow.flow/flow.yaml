@@ -1,4 +1,4 @@
-summary: Flow cho AI gợi ý địa điểm
+summary: Flow suggests disaster locations
 description: ''
 value:
   modules:
@@ -54,6 +54,9 @@ value:
                 data:
                   type: javascript
                   expr: results.d
+                url:
+                  type: javascript
+                  expr: flow_input.iter.value
               lock: ''
               is_trigger: false
               language: python3
