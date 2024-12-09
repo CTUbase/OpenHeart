@@ -1,4 +1,4 @@
-summary: Quản lý sự kiện
+summary: ''
 value:
   css:
     htmlcomponent:
@@ -100,7 +100,7 @@ value:
         h: 25
         w: 10
         x: 2
-        'y': 1
+        'y': 0
       '3':
         fixed: false
         fullHeight: false
@@ -455,7 +455,7 @@ value:
       recomputeIds: []
       recomputeOnInputChanged: true
     - type: runnableByName
-      name: get_org
+      name: get_userParam
       autoRefresh: false
       fields:
         user_id:
@@ -464,13 +464,13 @@ value:
           connections:
             - id: result
               componentId: bg_0
-          expr: bg_0?.result?.id ?? 2
+          expr: bg_0.result.id
           fieldType: string
       inlineScript:
-        content: '!inline get_org.inline_script.py'
-        lock: '!inline get_org.inline_script.lock'
+        content: '!inline get_userparam.inline_script.py'
+        lock: '!inline get_userparam.inline_script.lock'
         language: python3
-        path: f/org/eventManage/get_org
+        path: f/org/eventManage/get_userParam
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
@@ -485,22 +485,18 @@ value:
       recomputeIds: []
       recomputeOnInputChanged: true
     - type: runnableByName
-      name: get_org_event
-      autoRefresh: false
+      name: get_data_event
+      autoRefresh: true
       fields:
         x:
-          type: evalv2
+          type: static
           value: '1'
-          connections:
-            - id: result
-              componentId: bg_2
-          expr: 'bg_2?.result[0]?.id ?? 1'
           fieldType: string
       inlineScript:
-        content: '!inline get_org_event.inline_script.py'
-        lock: '!inline get_org_event.inline_script.lock'
+        content: '!inline get_data_event.inline_script.py'
+        lock: '!inline get_data_event.inline_script.lock'
         language: python3
-        path: f/org/eventManage/get_org_event
+        path: f/org/eventManage/get_data_event
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
@@ -515,22 +511,18 @@ value:
       recomputeIds: []
       recomputeOnInputChanged: true
     - type: runnableByName
-      name: get_events_time_by_org
-      autoRefresh: false
+      name: Background Runnable 0
+      autoRefresh: true
       fields:
         x:
-          type: evalv2
-          value: 'bg_2?.result[0]?.id ?? 1'
-          connections:
-            - id: result
-              componentId: bg_2
-          expr: 'bg_2?.result[0]?.id ?? 2'
+          type: static
+          value: '1'
           fieldType: string
       inlineScript:
-        content: '!inline get_events_time_by_org.inline_script.py'
-        lock: '!inline get_events_time_by_org.inline_script.lock'
+        content: '!inline background_runnable_0.inline_script.py'
+        lock: '!inline background_runnable_0.inline_script.lock'
         language: python3
-        path: f/org/eventManage/get_events_time_by_org
+        path: f/org/eventManage/Background_Runnable_0
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
@@ -582,7 +574,7 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 17
+          h: 13
           w: 12
           x: 0
           'y': 8
@@ -590,56 +582,63 @@ value:
           fixed: false
           fullHeight: false
           h: 8
-          w: 2
+          w: 3
           x: 0
-          'y': 11
-        id: h
+          'y': 3
+        id: c
         data:
-          id: h
-          type: tabscomponent
+          id: c
+          type: listcomponent
           actions: []
+          componentInput:
+            type: evalv2
+            value: []
+            connections:
+              - id: result
+                componentId: bg_3
+            expr: bg_3.result
+            fieldType: array
+            subFieldType: object
           configuration:
-            tabsKind:
+            displayBorders:
               type: static
-              value: tabs
+              value: true
+            heightPx:
+              type: static
+              value: null
+            pagination:
+              type: oneOf
+              configuration:
+                auto:
+                  pageSize:
+                    type: static
+                    value: 3
+                manual:
+                  pageCount:
+                    type: static
+                    value: 3
+                    connections: []
+                    expr: '2'
+              selected: auto
+            width:
+              type: oneOf
+              configuration:
+                card:
+                  minWidthPx:
+                    type: static
+                    value: 300
+                row: {}
+              selected: row
           customCss:
-            allTabs:
-              class: ''
-              style: ''
             container:
               class: ''
               style: ''
-            selectedTab:
-              class: ''
-              style: ''
-            tabRow:
-              class: ''
-              style: ''
-          disabledTabs:
-            - type: static
-              value: false
-              fieldType: boolean
-            - type: static
-              value: false
-              fieldType: boolean
-            - type: static
-              value: false
-              fieldType: boolean
-            - type: static
-              value: false
-              fieldType: boolean
-          numberOfSubgrids: 4
-          onTabChange: []
-          tabs:
-            - Tất cả
-            - Sắp diễn ra
-            - Đã qua
-            - Nháp
-    eventList-0:
+          numberOfSubgrids: 1
+    c-0:
       - '12':
           fixed: false
           fullHeight: false
-          h: 3
+          h: 4
           w: 2
           x: 0
           'y': 0
@@ -661,7 +660,7 @@ value:
               value: ''
             imageFit:
               type: static
-              value: cover
+              value: contain
             source:
               type: evalv2
               value: /logo.svg
@@ -676,7 +675,7 @@ value:
               value: url
           customCss:
             image:
-              class: rounded-lg
+              class: ''
               style: ''
       - '12':
           fixed: false
@@ -705,7 +704,7 @@ value:
               - id: result
                 componentId: bg_3
             eval: 'Hello ${ctx.username}'
-            expr: 'bg_3.result[iter.index].name'
+            expr: '"Tên:  " + bg_3.result[iter.index].name'
             fieldType: template
           configuration:
             copyButton:
@@ -716,7 +715,7 @@ value:
               value: false
             style:
               type: static
-              value: Subtitle
+              value: Body
             tooltip:
               type: static
               value: ''
@@ -733,87 +732,7 @@ value:
           fixed: false
           fullHeight: false
           h: 1
-          w: 1
-          x: 10
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 3
-          w: 1
-          x: 1
-          'y': 5
-        id: k
-        data:
-          id: k
-          type: iconcomponent
-          actions: []
-          configuration:
-            color:
-              type: static
-              value: currentColor
-            icon:
-              type: static
-              value: bell
-            size:
-              type: static
-              value: 24
-            strokeWidth:
-              type: static
-              value: 2
-          customCss:
-            container:
-              class: ''
-              style: ''
-            icon:
-              class: ''
-              style: ''
-          horizontalAlignment: right
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 11
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 0
-          'y': 5
-        id: j
-        data:
-          id: j
-          type: checkboxcomponent
-          actions: []
-          configuration:
-            defaultValue:
-              type: static
-            disabled:
-              type: static
-              value: false
-            label:
-              type: static
-              value: ''
-          customCss:
-            container:
-              class: ''
-              style: ''
-            text:
-              class: ''
-              style: ''
-          horizontalAlignment: left
-          onToggle: []
-          recomputeIds: []
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 4
+          w: 6
           x: 2
           'y': 1
         '3':
@@ -864,7 +783,7 @@ value:
           fixed: false
           fullHeight: false
           h: 1
-          w: 4
+          w: 5
           x: 2
           'y': 2
         '3':
@@ -883,12 +802,12 @@ value:
             type: evalv2
             autoRefresh: true
             connections:
-              - id: result
-                componentId: bg_3
               - id: index
                 componentId: iter
+              - id: result
+                componentId: bg_3
             eval: 'Hello ${ctx.username}'
-            expr: 'bg_3.result[iter.index].location'
+            expr: '"Địa chỉ cụ thể:  " + bg_3.result[iter.index].location'
             fields: {}
             fieldType: template
             hideRefreshButton: false
@@ -915,7 +834,7 @@ value:
               value: false
             style:
               type: static
-              value: Label
+              value: Body
             tooltip:
               type: static
               value: ''
@@ -928,85 +847,72 @@ value:
               style: ''
           horizontalAlignment: left
           verticalAlignment: top
+    topbar-0:
       - '12':
           fixed: false
           fullHeight: false
           h: 1
-          w: 2
-          x: 7
-          'y': 2
+          w: 12
+          x: 0
+          'y': 0
         '3':
           fixed: false
           fullHeight: false
           h: 1
-          w: 1
-          x: 2
-          'y': 6
-        id: o
+          w: 6
+          x: 0
+          'y': 0
+        id: AppTitle
         data:
-          id: o
+          id: AppTitle
           type: textcomponent
           actions: []
           componentInput:
             type: templatev2
-            autoRefresh: true
             connections: []
-            eval: Số lượng
-            expr: ''
-            fields: {}
+            eval: OPEN HEART
             fieldType: template
-            hideRefreshButton: false
-            recomputeOnInputChanged: true
-            runnable:
-              type: runnableByName
-              name: Eval of f
-              inlineScript:
-                content: '!inline eval_of_f_1.inline_script.frontend.js'
-                language: frontend
-                path: f/org/eventManage/Eval_of_f
-                refreshOn:
-                  - id: iter
-                    key: index
-                  - id: bg_3
-                    key: result
-                suggestedRefreshOn: []
           configuration:
             copyButton:
               type: static
               value: false
             disableNoText:
               type: static
-              value: false
+              value: true
+              fieldType: boolean
             style:
               type: static
-              value: Caption
+              value: Title
             tooltip:
               type: static
               value: ''
+              connections: []
+              expr: ''
+              fieldType: text
           customCss:
             container:
               class: ''
               style: ''
             text:
-              class: ''
+              class: text-xl font-semibold whitespace-nowrap truncate
               style: ''
-          horizontalAlignment: right
-          verticalAlignment: center
+          horizontalAlignment: center
+          verticalAlignment: top
       - '12':
           fixed: false
           fullHeight: false
           h: 1
-          w: 1
-          x: 9
-          'y': 2
+          w: 3
+          x: 0
+          'y': 1
         '3':
           fixed: false
           fullHeight: false
-          h: 1
-          w: 1
+          h: 4
+          w: 3
           x: 0
-          'y': 6
-        id: l
+          'y': 1
+        id: userLogo
         data:
           id: l
           type: textcomponent
@@ -2350,4 +2256,5 @@ policy:
     'q:rawscript/d0043da0f26453acb81bf2e594ab80a3fe817c5fdfc85c26b511ac708f961a0c':
       allow_user_resources: []
       one_of_inputs: {}
-      static_inputs: {}
+      static_inputs:
+        x: '1'
