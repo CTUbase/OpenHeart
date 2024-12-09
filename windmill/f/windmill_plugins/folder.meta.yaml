@@ -1,10 +1,8 @@
-summary: ''
-display_name: test_folder
+summary: null
+display_name: windmill_plugins
 extra_perms:
   g/all: true
   u/hoangphuc090104: true
-  u/nguyen: true
 owners:
   - u/hoangphuc090104
   - g/all
-  - u/nguyen

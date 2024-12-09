@@ -1,6 +1,6 @@
-
-def main(data):
-    ratios = data['ratio']
+def main(data, url):
+    ratios = data["ratio"]
+    locations = data['locations']
 
     weight = [0.12054469, 0.05292558, 0.01311273]
     bias = -0.019999999999999997
@@ -9,6 +9,10 @@ def main(data):
     prediction = 1 if calc >= 0 else 0
 
     if prediction == 1:
-        return data['locations']
+        result = [
+            (url, location)
+            for location in locations
+        ]
+        return result
     else:
         return None

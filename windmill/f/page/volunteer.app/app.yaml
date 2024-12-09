@@ -45,11 +45,11 @@ value:
         numberOfSubgrids: 1
     - '12':
         fixed: false
-        fullHeight: true
-        h: 18
+        fullHeight: false
+        h: 28
         w: 10
         x: 2
-        'y': 0
+        'y': 1
       '3':
         fixed: false
         fullHeight: false
@@ -66,7 +66,7 @@ value:
         customCss:
           container:
             class: ''
-            style: ''
+            style: 'overflow: scroll;'
         numberOfSubgrids: 1
     - '12':
         fixed: false
@@ -1411,6 +1411,158 @@ value:
           horizontalAlignment: center
           recomputeIds: []
           verticalAlignment: center
+    l-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 7
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 0
+          'y': 0
+        id: m
+        data:
+          id: m
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections: []
+            eval: ⚠️ Bảng thông báo những vùng gặp khó khăn
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: false
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: static
+              value: ''
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: ''
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: top
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 7
+          w: 12
+          x: 0
+          'y': 1
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 10
+          w: 3
+          x: 0
+          'y': 1
+        id: a
+        data:
+          id: a
+          type: aggridcomponent
+          actions: []
+          componentInput:
+            type: runnable
+            value:
+              - id: 1
+                name: A cell with a long name
+                age: 42
+              - id: 2
+                name: A briefer cell
+                age: 84
+            autoRefresh: true
+            fields:
+              keyword:
+                type: static
+                value: bão
+                fieldType: string
+              maximum:
+                type: static
+                value: 1
+                fieldType: integer
+            fieldType: array
+            recomputeOnInputChanged: true
+            runnable:
+              type: runnableByPath
+              name: Flow suggests disaster locations
+              path: f/windmill_plugins/model2_flow
+              runType: flow
+              schema:
+                $schema: 'https://json-schema.org/draft/2020-12/schema'
+                type: object
+                order:
+                  - keyword
+                  - maximum
+                properties:
+                  keyword:
+                    type: string
+                    description: ''
+                    default: ''
+                  maximum:
+                    type: integer
+                required: []
+            subFieldType: object
+          configuration:
+            allEditable:
+              type: static
+              value: false
+            columnDefs:
+              type: static
+              value:
+                - editable: true
+                  field: Địa điểm
+                  flex: 1
+                - field: Nguồn
+                  flex: 1
+            compactness:
+              type: static
+              value: normal
+            customActionsHeader:
+              type: static
+            extraConfig:
+              type: static
+              value: {}
+            flex:
+              type: static
+              value: true
+            footer:
+              type: static
+              value: true
+            multipleSelectable:
+              type: static
+              value: false
+            pagination:
+              type: static
+              value: false
+            rowMultiselectWithClick:
+              type: static
+              value: true
+            selectFirstRowByDefault:
+              type: static
+              value: true
+            wrapActions:
+              type: static
+              value: false
+          customCss:
+            container:
+              class: ''
+              style: ''
     main-0:
       - '12':
           fixed: false
@@ -1544,6 +1696,31 @@ value:
                     value: 300
                 row: {}
               selected: card
+          customCss:
+            container:
+              class: ''
+              style: ''
+          numberOfSubgrids: 1
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 9
+          w: 12
+          x: 0
+          'y': 17
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 8
+          w: 2
+          x: 0
+          'y': 16
+        id: l
+        data:
+          id: l
+          type: containercomponent
+          actions: []
+          configuration: {}
           customCss:
             container:
               class: ''
@@ -2083,6 +2260,12 @@ policy:
   execution_mode: anonymous
   s3_inputs: []
   triggerables_v2:
+    'a:flow/f/windmill_plugins/model2_flow':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs:
+        keyword: bão
+        maximum: 1
     'bg_0:rawscript/c60c0d40ae69728e16c2267e3584aafb6db4a385036c3708ff137d432b50f2c0':
       allow_user_resources: []
       one_of_inputs: {}

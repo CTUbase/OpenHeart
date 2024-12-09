@@ -1,9 +1,4 @@
-import wmill
-import base64
-from supabase import create_client, Client
-from datetime import datetime
 from io import BytesIO
-
 import requests
 from pyvi import ViTokenizer, ViPosTagger
 import string
@@ -65,7 +60,7 @@ def first_appearance_index(test_token_list, context):
     for idx, test_token in enumerate(test_token_list):
         count = count_tokens(test_token, context)
         if count > 0:
-            return idx + 1
+            return idx+1
     return 0
 
 
@@ -83,31 +78,24 @@ def remove_tokens(tokens, check_tokens):
             tokens.remove(token)
     return tokens
 
-
 def create_input(article):
+
     # Lấy token từ url tương ứng trên repo github
-    people_death_tokens = get_tokens_from_url(
-        "https://raw.githubusercontent.com/CTUbase/windmill-plugins/main/model_2/sample/people_death_keywords.txt"
-    )
-    people_injuries_tokens = get_tokens_from_url(
-        "https://raw.githubusercontent.com/CTUbase/windmill-plugins/main/model_2/sample/people_injuries_keywords.txt"
-    )
-    large_property_tokens = get_tokens_from_url(
-        "https://raw.githubusercontent.com/CTUbase/windmill-plugins/main/model_2/sample/property_large_keywords.txt"
-    )
-    average_property_tokens = get_tokens_from_url(
-        "https://raw.githubusercontent.com/CTUbase/windmill-plugins/main/model_2/sample/property_medium_keywords.txt"
-    )
-    small_property_tokens = get_tokens_from_url(
-        "https://raw.githubusercontent.com/CTUbase/windmill-plugins/main/model_2/sample/property_small_keywords.txt"
-    )
-    serious_keyword_tokens = get_tokens_from_url(
-        "https://raw.githubusercontent.com/CTUbase/windmill-plugins/main/model_2/sample/serious_keywords.txt"
-    )
+    people_death_tokens = get_tokens_from_url('https://raw.githubusercontent.com/CTUbase/windmill-plugins/main/model_2/sample/people_death_keywords.txt')
+    people_injuries_tokens = get_tokens_from_url('https://raw.githubusercontent.com/CTUbase/windmill-plugins/main/model_2/sample/people_injuries_keywords.txt')
+    large_property_tokens = get_tokens_from_url('https://raw.githubusercontent.com/CTUbase/windmill-plugins/main/model_2/sample/property_large_keywords.txt')
+    average_property_tokens = get_tokens_from_url('https://raw.githubusercontent.com/CTUbase/windmill-plugins/main/model_2/sample/property_medium_keywords.txt')
+    small_property_tokens = get_tokens_from_url('https://raw.githubusercontent.com/CTUbase/windmill-plugins/main/model_2/sample/property_small_keywords.txt')
+    serious_keyword_tokens = get_tokens_from_url('https://raw.githubusercontent.com/CTUbase/windmill-plugins/main/model_2/sample/serious_keywords.txt')
 
     # Khởi tạo dữ liệu ban đầu
-    data = {"deaths": 0, "injuries": 0, "property": [], "keyword": 0}
-
+    data = {
+        'deaths': 0,
+        'injuries': 0,
+        'property': [],
+        'keyword': 0
+    }
+    
     tokens = create_tokens(article)
 
     # Xử lý số
@@ -122,53 +110,56 @@ def create_input(article):
         "chục_ngàn": 10000,
         "chục": 10,
         "mươi": 10,
-        "nhiều": 2,
+        "nhiều": 2
     }
 
     for idx, token in enumerate(tokens):
         if token in number_conversion:
             tokens[idx] = str(number_conversion[token])
 
+
     people_token_list = [people_death_tokens, people_injuries_tokens]
-    property_token_list = [
-        large_property_tokens,
-        average_property_tokens,
-        small_property_tokens,
-    ]
+    property_token_list = [large_property_tokens, average_property_tokens, small_property_tokens]
 
     for token in tokens:
+
         if token.isdigit():
-            left_context = tokens[max(0, tokens.index(token) - 2) : tokens.index(token)]
+            left_context = tokens[max(0, tokens.index(token) - 2):tokens.index(token)]
             check_value = first_appearance_index(people_token_list, left_context)
-            if check_value != 0:
+            if (check_value != 0):
                 if check_value == 1:
-                    data["deaths"] += int(token)
+                    data['deaths'] += int(token)
                 else:
-                    data["injuries"] += int(token)
+                    data['injuries'] += int(token)
                 remove_tokens(tokens, left_context)
                 continue
 
-            right_context = tokens[tokens.index(token) + 1 : tokens.index(token) + 2]
+
+            right_context = tokens[tokens.index(token) + 1:tokens.index(token) + 2]
             check_value = first_appearance_index(people_token_list, right_context)
-            if check_value != 0:
+            if (check_value != 0):
                 if check_value == 1:
-                    data["deaths"] += int(token)
+                    data['deaths'] += int(token)
                 else:
-                    data["injuries"] += int(token)
+                    data['injuries'] += int(token)
                 remove_tokens(tokens, right_context)
                 continue
 
+
+
     check_value = appearance_array(property_token_list, tokens)
-    data["property"] = check_value
+    data['property'] = check_value
 
     filtered_tokens = [word for word in tokens if len(word) > 2]
     length = len(filtered_tokens)
-    data["keyword"] = count_tokens(serious_keyword_tokens, filtered_tokens) / length
+    data['keyword'] = count_tokens(serious_keyword_tokens, filtered_tokens)/length
 
     return data
 
 
-def analyze(article: str):
+
+def main(article: str):
+    
     data = create_input(article)
 
     joblib_url = "https://raw.githubusercontent.com/CTUbase/windmill-plugins/main/model_2/models/best_decision_tree_model.joblib"
@@ -192,54 +183,3 @@ def analyze(article: str):
     # Make the prediction
     prediction = model.predict(data_df)
     return prediction[0]
-
-
-def main(
-    base64_data: str,
-    file_name: str,
-    name: str,
-    description: str,
-    s_date: str,
-    e_date: str,
-    location: str,
-    amount: str,
-    id_org,
-):
-    # Initialize Supabase client
-    SUPABASE_URL = wmill.get_variable("f/info_page/supabase_url")
-    SUPABASE_KEY = wmill.get_variable("f/info_page/supabase_service_key")
-    supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
-
-    file_binary = base64.b64decode(base64_data)  # decode b64 -> binary
-
-    # Upload to Supabase Storage
-    response = supabase.storage.from_("image-events").upload(file_name, file_binary)
-    url_img = (
-        "https://euchsokljjcbkuaryyco.supabase.co/storage/v1/object/public/"
-        + response.full_path
-    )
-    ds = datetime.fromisoformat(s_date)
-    start_date = ds.strftime("%Y-%m-%d %H:%M:%S")
-    de = datetime.fromisoformat(e_date)
-    end_date = de.strftime("%Y-%m-%d %H:%M:%S")
-    id_imt = str(analyze(description))
-
-    # Insert events
-    response = (
-        supabase.table("events")
-        .insert(
-            {
-                "name": name,
-                "description": description,
-                "start_date": start_date,
-                "end_date": end_date,
-                "location": location,
-                "amount": amount,
-                "image": url_img,
-                "id_org": id_org,
-                "id_imt": id_imt,
-            }
-        )
-        .execute()
-    )
-    return response
