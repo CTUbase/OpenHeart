@@ -1,1 +1,0 @@
-return "Địa chỉ cụ thể:  " + bg_3.result[iter.index].location
