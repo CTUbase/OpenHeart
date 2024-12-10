@@ -567,7 +567,7 @@ value:
             connections:
               - id: result
                 componentId: bg_2
-            eval: "Chào mừng ${bg_2?.result[0]?.full_name ?? 'bạn'}\U0001F44B đến với Open Heart!"
+            eval: "Chào mừng ${bg_2?.result?.[0]?.full_name ?? 'bạn'}\U0001F44B đến với Open Heart!"
             fieldType: template
           configuration:
             copyButton:

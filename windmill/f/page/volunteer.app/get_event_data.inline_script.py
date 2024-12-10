@@ -11,7 +11,9 @@ def main():
         .select("*, organizations(*)")
         .execute()
     )        
+
     if not response.data:
-        return "err fetching data"
+        raise Exception("Khong the tai du lieu")
     else:
         return response.data
+    

@@ -1,0 +1,9 @@
+summary: get event data
+description: ''
+lock: '!inline f/page/volunteer/get_event_data/inline_bg_0.script.lock'
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties: {}
+  required: []

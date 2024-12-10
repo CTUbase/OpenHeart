@@ -25,7 +25,7 @@ value:
     - '12':
         fixed: true
         fullHeight: false
-        h: 3
+        h: 4
         w: 2
         x: 0
         'y': 0
@@ -78,7 +78,7 @@ value:
         h: 12
         w: 2
         x: 0
-        'y': 3
+        'y': 4
       '3':
         fixed: false
         fullHeight: false
@@ -466,7 +466,7 @@ value:
             connections:
               - id: result
                 componentId: bg_2
-            eval: "Chào mừng ${bg_2?.result[0]?.name ?? 'bạn'}\U0001F44B đến với Open Heart!"
+            eval: "Chào mừng ${bg_2?.result?.[0]?.name ?? 'bạn'}\U0001F44B đến với Open Heart!"
             expr: ''
             fieldType: template
           configuration:
@@ -609,7 +609,7 @@ value:
             eval: |-
 
               <p class="absolute text-sm font-bold">
-              ${bg_2?.result[0]?.name ?? 'tên tổ chức'}
+              ${bg_2?.result?.[0]?.name ?? 'Tên tổ chức'}
               </p>
             fieldType: template
           configuration: {}
@@ -617,6 +617,315 @@ value:
             container:
               class: ''
               style: ''
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 12
+          x: 0
+          'y': 2
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 1
+          'y': 5
+        id: c
+        data:
+          id: c
+          type: menucomponent
+          actions: []
+          configuration:
+            afterIcon:
+              type: static
+              value: ''
+            beforeIcon:
+              type: static
+              value: Menu
+            color:
+              type: static
+              value: light
+            fillContainer:
+              type: static
+              value: false
+            label:
+              type: static
+              value: ''
+            size:
+              type: static
+              value: xs
+          customCss:
+            button:
+              class: ''
+              style: ''
+          horizontalAlignment: center
+          menuItems:
+            - id: c_a
+              type: buttoncomponent
+              actions: []
+              componentInput:
+                type: runnable
+                fields: {}
+                fieldType: any
+              configuration:
+                afterIcon:
+                  type: static
+                  value: ''
+                beforeIcon:
+                  type: static
+                  value: ''
+                color:
+                  type: static
+                  value: light
+                confirmationModal:
+                  type: oneOf
+                  configuration:
+                    confirmationModal:
+                      description:
+                        type: static
+                        value: Are you sure?
+                      confirmationText:
+                        type: static
+                        value: Confirm
+                      title:
+                        type: static
+                        value: Title
+                    none: {}
+                  selected: none
+                disabled:
+                  type: static
+                  value: false
+                fillContainer:
+                  type: static
+                  value: false
+                label:
+                  type: static
+                  value: Quản lý tài khoản
+                onError:
+                  type: oneOf
+                  configuration:
+                    close:
+                      id:
+                        type: static
+                        value: ''
+                    errorOverlay: {}
+                    gotoUrl:
+                      newTab:
+                        type: static
+                        value: true
+                      url:
+                        type: static
+                        value: ''
+                    open:
+                      id:
+                        type: static
+                        value: ''
+                    sendErrorToast:
+                      appendError:
+                        type: static
+                        value: true
+                      message:
+                        type: static
+                        value: An error occured
+                    setTab:
+                      setTab:
+                        type: static
+                        value: []
+                  selected: errorOverlay
+                onSuccess:
+                  type: oneOf
+                  configuration:
+                    clearFiles:
+                      id:
+                        type: static
+                        value: ''
+                    close:
+                      id:
+                        type: static
+                        value: ''
+                    closeModal:
+                      modalId:
+                        type: static
+                        value: ''
+                    gotoUrl:
+                      newTab:
+                        type: static
+                        value: false
+                      url:
+                        type: evalv2
+                        value: bg_1.result +"org/home?"+"user="+bg_0.result.id
+                        connections:
+                          - id: result
+                            componentId: bg_0
+                          - id: result
+                            componentId: bg_1
+                        expr: >-
+                          bg_1.result
+                          +"info_page/info_page_organization?"+"user="+bg_0.result.id
+                    none: {}
+                    open:
+                      id:
+                        type: static
+                        value: ''
+                    openModal:
+                      modalId:
+                        type: static
+                        value: ''
+                    sendToast:
+                      message:
+                        type: static
+                        value: ''
+                    setTab:
+                      setTab:
+                        type: static
+                        value: []
+                  selected: gotoUrl
+                size:
+                  type: static
+                  value: xs
+                triggerOnAppLoad:
+                  type: static
+                  value: false
+              customCss:
+                button:
+                  class: ''
+                  style: ''
+                container:
+                  class: ''
+                  style: ''
+              horizontalAlignment: center
+              recomputeIds: []
+              verticalAlignment: center
+            - id: c_b
+              type: buttoncomponent
+              actions: []
+              componentInput:
+                type: runnable
+                fields: {}
+                fieldType: any
+              configuration:
+                afterIcon:
+                  type: static
+                  value: ''
+                beforeIcon:
+                  type: static
+                  value: ''
+                color:
+                  type: static
+                  value: red
+                confirmationModal:
+                  type: oneOf
+                  configuration:
+                    confirmationModal:
+                      description:
+                        type: static
+                        value: Are you sure?
+                      confirmationText:
+                        type: static
+                        value: Confirm
+                      title:
+                        type: static
+                        value: Title
+                    none: {}
+                  selected: none
+                disabled:
+                  type: static
+                  value: false
+                fillContainer:
+                  type: static
+                  value: false
+                label:
+                  type: static
+                  value: Press me
+                onError:
+                  type: oneOf
+                  configuration:
+                    close:
+                      id:
+                        type: static
+                        value: ''
+                    errorOverlay: {}
+                    gotoUrl:
+                      newTab:
+                        type: static
+                        value: true
+                      url:
+                        type: static
+                        value: ''
+                    open:
+                      id:
+                        type: static
+                        value: ''
+                    sendErrorToast:
+                      appendError:
+                        type: static
+                        value: true
+                      message:
+                        type: static
+                        value: An error occured
+                    setTab:
+                      setTab:
+                        type: static
+                        value: []
+                  selected: errorOverlay
+                onSuccess:
+                  type: oneOf
+                  configuration:
+                    clearFiles:
+                      id:
+                        type: static
+                        value: ''
+                    close:
+                      id:
+                        type: static
+                        value: ''
+                    closeModal:
+                      modalId:
+                        type: static
+                        value: ''
+                    gotoUrl:
+                      newTab:
+                        type: static
+                        value: false
+                      url:
+                        type: static
+                        value: bg_1.result +"login_page/login_page"
+                    none: {}
+                    open:
+                      id:
+                        type: static
+                        value: ''
+                    openModal:
+                      modalId:
+                        type: static
+                        value: ''
+                    sendToast:
+                      message:
+                        type: static
+                        value: ''
+                    setTab:
+                      setTab:
+                        type: static
+                        value: []
+                  selected: gotoUrl
+                size:
+                  type: static
+                  value: xs
+                triggerOnAppLoad:
+                  type: static
+                  value: false
+              customCss:
+                button:
+                  class: ''
+                  style: ''
+                container:
+                  class: ''
+                  style: ''
+              horizontalAlignment: center
+              recomputeIds: []
+              verticalAlignment: center
+          verticalAlignment: center
   theme:
     type: path
     path: f/app_themes/theme_0

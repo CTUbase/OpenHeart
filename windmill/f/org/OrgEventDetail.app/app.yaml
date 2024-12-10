@@ -1,4 +1,4 @@
-summary: Trang chi tiết tình nguyện
+summary: Chi tiết sự kiện (org)
 value:
   css:
     buttoncomponent:
@@ -46,7 +46,7 @@ value:
     - '12':
         fixed: true
         fullHeight: false
-        h: 3
+        h: 4
         w: 2
         x: 0
         'y': 0
@@ -57,9 +57,9 @@ value:
         w: 6
         x: 0
         'y': 1
-      id: af
+      id: ac
       data:
-        id: af
+        id: ac
         type: containercomponent
         actions: []
         configuration: {}
@@ -97,10 +97,10 @@ value:
     - '12':
         fixed: false
         fullHeight: false
-        h: 14
+        h: 10
         w: 2
         x: 0
-        'y': 3
+        'y': 4
       '3':
         fixed: false
         fullHeight: false
@@ -108,9 +108,9 @@ value:
         w: 12
         x: 0
         'y': 0
-      id: ag
+      id: aj
       data:
-        id: ag
+        id: aj
         type: navbarcomponent
         actions: []
         configuration:
@@ -147,59 +147,6 @@ value:
             style: ''
         horizontalAlignment: center
         navbarItems:
-          - caption: tính năng đang phát triển
-            disabled:
-              type: static
-              value: true
-              fieldType: boolean
-            hidden:
-              type: static
-              value: false
-              fieldType: boolean
-            icon: briefcase
-            label:
-              type: static
-              value: Tổ chức của tôi
-              fieldType: text
-            path:
-              type: oneOf
-              configuration:
-                app:
-                  path:
-                    type: static
-                    value: u/page/notFound404
-                    allowTypeChange: false
-                    fieldType: app-path
-                    tooltip: >-
-                      The app to navigate to when the item is clicked. Will be
-                      opened in the same tab. If you want to navigate to an
-                      external URL, use the "Href" option.
-                  queryParamsOrHash:
-                    type: static
-                    fieldType: text
-                    placeholder: '?key=value#hash'
-                    tooltip: >-
-                      Query parameters or hash to append to the URL. For
-                      example, `?key=value` or `#hash`.
-                href:
-                  href:
-                    type: evalv2
-                    value: bg_1.result +'page/notFound404?'+'user='+bg_0.result.id
-                    connections:
-                      - id: result
-                        componentId: bg_4
-                      - id: result
-                        componentId: bg_5
-                    expr: bg_5.result +'page/notFound404?'+'user='+bg_4.result.id
-                    fieldType: text
-                    tooltip: >-
-                      The URL to navigate to when the item is clicked. Will be
-                      opened in a new tab. If you want to navigate to an other
-                      app, use the 'App' option.
-              labels:
-                app: Navigate to an app
-                href: Navigate to an external URL
-              selected: href
           - disabled:
               type: static
               value: false
@@ -227,7 +174,12 @@ value:
                       opened in the same tab. If you want to navigate to an
                       external URL, use the "Href" option.
                   queryParamsOrHash:
-                    type: static
+                    type: evalv2
+                    value: '?user='
+                    connections:
+                      - id: result
+                        componentId: bg_0
+                    expr: '''?user=''+bg_0.result.id'
                     fieldType: text
                     placeholder: '?key=value#hash'
                     tooltip: >-
@@ -236,13 +188,13 @@ value:
                 href:
                   href:
                     type: evalv2
-                    value: bg_1.result +"org/home?"+"user="+bg_0.result.id
+                    value: bg_1.result +'org/home'+
                     connections:
                       - id: result
                         componentId: bg_5
                       - id: result
                         componentId: bg_4
-                    expr: bg_5.result +"page/home?"+"user="+bg_4.result.id
+                    expr: bg_5.result +"org/home?"+"user="+bg_4.result.id
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -252,7 +204,7 @@ value:
                 app: Navigate to an app
                 href: Navigate to an external URL
               selected: href
-          - caption: Tính năng Đang Phát triển
+          - caption: tính năng đang phát triển
             disabled:
               type: static
               value: true
@@ -264,7 +216,7 @@ value:
             icon: bell
             label:
               type: static
-              value: Thông báo
+              value: thông báo
               fieldType: text
             path:
               type: oneOf
@@ -289,7 +241,7 @@ value:
                 href:
                   href:
                     type: evalv2
-                    value: ''
+                    value: bg_1.result +'page/notFound404'
                     connections:
                       - id: result
                         componentId: bg_5
@@ -314,10 +266,10 @@ value:
               type: static
               value: false
               fieldType: boolean
-            icon: calendar
+            icon: app-window-mac
             label:
               type: static
-              value: Tình nguyện
+              value: Quản lý sự kiện
               fieldType: text
             path:
               type: oneOf
@@ -344,114 +296,10 @@ value:
                     type: evalv2
                     connections:
                       - id: result
-                        componentId: bg_5
-                      - id: result
                         componentId: bg_4
-                    expr: bg_5.result +'page/volunteer?'+'user='+bg_4.result.id
-                    fieldType: text
-                    tooltip: >-
-                      The URL to navigate to when the item is clicked. Will be
-                      opened in a new tab. If you want to navigate to an other
-                      app, use the 'App' option.
-              labels:
-                app: Navigate to an app
-                href: Navigate to an external URL
-              selected: href
-          - disabled:
-              type: static
-              value: false
-              fieldType: boolean
-            hidden:
-              type: static
-              value: false
-              fieldType: boolean
-            icon: bookmark
-            label:
-              type: static
-              value: Hoạt động
-              fieldType: text
-            path:
-              type: oneOf
-              configuration:
-                app:
-                  path:
-                    type: static
-                    value: u/page/notFound404
-                    allowTypeChange: false
-                    fieldType: app-path
-                    tooltip: >-
-                      The app to navigate to when the item is clicked. Will be
-                      opened in the same tab. If you want to navigate to an
-                      external URL, use the "Href" option.
-                  queryParamsOrHash:
-                    type: static
-                    fieldType: text
-                    placeholder: '?key=value#hash'
-                    tooltip: >-
-                      Query parameters or hash to append to the URL. For
-                      example, `?key=value` or `#hash`.
-                href:
-                  href:
-                    type: evalv2
-                    value: ''
-                    connections:
                       - id: result
                         componentId: bg_5
-                      - id: result
-                        componentId: bg_4
-                    expr: bg_5.result +"page/myRegistration?"+"user="+bg_4.result.id
-                    fieldType: text
-                    tooltip: >-
-                      The URL to navigate to when the item is clicked. Will be
-                      opened in a new tab. If you want to navigate to an other
-                      app, use the 'App' option.
-              labels:
-                app: Navigate to an app
-                href: Navigate to an external URL
-              selected: href
-          - disabled:
-              type: static
-              value: true
-              fieldType: boolean
-            hidden:
-              type: static
-              value: false
-              fieldType: boolean
-            icon: search
-            label:
-              type: static
-              value: Tìm kiếm tổ chức
-              fieldType: text
-            path:
-              type: oneOf
-              configuration:
-                app:
-                  path:
-                    type: static
-                    value: u/page/notFound404
-                    allowTypeChange: false
-                    fieldType: app-path
-                    tooltip: >-
-                      The app to navigate to when the item is clicked. Will be
-                      opened in the same tab. If you want to navigate to an
-                      external URL, use the "Href" option.
-                  queryParamsOrHash:
-                    type: static
-                    fieldType: text
-                    placeholder: '?key=value#hash'
-                    tooltip: >-
-                      Query parameters or hash to append to the URL. For
-                      example, `?key=value` or `#hash`.
-                href:
-                  href:
-                    type: evalv2
-                    value: bg_1.result +'page/notFound404?'+'user='+bg_0.result.id
-                    connections:
-                      - id: result
-                        componentId: bg_5
-                      - id: result
-                        componentId: bg_4
-                    expr: bg_5.result +'page/notFound404?'+'user='+bg_4.result.id
+                    expr: bg_5.result +'org/manageEvent?'+'user='+bg_4.result.id
                     fieldType: text
                     tooltip: >-
                       The URL to navigate to when the item is clicked. Will be
@@ -470,10 +318,10 @@ value:
               type: static
               value: false
               fieldType: boolean
-            icon: activity
+            icon: message-circle-more
             label:
               type: static
-              value: Đóng góp
+              value: Tin nhắn
               fieldType: text
             path:
               type: oneOf
@@ -514,11 +362,64 @@ value:
                 app: Navigate to an app
                 href: Navigate to an external URL
               selected: href
+          - caption: tính năng đang phát triển
+            disabled:
+              type: static
+              value: true
+              fieldType: boolean
+            hidden:
+              type: static
+              value: false
+              fieldType: boolean
+            icon: activity
+            label:
+              type: static
+              value: thống kê
+              fieldType: text
+            path:
+              type: oneOf
+              configuration:
+                app:
+                  path:
+                    type: static
+                    value: u/page/notFound404
+                    allowTypeChange: false
+                    fieldType: app-path
+                    tooltip: >-
+                      The app to navigate to when the item is clicked. Will be
+                      opened in the same tab. If you want to navigate to an
+                      external URL, use the "Href" option.
+                  queryParamsOrHash:
+                    type: static
+                    fieldType: text
+                    placeholder: '?key=value#hash'
+                    tooltip: >-
+                      Query parameters or hash to append to the URL. For
+                      example, `?key=value` or `#hash`.
+                href:
+                  href:
+                    type: evalv2
+                    value: bg_1.result +'page/notFound404?'+'user='+bg_0.result.id
+                    connections:
+                      - id: result
+                        componentId: bg_5
+                      - id: result
+                        componentId: bg_4
+                    expr: bg_5.result +'page/notFound404?'+'user='+bg_4.result.id
+                    fieldType: text
+                    tooltip: >-
+                      The URL to navigate to when the item is clicked. Will be
+                      opened in a new tab. If you want to navigate to an other
+                      app, use the 'App' option.
+              labels:
+                app: Navigate to an app
+                href: Navigate to an external URL
+              selected: href
         verticalAlignment: center
   hiddenInlineScripts:
     - type: runnableByName
       name: get_event
-      autoRefresh: false
+      autoRefresh: true
       fields:
         id_evt:
           type: evalv2
@@ -532,7 +433,7 @@ value:
         content: '!inline get_event.inline_script.py'
         lock: '!inline get_event.inline_script.lock'
         language: python3
-        path: f/page/eventDetail/get_event
+        path: f/org/OrgEventDetail/get_event
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
@@ -548,7 +449,7 @@ value:
       recomputeOnInputChanged: true
     - type: runnableByName
       name: get_org
-      autoRefresh: false
+      autoRefresh: true
       fields:
         id_evt:
           type: evalv2
@@ -562,7 +463,7 @@ value:
         content: '!inline get_org.inline_script.py'
         lock: '!inline get_org.inline_script.lock'
         language: python3
-        path: f/page/eventDetail/get_org
+        path: f/org/OrgEventDetail/get_org
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
@@ -578,7 +479,7 @@ value:
       recomputeOnInputChanged: true
     - type: runnableByName
       name: get_date_from_event
-      autoRefresh: false
+      autoRefresh: true
       fields:
         x:
           type: evalv2
@@ -592,7 +493,7 @@ value:
         content: '!inline get_date_from_event.inline_script.py'
         lock: '!inline get_date_from_event.inline_script.lock'
         language: python3
-        path: f/page/eventDetail/get_date_from_event
+        path: f/org/OrgEventDetail/get_date_from_event
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
@@ -608,7 +509,7 @@ value:
       recomputeOnInputChanged: true
     - type: runnableByName
       name: get_registeredVolunteer
-      autoRefresh: false
+      autoRefresh: true
       fields:
         x:
           type: evalv2
@@ -622,7 +523,7 @@ value:
         content: '!inline get_registeredvolunteer.inline_script.py'
         lock: '!inline get_registeredvolunteer.inline_script.lock'
         language: python3
-        path: f/page/eventDetail/get_registeredVolunteer
+        path: f/org/OrgEventDetail/get_registeredVolunteer
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
@@ -643,7 +544,7 @@ value:
       inlineScript:
         content: '!inline get_url_param.inline_script.frontend.js'
         language: frontend
-        path: f/page/eventDetail/get_url_param
+        path: f/org/OrgEventDetail/get_url_param
         suggestedRefreshOn: []
       recomputeIds:
         - bg_6
@@ -660,7 +561,7 @@ value:
         content: '!inline get_wmill_path.inline_script.py'
         lock: '!inline get_wmill_path.inline_script.lock'
         language: python3
-        path: f/page/eventDetail/get_wmill_path
+        path: f/org/OrgEventDetail/get_wmill_path
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
@@ -669,7 +570,7 @@ value:
       recomputeIds: []
       recomputeOnInputChanged: true
     - type: runnableByName
-      name: get_volunteer_profile
+      name: org_profile
       autoRefresh: false
       fields:
         user_id:
@@ -681,10 +582,10 @@ value:
           expr: bg_4.result.id
           fieldType: string
       inlineScript:
-        content: '!inline get_volunteer_profile.inline_script.py'
-        lock: '!inline get_volunteer_profile.inline_script.lock'
+        content: '!inline org_profile.inline_script.py'
+        lock: '!inline org_profile.inline_script.lock'
         language: python3
-        path: f/page/eventDetail/get_volunteer_profile
+        path: f/org/OrgEventDetail/org_profile
         schema:
           $schema: 'https://json-schema.org/draft/2020-12/schema'
           type: object
@@ -777,35 +678,10 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 4
-          w: 3
-          x: 9
-          'y': 2
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 8
-          w: 2
-          x: 0
-          'y': 5
-        id: e
-        data:
-          id: e
-          type: containercomponent
-          actions: []
-          configuration: {}
-          customCss:
-            container:
-              class: ''
-              style: 'border-radius: 5px; border: 1px solid #dadada;'
-          numberOfSubgrids: 1
-      - '12':
-          fixed: false
-          fullHeight: false
           h: 6
           w: 3
           x: 9
-          'y': 6
+          'y': 2
         '3':
           fixed: false
           fullHeight: false
@@ -824,158 +700,6 @@ value:
               class: ''
               style: 'border-radius: 5px; border: 1px solid #dadada;'
           numberOfSubgrids: 1
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 2
-          w: 3
-          x: 9
-          'y': 12
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 1
-          'y': 0
-        id: s
-        data:
-          id: s
-          type: buttoncomponent
-          actions: []
-          componentInput:
-            type: runnable
-            fields: {}
-            fieldType: any
-          configuration:
-            afterIcon:
-              type: static
-              value: ''
-            beforeIcon:
-              type: static
-              value: ''
-            color:
-              type: static
-              value: blue
-            confirmationModal:
-              type: oneOf
-              configuration:
-                confirmationModal:
-                  description:
-                    type: evalv2
-                    value: >-
-                      Bạn đã đáp ứng các yêu cầu  và mong muốn tham gia hoạt
-                      động trên?
-                    connections:
-                      - id: result
-                        componentId: bg_0
-                    expr: >-
-                      "Bạn đã đáp ứng các yêu cầu và mong muốn tham gia hoạt
-                      động " + bg_0.result.name +"?"
-                  confirmationText:
-                    type: static
-                    value: Đồng ý
-                  title:
-                    type: static
-                    value: Xác nhận đăng ký
-                none: {}
-              selected: confirmationModal
-            disabled:
-              type: static
-              value: false
-            fillContainer:
-              type: static
-              value: true
-            label:
-              type: static
-              value: Đăng kí
-            onError:
-              type: oneOf
-              configuration:
-                close:
-                  id:
-                    type: static
-                    value: ''
-                errorOverlay: {}
-                gotoUrl:
-                  newTab:
-                    type: static
-                    value: true
-                  url:
-                    type: static
-                    value: ''
-                open:
-                  id:
-                    type: static
-                    value: ''
-                sendErrorToast:
-                  appendError:
-                    type: static
-                    value: true
-                  message:
-                    type: static
-                    value: An error occured
-                setTab:
-                  setTab:
-                    type: static
-                    value: []
-              selected: errorOverlay
-            onSuccess:
-              type: oneOf
-              configuration:
-                clearFiles:
-                  id:
-                    type: static
-                    value: ''
-                close:
-                  id:
-                    type: static
-                    value: ''
-                closeModal:
-                  modalId:
-                    type: static
-                    value: ''
-                gotoUrl:
-                  newTab:
-                    type: static
-                    value: true
-                  url:
-                    type: static
-                    value: ''
-                none: {}
-                open:
-                  id:
-                    type: static
-                    value: ''
-                openModal:
-                  modalId:
-                    type: static
-                    value: ''
-                sendToast:
-                  message:
-                    type: static
-                    value: ''
-                setTab:
-                  setTab:
-                    type: static
-                    value: []
-              selected: none
-            size:
-              type: static
-              value: xl
-            triggerOnAppLoad:
-              type: static
-              value: false
-          customCss:
-            button:
-              class: ''
-              style: 'border: 1px solid #dadada;'
-            container:
-              class: ''
-              style: ''
-          horizontalAlignment: center
-          recomputeIds: []
-          verticalAlignment: center
       - '12':
           fixed: false
           fullHeight: false
@@ -1006,100 +730,6 @@ value:
           fixed: false
           fullHeight: false
           h: 1
-          w: 1
-          x: 4
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 4
-          w: 3
-          x: 0
-          'y': 5
-        id: ak
-        data:
-          id: ak
-          type: imagecomponent
-          actions: []
-          configuration:
-            altText:
-              type: static
-              value: ''
-            imageFit:
-              type: static
-              value: contain
-            source:
-              type: evalv2
-              value: /logo.svg
-              connections:
-                - id: result
-                  componentId: ac
-                - id: index
-                  componentId: iter
-              expr: 'ac?.result[iter.index]?.picpath ?? ''/logo.svg'''
-            sourceKind:
-              type: static
-              value: url
-          customCss:
-            image:
-              class: rounded-full border-4
-              style: ''
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 4
-          x: 5
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 0
-          'y': 4
-        id: ae
-        data:
-          id: ae
-          type: textcomponent
-          actions: []
-          componentInput:
-            type: evalv2
-            connections:
-              - id: result
-                componentId: ac
-              - id: index
-                componentId: iter
-            eval: ''
-            expr: 'ac?.result[iter.index]?.hoten ?? ''họ tên'''
-            fieldType: template
-          configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: false
-            style:
-              type: static
-              value: Body
-            tooltip:
-              type: static
-              value: ''
-          customCss:
-            container:
-              class: ''
-              style: ''
-            text:
-              class: ''
-              style: ''
-          horizontalAlignment: left
-          verticalAlignment: center
-    af-0:
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
           w: 12
           x: 0
           'y': 0
@@ -1110,9 +740,9 @@ value:
           w: 6
           x: 0
           'y': 0
-        id: ah
+        id: ae
         data:
-          id: ah
+          id: ae
           type: textcomponent
           actions: []
           componentInput:
@@ -1130,7 +760,7 @@ value:
               fieldType: boolean
             style:
               type: static
-              value: Body
+              value: Title
             tooltip:
               type: static
               value: ''
@@ -1144,8 +774,8 @@ value:
             text:
               class: text-xl font-semibold whitespace-nowrap truncate
               style: ''
-          horizontalAlignment: left
-          verticalAlignment: center
+          horizontalAlignment: center
+          verticalAlignment: top
       - '12':
           fixed: false
           fullHeight: false
@@ -1160,9 +790,9 @@ value:
           w: 3
           x: 0
           'y': 1
-        id: ai
+        id: af
         data:
-          id: ai
+          id: af
           type: imagecomponent
           actions: []
           configuration:
@@ -1178,13 +808,13 @@ value:
               connections:
                 - id: result
                   componentId: bg_6
-              expr: 'bg_6?.result[0]?.picPath ?? ''/logo.svg'''
+              expr: 'bg_6?.result[0]?.image ?? ''/logo.svg'''
             sourceKind:
               type: static
               value: url
           customCss:
             image:
-              class: ''
+              class: border-2 rounded-full
               style: ''
       - '12':
           fixed: false
@@ -1196,13 +826,48 @@ value:
         '3':
           fixed: false
           fullHeight: false
-          h: 1
+          h: 2
           w: 1
           x: 0
           'y': 5
-        id: aj
+        id: ah
         data:
-          id: aj
+          id: ah
+          type: htmlcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections:
+              - id: result
+                componentId: bg_6
+            eval: |-
+
+              <p class="absolute text-sm font-bold">
+              ${bg_6?.result[0]?.name ?? 'tên tổ chức'}
+              </p>
+            fieldType: template
+          configuration: {}
+          customCss:
+            container:
+              class: ''
+              style: ''
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 12
+          x: 0
+          'y': 2
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 1
+          x: 1
+          'y': 5
+        id: ai
+        data:
+          id: ai
           type: menucomponent
           actions: []
           configuration:
@@ -1211,38 +876,32 @@ value:
               value: ''
             beforeIcon:
               type: static
-              value: ''
+              value: Menu
             color:
               type: static
-              value: none
+              value: light
             fillContainer:
               type: static
               value: false
             label:
-              type: evalv2
-              value: your name
-              connections:
-                - id: result
-                  componentId: bg_6
-              expr: 'bg_6?.result[0]?.full_name ?? ''tên của bạn'''
+              type: static
+              value: ''
             size:
               type: static
               value: xs
           customCss:
             button:
-              class: max-w-xs
+              class: ''
               style: ''
           horizontalAlignment: center
           menuItems:
-            - id: aj_a
+            - id: ai_a
               type: buttoncomponent
               actions: []
               componentInput:
                 type: runnable
-                autoRefresh: false
                 fields: {}
                 fieldType: any
-                recomputeOnInputChanged: false
               configuration:
                 afterIcon:
                   type: static
@@ -1276,7 +935,7 @@ value:
                   value: false
                 label:
                   type: static
-                  value: quản lý tài khoản
+                  value: Quản lý tài khoản
                 onError:
                   type: oneOf
                   configuration:
@@ -1332,12 +991,12 @@ value:
                         value: bg_1.result +"org/home?"+"user="+bg_0.result.id
                         connections:
                           - id: result
-                            componentId: bg_1
+                            componentId: bg_4
                           - id: result
-                            componentId: bg_0
+                            componentId: bg_6
                         expr: >-
-                          bg_1.result
-                          +"info_page/info_page_volunteer?"+"user="+bg_0.result.id
+                          bg_4.result
+                          +"info_page/info_page_organization?"+"user="+bg_6.result.id
                     none: {}
                     open:
                       id:
@@ -1372,7 +1031,7 @@ value:
               horizontalAlignment: center
               recomputeIds: []
               verticalAlignment: center
-            - id: aj_c
+            - id: ai_b
               type: buttoncomponent
               actions: []
               componentInput:
@@ -1412,7 +1071,7 @@ value:
                   value: false
                 label:
                   type: static
-                  value: Đăng xuất
+                  value: Press me
                 onError:
                   type: oneOf
                   configuration:
@@ -1464,12 +1123,8 @@ value:
                         type: static
                         value: false
                       url:
-                        type: evalv2
-                        value: bg_1.result +"org/home?"+"user="+bg_0.result.id
-                        connections:
-                          - id: result
-                            componentId: bg_1
-                        expr: bg_1.result +"login_page/login_page"
+                        type: static
+                        value: bg_5.result +"login_page/login_page"
                     none: {}
                     open:
                       id:
@@ -1504,425 +1159,6 @@ value:
               horizontalAlignment: center
               recomputeIds: []
               verticalAlignment: center
-          verticalAlignment: center
-    e-0:
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 8
-          x: 0
-          'y': 0
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 0
-          'y': 0
-        id: f
-        data:
-          id: f
-          type: textcomponent
-          actions: []
-          componentInput:
-            type: templatev2
-            connections: []
-            eval: 'Liên hệ '
-            fieldType: template
-          configuration:
-            copyButton:
-              type: static
-              value: false
-            disableNoText:
-              type: static
-              value: false
-            style:
-              type: static
-              value: Subtitle
-            tooltip:
-              type: static
-              value: ''
-          customCss:
-            container:
-              class: ''
-              style: ''
-            text:
-              class: ''
-              style: ''
-          horizontalAlignment: left
-          verticalAlignment: top
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 3
-          x: 0
-          'y': 1
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 4
-          w: 3
-          x: 0
-          'y': 1
-        id: g
-        data:
-          id: g
-          type: imagecomponent
-          actions: []
-          configuration:
-            altText:
-              type: static
-              value: ''
-            imageFit:
-              type: static
-              value: contain
-            source:
-              type: evalv2
-              value: /logo.svg
-              connections:
-                - id: result
-                  componentId: bg_1
-              expr: bg_1.result.image
-            sourceKind:
-              type: static
-              value: url
-          customCss:
-            image:
-              class: rounded-full border-4
-              style: ''
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 9
-          x: 3
-          'y': 1
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 2
-          w: 1
-          x: 0
-          'y': 5
-        id: j
-        data:
-          id: j
-          type: htmlcomponent
-          actions: []
-          componentInput:
-            type: templatev2
-            connections:
-              - id: result
-                componentId: bg_1
-            eval: |-
-
-              <p class="absolute flex align-center text-sm">
-              ${bg_1?.result?.name ?? 'Tên tổ chức' }
-              </p>
-            expr: ''
-            fieldType: template
-          configuration: {}
-          customCss:
-            container:
-              class: ''
-              style: ''
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 2
-          x: 4
-          'y': 2
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 1
-          'y': 0
-        id: h
-        data:
-          id: h
-          type: buttoncomponent
-          actions: []
-          componentInput:
-            type: runnable
-            fields: {}
-            fieldType: any
-          configuration:
-            afterIcon:
-              type: static
-              value: ''
-            beforeIcon:
-              type: static
-              value: phone-call
-            color:
-              type: static
-              value: blue
-            confirmationModal:
-              type: oneOf
-              configuration:
-                confirmationModal:
-                  description:
-                    type: static
-                    value: Are you sure?
-                  confirmationText:
-                    type: static
-                    value: Confirm
-                  title:
-                    type: static
-                    value: Title
-                none: {}
-              selected: none
-            disabled:
-              type: static
-              value: false
-            fillContainer:
-              type: static
-              value: false
-            label:
-              type: static
-              value: SĐT
-            onError:
-              type: oneOf
-              configuration:
-                close:
-                  id:
-                    type: static
-                    value: ''
-                errorOverlay: {}
-                gotoUrl:
-                  newTab:
-                    type: static
-                    value: true
-                  url:
-                    type: static
-                    value: ''
-                open:
-                  id:
-                    type: static
-                    value: ''
-                sendErrorToast:
-                  appendError:
-                    type: static
-                    value: true
-                  message:
-                    type: static
-                    value: An error occured
-                setTab:
-                  setTab:
-                    type: static
-                    value: []
-              selected: errorOverlay
-            onSuccess:
-              type: oneOf
-              configuration:
-                clearFiles:
-                  id:
-                    type: static
-                    value: ''
-                close:
-                  id:
-                    type: static
-                    value: ''
-                closeModal:
-                  modalId:
-                    type: static
-                    value: ''
-                gotoUrl:
-                  newTab:
-                    type: static
-                    value: true
-                  url:
-                    type: evalv2
-                    value: ''
-                    connections:
-                      - id: result
-                        componentId: bg_1
-                    expr: '''tel: +84 ''+ bg_1.result.phone'
-                none: {}
-                open:
-                  id:
-                    type: static
-                    value: ''
-                openModal:
-                  modalId:
-                    type: static
-                    value: ''
-                sendToast:
-                  message:
-                    type: static
-                    value: ''
-                setTab:
-                  setTab:
-                    type: static
-                    value: []
-              selected: gotoUrl
-            size:
-              type: static
-              value: xs
-            triggerOnAppLoad:
-              type: static
-              value: false
-          customCss:
-            button:
-              class: ''
-              style: ''
-            container:
-              class: ''
-              style: ''
-          horizontalAlignment: center
-          recomputeIds: []
-          verticalAlignment: center
-      - '12':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 2
-          x: 9
-          'y': 2
-        '3':
-          fixed: false
-          fullHeight: false
-          h: 1
-          w: 1
-          x: 2
-          'y': 0
-        id: i
-        data:
-          id: i
-          type: buttoncomponent
-          actions: []
-          componentInput:
-            type: runnable
-            fields: {}
-            fieldType: any
-          configuration:
-            afterIcon:
-              type: static
-              value: ''
-            beforeIcon:
-              type: static
-              value: mail
-            color:
-              type: static
-              value: blue
-            confirmationModal:
-              type: oneOf
-              configuration:
-                confirmationModal:
-                  description:
-                    type: static
-                    value: Are you sure?
-                  confirmationText:
-                    type: static
-                    value: Confirm
-                  title:
-                    type: static
-                    value: Title
-                none: {}
-              selected: none
-            disabled:
-              type: static
-              value: false
-            fillContainer:
-              type: static
-              value: false
-            label:
-              type: static
-              value: Email
-            onError:
-              type: oneOf
-              configuration:
-                close:
-                  id:
-                    type: static
-                    value: ''
-                errorOverlay: {}
-                gotoUrl:
-                  newTab:
-                    type: static
-                    value: true
-                  url:
-                    type: static
-                    value: ''
-                open:
-                  id:
-                    type: static
-                    value: ''
-                sendErrorToast:
-                  appendError:
-                    type: static
-                    value: true
-                  message:
-                    type: static
-                    value: An error occured
-                setTab:
-                  setTab:
-                    type: static
-                    value: []
-              selected: errorOverlay
-            onSuccess:
-              type: oneOf
-              configuration:
-                clearFiles:
-                  id:
-                    type: static
-                    value: ''
-                close:
-                  id:
-                    type: static
-                    value: ''
-                closeModal:
-                  modalId:
-                    type: static
-                    value: ''
-                gotoUrl:
-                  newTab:
-                    type: static
-                    value: true
-                  url:
-                    type: evalv2
-                    value: '''tel: +84 ''+ bg_1.result.phone'
-                    connections:
-                      - id: result
-                        componentId: bg_1
-                    expr: '''mailto: ''+ bg_1.result.email'
-                none: {}
-                open:
-                  id:
-                    type: static
-                    value: ''
-                openModal:
-                  modalId:
-                    type: static
-                    value: ''
-                sendToast:
-                  message:
-                    type: static
-                    value: ''
-                setTab:
-                  setTab:
-                    type: static
-                    value: []
-              selected: gotoUrl
-            size:
-              type: static
-              value: xs
-            triggerOnAppLoad:
-              type: static
-              value: false
-          customCss:
-            button:
-              class: ''
-              style: ''
-            container:
-              class: ''
-              style: ''
-          horizontalAlignment: center
-          recomputeIds: []
           verticalAlignment: center
     k-0:
       - '12':
@@ -3230,27 +2466,31 @@ value:
       - '12':
           fixed: false
           fullHeight: false
-          h: 4
+          h: 9
           w: 12
           x: 0
           'y': 0
         '3':
           fixed: false
           fullHeight: false
-          h: 8
+          h: 10
           w: 3
           x: 0
           'y': 0
-        id: ac
+        id: 'y'
         data:
-          id: ac
-          type: listcomponent
+          id: 'y'
+          type: aggridcomponent
           actions: []
           componentInput:
             type: evalv2
             value:
-              - {}
-              - {}
+              - id: 1
+                name: A cell with a long name
+                age: 42
+              - id: 2
+                name: A briefer cell
+                age: 84
             connections:
               - id: result
                 componentId: bg_3
@@ -3258,38 +2498,72 @@ value:
             fieldType: array
             subFieldType: object
           configuration:
-            displayBorders:
+            allEditable:
+              type: static
+              value: false
+            columnDefs:
+              type: static
+              value:
+                - cellRendererType: text
+                  field: hoten
+                  flex: 1
+                  headerName: Họ và tên
+                  sort: null
+                  valueFormatter: null
+                - cellRendererType: text
+                  field: gender_name
+                  flex: 1
+                  headerName: Giới tính
+                  sort: null
+                  valueFormatter: null
+                - cellRendererType: text
+                  field: provinces_name
+                  flex: 1
+                  headerName: Địa chỉ
+                  sort: null
+                  valueFormatter: null
+                - cellRendererType: text
+                  field: phone
+                  flex: 1
+                  headerName: SĐT
+                  sort: null
+                  valueFormatter: null
+            compactness:
+              type: static
+              value: normal
+            customActionsHeader:
+              type: static
+            extraConfig:
+              type: static
+              value: {}
+            flex:
               type: static
               value: true
-            heightPx:
+            footer:
               type: static
-              value: null
+              value: true
+            multipleSelectable:
+              type: static
+              value: false
             pagination:
-              type: oneOf
-              configuration:
-                auto:
-                  pageSize:
-                    type: static
-                    value: 20
-                manual:
-                  pageCount:
-                    type: static
-                    value: -1
-              selected: auto
-            width:
-              type: oneOf
-              configuration:
-                card:
-                  minWidthPx:
-                    type: static
-                    value: 300
-                row: {}
-              selected: row
+              type: static
+              value: false
+            rowIdCol:
+              type: static
+              value: ''
+            rowMultiselectWithClick:
+              type: static
+              value: true
+            selectFirstRowByDefault:
+              type: static
+              value: true
+            wrapActions:
+              type: static
+              value: false
           customCss:
             container:
               class: ''
               style: ''
-          numberOfSubgrids: 1
   theme:
     type: path
     path: f/app_themes/theme_0
@@ -3298,19 +2572,19 @@ policy:
   execution_mode: publisher
   s3_inputs: []
   triggerables_v2:
-    'bg_0:rawscript/921585fa7f0e2e6c6b0915027fa7d91dad3bbbd1bd30cec271bdce5feb2b047f':
+    'bg_0:rawscript/2c175ba66f722a2a0e11651a890bce9085d64d306fe6a7cc8afa5c003a8ff094':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_1:rawscript/e2bd96a3e190962187cee1af9ca92e84716e8586480f27fd5c8611a07f9b49c2':
+    'bg_1:rawscript/e0117523facb8d3fbabfd2c7a9709f8f88de2e4d9984a4ae4d99f851edb6f399':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_2:rawscript/8fdfa058f651ae5cbb1a2b225f314074e2843c318de90d1c1f449e6473990c25':
+    'bg_2:rawscript/5a97d722cf71b391845f1bc64a9a6724d3e887921c126e84de3014871b4253ca':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_3:rawscript/e596900df8c909138c0a0ec9d105d313d8376db965fca59b3c61372ea3424266':
+    'bg_3:rawscript/35812b6c852e95cdadafeab4bdb8a728116cd7a8bab658861aa34c0289b2ab50':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
@@ -3322,7 +2596,7 @@ policy:
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_6:rawscript/0c7d02ba907805d07da786499a37818e677c497484bcd22c030f9403b4a0f190':
+    'bg_6:rawscript/223446e18f6e566469e8017a2b93216e60440e7dec8a8ddd3a3eef848814c753':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}

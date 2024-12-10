@@ -1,4 +1,4 @@
-summary: trang tình nguyện
+summary: Trang tình nguyện
 value:
   css:
     containercomponent:
@@ -16,6 +16,7 @@ value:
       text:
         class: ''
         style: ''
+  darkMode: false
   fullscreen: true
   grid:
     - '12':
@@ -394,7 +395,7 @@ value:
             icon: search
             label:
               type: static
-              value: tìm kiếm tổ chức
+              value: Tìm kiếm tổ chức
               fieldType: text
             path:
               type: oneOf
@@ -447,7 +448,7 @@ value:
             icon: activity
             label:
               type: static
-              value: đóng góp
+              value: Đóng góp
               fieldType: text
             path:
               type: oneOf
@@ -490,7 +491,7 @@ value:
               selected: href
         verticalAlignment: center
   hiddenInlineScripts:
-    - type: runnableByName
+    - type: runnableByPath
       name: get event data
       autoRefresh: true
       fields: {}
@@ -504,8 +505,15 @@ value:
           type: object
           properties: {}
           required: []
+      path: f/page/volunteer/get_event_data/inline_bg_0
       recomputeIds: []
       recomputeOnInputChanged: true
+      runType: script
+      schema:
+        $schema: 'https://json-schema.org/draft/2020-12/schema'
+        type: object
+        properties: {}
+        required: []
     - type: runnableByName
       name: get url param
       autoRefresh: true
@@ -564,6 +572,29 @@ value:
             - user_id
       recomputeIds: []
       recomputeOnInputChanged: true
+    - type: runnableByPath
+      name: get_locations_and_orgs
+      autoRefresh: true
+      fields: {}
+      inlineScript:
+        content: '!inline get_locations_and_orgs.inline_script.py'
+        lock: '!inline get_locations_and_orgs.inline_script.lock'
+        language: python3
+        path: f/page/volunteer/Background_Runnable_0
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties: {}
+          required: []
+      path: f/page/volunteer/Background_Runnable_0/inline_bg_4
+      recomputeIds: []
+      recomputeOnInputChanged: true
+      runType: script
+      schema:
+        $schema: 'https://json-schema.org/draft/2020-12/schema'
+        type: object
+        properties: {}
+        required: []
   hideLegacyTopBar: true
   mobileViewOnSmallerScreens: false
   norefreshbar: false
@@ -648,20 +679,22 @@ value:
               type: static
               value: true
             items:
-              type: static
+              type: evalv2
               value:
                 - value: foo
-                  label: Foo
+                  label: foo
                 - value: bar
-                  label: Bar
-              connections: []
-              expr: '[{"value":"foo","label":"Foo"},{"value":"bar","label":"Bar"}]'
+                  label: bar
+              connections:
+                - id: result
+                  componentId: bg_4
+              expr: bg_4.result.organizations
             nativeHtmlSelect:
               type: static
               value: false
             placeholder:
               type: static
-              value: tất cả tổ chức
+              value: Tất cả tổ chức
             preselectFirst:
               type: static
               value: false
@@ -671,6 +704,7 @@ value:
               style: ''
               tooltip: >-
                 https://github.com/rob-balfre/svelte-select/blob/master/docs/theming_variables.md
+          onSelect: []
           recomputeIds: []
           verticalAlignment: center
     b-1:
@@ -752,20 +786,22 @@ value:
               type: static
               value: true
             items:
-              type: static
+              type: evalv2
               value:
                 - value: foo
                   label: Foo
                 - value: bar
                   label: Bar
-              connections: []
-              expr: '[{"value":"foo","label":"Foo"},{"value":"bar","label":"Bar"}]'
+              connections:
+                - id: result
+                  componentId: bg_4
+              expr: bg_4.result.locations
             nativeHtmlSelect:
               type: static
               value: false
             placeholder:
               type: static
-              value: tất cả địa điểm
+              value: Tất cả địa điểm
             preselectFirst:
               type: static
               value: false
@@ -775,6 +811,7 @@ value:
               style: ''
               tooltip: >-
                 https://github.com/rob-balfre/svelte-select/blob/master/docs/theming_variables.md
+          onSelect: []
           recomputeIds: []
           verticalAlignment: center
     b-2:
@@ -800,7 +837,7 @@ value:
           componentInput:
             type: templatev2
             connections: []
-            eval: thời gian
+            eval: Thời gian
             fieldType: template
           configuration:
             copyButton:
@@ -1024,7 +1061,7 @@ value:
               value: false
             label:
               type: static
-              value: tìm kiếm
+              value: Tìm kiếm
             onError:
               type: oneOf
               configuration:
@@ -1309,7 +1346,7 @@ value:
               value: true
             label:
               type: static
-              value: xem chi tiết
+              value: Xem chi tiết
               connections: []
               expr: Đăng Ký
             onError:
@@ -2085,7 +2122,7 @@ policy:
   execution_mode: anonymous
   s3_inputs: []
   triggerables_v2:
-    'bg_0:rawscript/6607340839f6ab05ffa0904bf13c971767729d67a658e995482bc5320d7b572b':
+    'bg_0:script/f/page/volunteer/get_event_data/inline_bg_0':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
@@ -2098,6 +2135,10 @@ policy:
       one_of_inputs: {}
       static_inputs: {}
     'bg_3:rawscript/b85081bfcddf0efd90880304c8dc8105402d1b28f7305ada52484bce7814d7d2':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_4:script/f/page/volunteer/Background_Runnable_0/inline_bg_4':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}

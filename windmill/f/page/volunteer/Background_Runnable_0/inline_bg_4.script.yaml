@@ -1,0 +1,9 @@
+summary: Background Runnable 0
+description: ''
+lock: '!inline f/page/volunteer/Background_Runnable_0/inline_bg_4.script.lock'
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties: {}
+  required: []

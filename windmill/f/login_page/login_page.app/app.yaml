@@ -27,6 +27,16 @@ value:
       input:
         class: ''
         style: ''
+    schemaformcomponent:
+      description:
+        class: ''
+        style: ''
+      container:
+        class: ''
+        style: ''
+      label:
+        class: ''
+        style: ''
     tabscomponent:
       allTabs:
         class: ''
@@ -513,7 +523,9 @@ value:
               value: ''
             beforeIcon:
               type: static
-              value: ''
+              value: log-in
+              connections: []
+              expr: ''
             color:
               type: static
               value: blue
@@ -535,8 +547,12 @@ value:
                 none: {}
               selected: none
             disabled:
-              type: static
+              type: evalv2
               value: false
+              connections:
+                - id: values
+                  componentId: g
+              expr: '!g.values.email || !g.values["Mật khẩu"]'
             fillContainer:
               type: static
               value: true
@@ -566,14 +582,18 @@ value:
                   appendError:
                     type: static
                     value: true
+                    connections: []
+                    expr: 'true'
                   message:
                     type: static
                     value: An error occured
+                    connections: []
+                    expr: '"An error occured"'
                 setTab:
                   setTab:
                     type: static
                     value: []
-              selected: errorOverlay
+              selected: sendErrorToast
             onSuccess:
               type: oneOf
               configuration:
@@ -1429,11 +1449,11 @@ policy:
   execution_mode: publisher
   s3_inputs: []
   triggerables_v2:
-    'bg_0:rawscript/44ec2055ae0aa74709f817d48215c0b939fac5d9098148f8dcb424b137a85413':
+    'bg_0:rawscript/7b078758d9024b7991d1b4b5625111b671317346ed5f0526af333d7178c41675':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'j:rawscript/387492d83cca9109c6de35758973de0e856ff1a62033a2dc29c103a76b18031f':
+    'j:rawscript/822fdd3b5736bb64ece71e2371e350fcb275afa995957c2b28f1712ccf3c978a':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
