@@ -1,0 +1,26 @@
+summary: cập nhật varible
+description: ''
+lock: '!inline f/puplic_link/update_variable.script.lock'
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    selfhost:
+      type: boolean
+      description: ''
+      default: null
+    supabase_service_key:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    supabase_url:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+  required:
+    - selfhost
+    - supabase_url
+    - supabase_service_key
