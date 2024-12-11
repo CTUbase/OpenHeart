@@ -2,7 +2,9 @@ summary: lưu trang profile
 display_name: info_page
 extra_perms:
   g/all: true
+  u/admin: true
   u/hoangphuc090104: true
 owners:
   - u/hoangphuc090104
   - g/all
+  - u/admin

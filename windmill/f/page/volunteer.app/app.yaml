@@ -564,6 +564,22 @@ value:
             - user_id
       recomputeIds: []
       recomputeOnInputChanged: true
+    - type: runnableByName
+      name: get_location_for_sort
+      autoRefresh: true
+      fields: {}
+      inlineScript:
+        content: '!inline get_location_for_sort.inline_script.py'
+        lock: '!inline get_location_for_sort.inline_script.lock'
+        language: python3
+        path: f/page/volunteer/get_location_for_sort
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties: {}
+          required: []
+      recomputeIds: []
+      recomputeOnInputChanged: true
   hideLegacyTopBar: true
   mobileViewOnSmallerScreens: false
   norefreshbar: false
@@ -752,14 +768,16 @@ value:
               type: static
               value: true
             items:
-              type: static
+              type: evalv2
               value:
                 - value: foo
                   label: Foo
                 - value: bar
                   label: Bar
-              connections: []
-              expr: '[{"value":"foo","label":"Foo"},{"value":"bar","label":"Bar"}]'
+              connections:
+                - id: result
+                  componentId: bg_4
+              expr: bg_4.result
             nativeHtmlSelect:
               type: static
               value: false
@@ -775,6 +793,7 @@ value:
               style: ''
               tooltip: >-
                 https://github.com/rob-balfre/svelte-select/blob/master/docs/theming_variables.md
+          onSelect: []
           recomputeIds: []
           verticalAlignment: center
     b-2:
@@ -1550,6 +1569,8 @@ value:
             pagination:
               type: static
               value: false
+            rowIdCol:
+              type: static
             rowMultiselectWithClick:
               type: static
               value: true
@@ -2266,19 +2287,23 @@ policy:
       static_inputs:
         keyword: bão
         maximum: 1
-    'bg_0:rawscript/c60c0d40ae69728e16c2267e3584aafb6db4a385036c3708ff137d432b50f2c0':
+    'bg_0:rawscript/6607340839f6ab05ffa0904bf13c971767729d67a658e995482bc5320d7b572b':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_1:rawscript/179b707e3e377541477fb6fa3a833f5ea7f0f74b3c055d667514ee7f6214a415':
+    'bg_1:rawscript/9e6a35ba160672e367ece8b59aeedb714bf054ad9b4a151e890dbce3fcf2bef1':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_2:rawscript/32681e8550c73f938b70d19350dc7d4a6d5fa652410fe99e5c64c8acd6639a0d':
+    'bg_2:rawscript/98c0b88043860d998f00362f6634306b09bee776e0a421eb7803fc4e1c50c6ca':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
-    'bg_3:rawscript/017401e8f763a2604aee0ecb4acd7ae5a8b94bb7c78673b103da0ca2c278262b':
+    'bg_3:rawscript/b85081bfcddf0efd90880304c8dc8105402d1b28f7305ada52484bce7814d7d2':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs: {}
+    'bg_4:rawscript/80e53d4955d8a961c59ccead446e4550c813cceb257bb717a7c1b80ac77a9fd2':
       allow_user_resources: []
       one_of_inputs: {}
       static_inputs: {}
