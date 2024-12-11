@@ -1,0 +1,10 @@
+joblib 
+requests
+bs4
+pyvi
+numpy
+pandas
+scikit-learn
+fastapi
+uvicorn[standard]
+pydantic
